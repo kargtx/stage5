@@ -1,0 +1,319 @@
+=== SECTIONS & MARGINS ===
+Section 0:
+  Page width: 595.3 pt (21.00 cm), height: 841.9 pt (29.70 cm)
+  Top: 56.7 pt (2.00 cm), Bottom: 56.7 pt (2.00 cm)
+  Left: 85.05 pt (3.00 cm), Right: 42.5 pt (1.50 cm)
+  Header: 35.4 pt, Footer: 35.4 pt
+  Different first page header/footer: False
+
+=== DEFAULT STYLES ===
+Style: Normal, Font: Times New Roman, Size: 14.0, Bold: None
+
+=== PARAGRAPHS ===
+P0 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Федеральное государственное бюджетное образовательное учреждение
+  Run 0: {'text': 'Федеральное государственное бюджетное образовательное учреждение ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P1 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: высшего образования
+  Run 0: {'text': 'высшего образования ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P2 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: «Уфимский университет науки и технологий»
+  Run 0: {'text': '«Уфимский университет науки и технологий»', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P4 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=12.0, SpA=12.0]:
+  Text: Кафедра АСУ
+  Run 0: {'text': 'Кафедра АСУ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P7 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Отчет по лабораторной работе № 1
+  Run 0: {'text': 'Отчет по лабораторной работе № 1', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P8 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: по дисциплине: Автоматизированные системы управления технологическими процессами
+  Run 0: {'text': 'по дисциплине: ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P9 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: на тему: «Изучение инструментальной среды TRACE MODE 6»
+  Run 0: {'text': 'на тему: «', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P12 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Выполнил:
+  Run 0: {'text': 'Выполнил:', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P13 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: студент гр. ЭАС-414С
+  Run 0: {'text': 'студент гр. ЭАС-41', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P14 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Гайнанов Д.И.
+  Run 0: {'text': 'Гайнанов Д.И.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P15 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Зачётная книжка № 22130421
+  Run 0: {'text': 'Зачётная книжка № ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P16 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Проверил:
+  Run 0: {'text': 'Проверил:', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P17 [Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Старцев Ю.В.
+  Run 0: {'text': 'Старцев Ю.В.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P20 [Align=CENTER (1), Indent=2.250722222222222 cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Уфа 2026 г.
+  Run 0: {'text': 'Уфа 202', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P21 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Цель работы
+  Run 0: {'text': 'Цель работы ', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P22 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Изучение назначение и состава SCADA-системы TRACE MODE 6, получение навыков работы с инструментально
+  Run 0: {'text': 'Изучение назначение и состава SCADA-системы TRACE MODE 6, получение навыков работы с инструментальной системой TRACE MODE 6.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P23 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Теоретическая часть
+  Run 0: {'text': 'Теоретическ', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P24 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Человеко-машинный интерфейс (ЧМИ), или HMI (Human-Machine Interface), представляет собой средство вз
+  Run 0: {'text': 'Человеко-машинный интерфейс (ЧМИ), или HMI (Human-Machine Interface), представляет собой средство взаимодействия оператора с автоматизированной системой. Он обеспечивает отображение информации о состоянии технологического процесса и позволяет человеку управлять этим процессом. В случае, когда интерфейс используется для управления технологическими объектами, он реализуется в составе SCADA-систем (Supervisory Control And Data Acquisition), которые предназначены для диспетчерского управления и сбора данных, но на практике выполняют значительно более широкий круг задач.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P26 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: SCADA-системы являются важным элементом автоматизированных систем управления и устанавливаются на оп
+  Run 0: {'text': 'SCADA-системы являются важным элементом автоматизированных систем управления и устанавливаются на операторских, диспетчерских и технологических станциях. Они функционируют на базе промышленных персональных компьютеров, панельных компьютеров и операторских панелей, а в некоторых случаях могут встраиваться непосредственно в контроллеры. Основной особенностью SCADA является наличие развитого пользовательского интерфейса, обеспечивающего эффективное взаимодействие оператора с системой.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P28 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Функциональные возможности SCADA-систем включают настройку под конкретную задачу, диспетчерское и ав
+  Run 0: {'text': 'Функциональные возможности SCADA-систем включают настройку под конкретную задачу, диспетчерское и автоматическое управление, хранение и обработку данных, а также выполнение общесистемных функций. В процессе разработки системы создается графический интерфейс (мнемосхемы, графики, таблицы), программируются алгоритмы управления, ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P30 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Кроме того, SCADA может выполнять отдельные функции автоматического управления, такие как регулирова
+  Run 0: {'text': 'Кроме того, SCADA может выполнять отдельные функции автоматического управления, такие как регулирование параметров, управление последовательностью операций, адаптация к изменяющимся условиям и блокировка оборудования при возникновении опасных ситуаций. Важной функцией является хранение истории процесса, включающее сбор, обработку и архивирование данных, что позволяет анализировать работу системы, выявлять ошибки и повышать эффективность управления.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P32 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Также SCADA выполняет общесистемные задачи, включая взаимодействие с другими программными средствами
+  Run 0: {'text': 'Также SCADA выполняет общесистемные задачи, включая взаимодействие с другими программными средствами и диагностику оборудования, каналов связи и программного обеспечения. Особое значение при разработке SCADA уделяется удобству и надежности интерфейса, поскольку от действий оператора может зависеть качество продукции и безопасность людей. Поэтому современные системы ориентированы на улучшение эргономики, снижение вероятности ошибок и внедрение элементов интеллектуальной поддержки принятия решений.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P33 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Ход работы (Вариант 1)
+  Run 0: {'text': 'Ход работы', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P34 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Задание 6.1.    Создать систему мониторинга, содержащую один узел АРМ, два внутренних генератора сиг
+  Run 0: {'text': 'Задание ', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P36 [Align=None, Indent=None cm, LineSp=1.0, SpB=None, SpA=None]:
+  Text: Таблица 1. Варианты заданий для генераторов
+  Run 0: {'text': 'Таблица 1. Варианты заданий для генераторов', 'font': 'Arial', 'size': 12.0, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P38 [Align=None, Indent=None cm, LineSp=1.0, SpB=None, SpA=None]:
+  Text: Таблица 2. Варианты заданий для показывающих приборов
+  Run 0: {'text': 'Таблица 2. Варианты заданий для показывающих приборов', 'font': 'Arial', 'size': 12.0, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P40 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: В соответствии с номером зачетной книжки X=2 Y=1
+  Run 0: {'text': 'В соответствии с номером зачетной книжки ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P41 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Требуется выполнить следующие условия:
+  Run 0: {'text': 'Требуется выполнить следующие условия:', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P48 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создан новый простой проект, в котором создана система RTM_1
+  Run 0: {'text': 'Создан новый простой проект, в котором создана система', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P49 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окна проекта TRACE_MODE 6
+  Run 0: {'text': 'Окна проекта ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P51 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: создан текстовый блок
+  Run 0: {'text': 'создан текстовый блок', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P52 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Произведены создание и настройка второго текстового блока с динамическим текстом
+  Run 0: {'text': 'Произведены создание и настройка второго текстового блока с динамическим текстом ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P54 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: параметры второго текстового блока
+  Run 0: {'text': 'параметры второго текстового блока', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P55 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создан стрелочный прибор по варианту и выполнена привязка значения
+  Run 0: {'text': 'Создан стрелочный прибор по варианту и выполнена привязка значения', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P57 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: стрелочный прибор и его параметры
+  Run 0: {'text': 'стрелочный прибор и его параметры', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P58 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Выполнена проверка работоспособности в режиме эмуляции
+  Run 0: {'text': 'Выполнена проверка работоспособности в режиме эмуляции', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P60 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: стрелочный прибор в режиме симуляции
+  Run 0: {'text': 'стрелочный прибор в режиме симуляции', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P64 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Выполнена процедура настройки автозаполнения
+  Run 0: {'text': 'Выполнена процедура настройки автозаполнения', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P66 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: окно настройки параметров аргумента параметр
+  Run 0: {'text': 'окно настройки параметров аргумента параметр', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P67 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создан генератор синусоиды и привязан к параметру
+  Run 0: {'text': 'Создан генератор синусоиды и привязан к параметру', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P69 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: «параметр» привязанный к синусоидальному генератору
+  Run 0: {'text': '«параметр» привязанный к синусоидальному генератору', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P75 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Запуск проекта через базовый профайлер
+  Run 0: {'text': 'Запуск проекта через базовый профайлер', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P77 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно профайлера
+  Run 0: {'text': 'Окно профайлера', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P78 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Задание 6.2 - В состав системы ввести функцию управления.
+  Run 0: {'text': 'Задание 6.2', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P79 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создана и названа кнопка для управления
+  Run 0: {'text': 'Создана и названа кнопка для управления', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P81 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Кнопка «управление» и её параметры
+  Run 0: {'text': 'Кнопка «управление» и её параметры', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P82 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Выполнена привязка нажатия кнопки к новому аргументу
+  Run 0: {'text': 'Выполнена привязка нажатия кнопки к новому аргументу', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P84 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно привязки для кнопки управление
+  Run 0: {'text': 'Окно привязки для кнопки управление', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P85 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Для аргумента управление создан канал связи
+  Run 0: {'text': 'Для аргумента управление создан канал связи', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P87 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно параметров аргументов экрана
+  Run 0: {'text': 'Окно параметров аргументов экрана', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P88 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создан графический элемент тренд
+  Run 0: {'text': 'Создан графический элемент тренд', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P90 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Экран системы с элементом «тренд» и его параметры
+  Run 0: {'text': 'Экран системы с ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P91 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Проверка работоспособности кнопки управление значение установлено в соответствии с двумя последними 
+  Run 0: {'text': 'Проверка работоспособности кнопки управление значение установлено в соответствии с двумя последними цифрами номера зачетной книжки «21»', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P93 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно профайлера с установкой управления
+  Run 0: {'text': 'Окно профайлера с установкой управления', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P94 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создан второй прибор по графику Р2 в соответствии с вариантом
+  Run 0: {'text': 'Создан второй прибор по графику Р2 в соответствии с вариантом', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P96 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно экрана с новыми элементами
+  Run 0: {'text': 'Окно экрана с новыми элементами', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P97 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Проверка работоспособности прибора и генератора Р2
+  Run 0: {'text': 'Проверка работоспособности прибора и генератора Р2', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P99 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно профайлера с тестом второго параметра
+  Run 0: {'text': 'Окно профайлера с тестом второго параметра', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P100 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Задание 6.3 - В состав проекта ввести программу обработки данных.
+  Run 0: {'text': 'Задание ', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P101 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Добавлен элемент отображения значения суммы, создан атрибут сумма и добавлен на график трендов
+  Run 0: {'text': 'Добавлен элемент отображения значения суммы, создан атрибут сумма и добавлен на график трендов', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P103 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Экран системы с суммой
+  Run 0: {'text': 'Экран системы с суммой', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P104 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Создана программа и аргументы в ней, прописана формула для суммы в соответствии с вариантом задания
+  Run 0: {'text': 'Создана программа и аргументы в ней, прописана формула для суммы в соответствии с вариантом задания', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P106 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно настройки и изменения программы
+  Run 0: {'text': 'Окно настройки и изменения программы', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P107 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Выполнена привязка аргументов программы к аргументам системы
+  Run 0: {'text': 'Выполнена привязка аргументов программы к аргументам системы', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P109 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно привязки аргументов программы к канала связи системы
+  Run 0: {'text': 'Окно привязки аргументов программы к канала связи системы', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P110 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Настроен график трендов и выполнен итоговый запуск системы, значение управления установлено на 21 в 
+  Run 0: {'text': 'Настроен график трендов и выполнен итоговый запуск системы, значение управления установлено на 21 в соответствии с номером зачетной книжки', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P112 [Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Окно профайлера базового с финальным запуском
+  Run 0: {'text': 'Окно профайлера базового ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P113 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Вывод
+  Run 0: {'text': 'Вывод', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P114 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: В ходе выполнения лабораторной работы были изучены назначение, структура и основные функциональные в
+  Run 0: {'text': 'В ходе выполнения лабораторной работы были изучены назначение, структура и основные функциональные возможности SCADA-системы TRACE MODE 6. Были освоены принципы работы в интегрированной среде разработки: создание нового проекта, формирование структуры в навигаторе, добавление узлов и каналов данных. Практически отработаны навыки разработки операторского интерфейса — добавлены и настроены графические элементы отображения параметров: стрелочный прибор со шкалой 135° для сигнала синусоиды (P1) и вертикальный ползунок с формой «квадрат» для треугольного сигнала (P2) в соответствии с вариантом задания (X=2, Y=1). Реализована функция ручного управления технологическим процессом и простейшая обработка данных по заданной формуле: Сумма = P1 + 0,25·P2 + Управление. Настроен тренд для визуализации динамики всех параметров с корректным масштабированием вертикальной оси. Проведено моделирование работы системы в отладочном мониторе реального времени (профайлере), в ходе которого подтверждена корректность работы всех компонентов проекта: значения параметров изменяются в реальном времени, управляющее воздействие влияет на результат вычислений, формула обрабатывается верно. В результате выполнены все поставленные задачи, получен работоспособный проект системы мониторинга и приобретены базовые навыки разработки простых АСУТП в среде TRACE MODE 6, которые могут быть применены при создании более сложных систем автоматизации технологических процессов.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P116 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Контрольные вопросы
+  Run 0: {'text': 'Контрольные вопросы', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P117 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Вопрос 2. Какими основными функциональными возможностями обладают SCADA-системы?
+  Run 0: {'text': 'Вопрос 2.', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P118 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: SCADA-системы выполняют функции настройки на конкретную задачу, диспетчерского и автоматического упр
+  Run 0: {'text': 'SCADA-системы выполняют функции настройки на конкретную задачу, диспетчерского и автоматического управления, хранения истории процесса, обеспечения безопасности и общесистемные функции. К диспетчерским задачам относятся взаимодействие с оператором, аварийная сигнализация, ведение журналов событий и архивов, подготовка отчётов. В части автоматического управления SCADA реализует регулирование, управление последовательностями операций и блокировку исполнительных устройств при заданных условиях. Система также собирает, обрабатывает и архивирует данные, управляет базами данных реального времени, обеспечивает взаимодействие с другими программами и диагностику оборудования. Главным отличительным признаком SCADA является наличие пользовательского интерфейса, без которого система теряет функцию диспетчерского управления.', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+P119 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: Вопрос 6. Какие графические формы принято использовать при отображении объектов и параметров АСУТП?
+  Run 0: {'text': 'Вопрос 6', 'font': None, 'size': None, 'bold': True, 'italic': None, 'underline': None, 'color': None}
+
+P120 [Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+  Text: При отображении объектов и параметров АСУТП в SCADA-системах применяется широкий набор графических ф
+  Run 0: {'text': 'При отображении объектов и параметров АСУТП в SCADA-системах применяется широкий набор графических форм, обеспечивающих наглядное и удобное представление информации оператору. Для визуализации аналоговых величин используются стрелочные приборы с настраиваемой шкалой (90° или 135°), позволяющие быстро оценить текущее значение параметра и его отклонение от нормы. Ползунки (слайдеры) горизонтального или вертикального типа с различными формами указателя (квадрат, домик, треугольник) применяются как для отображения, так и для ввода значений оператором. Для анализа динамики процессов во времени используются тренды — многослойные графики с регулируемым масштабом осей, на ', 'font': None, 'size': None, 'bold': None, 'italic': None, 'underline': None, 'color': None}
+
+
+=== TABLES ===
+Total tables: 4
+Table 0: 11 rows, 4 cols
+  Header: ['Номер варианта по Y', 'Генератор 1 (P1)', 'Генератор 2 (P2)', 'Сумма']
+Table 1: 7 rows, 3 cols
+  Header: ['Номер варианта по X', 'Показывающий прибор для Генератора 1', 'Показывающий прибор для Генератора 2']
+Table 2: 2 rows, 3 cols
+  Header: ['Генератор 1 (P1)', 'Генератор 2 (P2)', 'Сумма']
+Table 3: 2 rows, 2 cols
+  Header: ['Показывающий прибор для Генератора 1', 'Показывающий прибор для Генератора 2']

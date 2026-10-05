@@ -1,0 +1,408 @@
+=== SECTION MARGINS & SIZES ===
+Section 0:
+  Width: 595.3 pt (21.00 cm)
+  Height: 841.9 pt (29.70 cm)
+  Top: 56.7 pt (2.00 cm)
+  Bottom: 56.7 pt (2.00 cm)
+  Left: 85.05 pt (3.00 cm)
+  Right: 42.5 pt (1.50 cm)
+  Header dist: 35.4 pt, Footer dist: 35.4 pt
+  Different first page: False
+  Header text: []
+  Footer text: []
+
+=== DOCUMENT STYLES ===
+Style: 'Normal' (id: a)
+   Font: Times New Roman, size: 14.0, bold: None, italic: None
+   Line sp: 1.5, Indent: 1.2505972222222221 cm, Align: JUSTIFY (3)
+Style: 'List Paragraph' (id: a3)
+   Font: None, size: None, bold: None, italic: None
+   Line sp: None, Indent: None cm, Align: None
+Style: 'Caption' (id: a4)
+   Font: None, size: 9.0, bold: None, italic: True
+   Line sp: 1.0, Indent: None cm, Align: None
+
+=== DETAILED PARAGRAPH ANALYSIS ===
+P0 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Федеральное государственное бюджетное образовательное учреждение
+
+P1 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: высшего образования
+
+P2 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: «Уфимский университет науки и технологий»
+
+P3: [EMPTY]
+P4 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=12.0, SpA=12.0]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Кафедра АСУ
+
+P5: [EMPTY]
+P6: [EMPTY]
+P7 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Отчет по лабораторной работе № 1
+
+P8 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: по дисциплине: Автоматизированные системы управления технологическими процессами
+
+P9 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: на тему: «Изучение инструментальной среды TRACE MODE 6»
+
+P10: [EMPTY]
+P11: [EMPTY]
+P12 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Выполнил:
+
+P13 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: студент гр. ЭАС-414С
+
+P14 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Гайнанов Д.И.
+
+P15 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Зачётная книжка № 22130421
+
+P16 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Проверил:
+
+P17 [Style='Normal', Align=RIGHT (2), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Старцев Ю.В.
+
+P18: [EMPTY]
+P19: [EMPTY]
+P20 [Style='Normal', Align=CENTER (1), Indent=2.250722222222222 cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Уфа 2026 г.
+
+P21 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {True}, Italics: {None}
+   Text: Цель работы
+
+P22 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Изучение назначение и состава SCADA-системы TRACE MODE 6, получение навыков работы с инструментальной системой TRACE MODE 6.
+
+P23 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {True}, Italics: {None}
+   Text: Теоретическая часть
+
+P24 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Человеко-машинный интерфейс (ЧМИ), или HMI (Human-Machine Interface), представляет собой средство взаимодействия оператора с автоматизированной системой. Он обеспечивает отображение информации о состоянии технологического процесса и позволяет человеку управлять этим процессом. В случае, когда интерфейс используется для управления технологическими объектами, он реализуется в составе SCADA-систем (Supervisory Control And Data Acquisition), которые предназначены для диспетчерского управления и сбора данных, но на практике выполняют значительно более широкий круг задач.
+
+P25: [EMPTY]
+P26 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: SCADA-системы являются важным элементом автоматизированных систем управления и устанавливаются на операторских, диспетчерских и технологических станциях. Они функционируют на базе промышленных персональных компьютеров, панельных компьютеров и операторских панелей, а в некоторых случаях могут встраиваться непосредственно в контроллеры. Основной особенностью SCADA является наличие развитого пользовательского интерфейса, обеспечивающего эффективное взаимодействие оператора с системой.
+
+P27: [EMPTY]
+P28 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Функциональные возможности SCADA-систем включают настройку под конкретную задачу, диспетчерское и автоматическое управление, хранение и обработку данных, а также выполнение общесистемных функций. В процессе разработки системы создается графический интерфейс (мнемосхемы, графики, таблицы), программируются алгоритмы управления, настраиваются каналы связи и базы данных. В режиме диспетчерского управления SCADA обеспечивает визуализацию процессов, прием и передачу команд оператора, сигнализацию аварийных ситуаций, ведение журналов событий и формирование отчетов.
+
+P29: [EMPTY]
+P30 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Кроме того, SCADA может выполнять отдельные функции автоматического управления, такие как регулирование параметров, управление последовательностью операций, адаптация к изменяющимся условиям и блокировка оборудования при возникновении опасных ситуаций. Важной функцией является хранение истории процесса, включающее сбор, обработку и архивирование данных, что позволяет анализировать работу системы, выявлять ошибки и повышать эффективность управления.
+
+P31: [EMPTY]
+P32 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Также SCADA выполняет общесистемные задачи, включая взаимодействие с другими программными средствами и диагностику оборудования, каналов связи и программного обеспечения. Особое значение при разработке SCADA уделяется удобству и надежности интерфейса, поскольку от действий оператора может зависеть качество продукции и безопасность людей. Поэтому современные системы ориентированы на улучшение эргономики, снижение вероятности ошибок и внедрение элементов интеллектуальной поддержки принятия решений.
+
+P33 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {True}, Italics: {None}
+   Text: Ход работы (Вариант 1)
+
+P34 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT', 'Arial'}, Sizes: {'DEFAULT'}, Bolds: {None, True}, Italics: {None}
+   Text: Задание 6.1.    Создать систему мониторинга, содержащую один узел АРМ, два внутренних генератора сигналов и элементы отображения их значений с помощью различных средств операторского интерфейса. Варианты заданий определяются двумя последним цифрами XY номера зачетной книжки по таблицам 1 и 2.
+
+P35: [EMPTY]
+P36 [Style='Normal', Align=None, Indent=None cm, LineSp=1.0, SpB=None, SpA=None]:
+   Fonts: {'Arial'}, Sizes: {12.0}, Bolds: {None}, Italics: {None}
+   Text: Таблица 1. Варианты заданий для генераторов
+
+P37: [EMPTY]
+P38 [Style='Normal', Align=None, Indent=None cm, LineSp=1.0, SpB=None, SpA=None]:
+   Fonts: {'Arial'}, Sizes: {12.0}, Bolds: {None}, Italics: {None}
+   Text: Таблица 2. Варианты заданий для показывающих приборов
+
+P39: [EMPTY]
+P40 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: В соответствии с номером зачетной книжки X=2 Y=1
+
+P41 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Требуется выполнить следующие условия:
+
+P42: [EMPTY]
+P43: [EMPTY]
+P44: [EMPTY]
+P45: [EMPTY]
+P46: [EMPTY]
+P47: [EMPTY]
+P48 [Style='Normal', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создан новый простой проект, в котором создана система RTM_1
+
+P49 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окна проекта TRACE_MODE 6
+
+P50: [EMPTY]
+P51 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: создан текстовый блок
+
+P52 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Произведены создание и настройка второго текстового блока с динамическим текстом
+
+P53: [EMPTY]
+P54 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: параметры второго текстового блока
+
+P55 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создан стрелочный прибор по варианту и выполнена привязка значения
+
+P56: [EMPTY]
+P57 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: стрелочный прибор и его параметры
+
+P58 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Выполнена проверка работоспособности в режиме эмуляции
+
+P59: [EMPTY]
+P60 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: стрелочный прибор в режиме симуляции
+
+P61: [EMPTY]
+P62: [EMPTY]
+P63: [EMPTY]
+P64 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Выполнена процедура настройки автозаполнения
+
+P65: [EMPTY]
+P66 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: окно настройки параметров аргумента параметр
+
+P67 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создан генератор синусоиды и привязан к параметру
+
+P68: [EMPTY]
+P69 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: «параметр» привязанный к синусоидальному генератору
+
+P70: [EMPTY]
+P71: [EMPTY]
+P72: [EMPTY]
+P73: [EMPTY]
+P74: [EMPTY]
+P75 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Запуск проекта через базовый профайлер
+
+P76: [EMPTY]
+P77 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно профайлера
+
+P78 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT', 'Arial'}, Sizes: {'DEFAULT'}, Bolds: {None, True}, Italics: {None}
+   Text: Задание 6.2 - В состав системы ввести функцию управления.
+
+P79 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создана и названа кнопка для управления
+
+P80: [EMPTY]
+P81 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Кнопка «управление» и её параметры
+
+P82 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Выполнена привязка нажатия кнопки к новому аргументу
+
+P83: [EMPTY]
+P84 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно привязки для кнопки управление
+
+P85 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Для аргумента управление создан канал связи
+
+P86: [EMPTY]
+P87 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно параметров аргументов экрана
+
+P88 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создан графический элемент тренд
+
+P89: [EMPTY]
+P90 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Экран системы с элементом «тренд» и его параметры
+
+P91 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Проверка работоспособности кнопки управление значение установлено в соответствии с двумя последними цифрами номера зачетной книжки «21»
+
+P92: [EMPTY]
+P93 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно профайлера с установкой управления
+
+P94 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создан второй прибор по графику Р2 в соответствии с вариантом
+
+P95: [EMPTY]
+P96 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно экрана с новыми элементами
+
+P97 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Проверка работоспособности прибора и генератора Р2
+
+P98: [EMPTY]
+P99 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно профайлера с тестом второго параметра
+
+P100 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None, True}, Italics: {None}
+   Text: Задание 6.3 - В состав проекта ввести программу обработки данных.
+
+P101 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Добавлен элемент отображения значения суммы, создан атрибут сумма и добавлен на график трендов
+
+P102: [EMPTY]
+P103 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Экран системы с суммой
+
+P104 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Создана программа и аргументы в ней, прописана формула для суммы в соответствии с вариантом задания
+
+P105: [EMPTY]
+P106 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно настройки и изменения программы
+
+P107 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Выполнена привязка аргументов программы к аргументам системы
+
+P108: [EMPTY]
+P109 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно привязки аргументов программы к канала связи системы
+
+P110 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Настроен график трендов и выполнен итоговый запуск системы, значение управления установлено на 21 в соответствии с номером зачетной книжки
+
+P111: [EMPTY]
+P112 [Style='List Paragraph', Align=CENTER (1), Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: Окно профайлера базового с финальным запуском
+
+P113 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {True}, Italics: {None}
+   Text: Вывод
+
+P114 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: В ходе выполнения лабораторной работы были изучены назначение, структура и основные функциональные возможности SCADA-системы TRACE MODE 6. Были освоены принципы работы в интегрированной среде разработки: создание нового проекта, формирование структуры в навигаторе, добавление узлов и каналов данных. Практически отработаны навыки разработки операторского интерфейса — добавлены и настроены графические элементы отображения параметров: стрелочный прибор со шкалой 135° для сигнала синусоиды (P1) и вертикальный ползунок с формой «квадрат» для треугольного сигнала (P2) в соответствии с вариантом задания (X=2, Y=1). Реализована функция ручного управления технологическим процессом и простейшая обработка данных по заданной формуле: Сумма = P1 + 0,25·P2 + Управление. Настроен тренд для визуализации динамики всех параметров с корректным масштабированием вертикальной оси. Проведено моделирование работы системы в отладочном мониторе реального времени (профайлере), в ходе которого подтверждена корректность работы всех компонентов проекта: значения параметров изменяются в реальном времени, управляющее воздействие влияет на результат вычислений, формула обрабатывается верно. В результате выполнены все поставленные задачи, получен работоспособный проект системы мониторинга и приобретены базовые навыки разработки простых АСУТП в среде TRACE MODE 6, которые могут быть применены при создании более сложных систем автоматизации технологических процессов.
+
+P115: [EMPTY]
+P116 [Style='List Paragraph', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {True}, Italics: {None}
+   Text: Контрольные вопросы
+
+P117 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None, True}, Italics: {None}
+   Text: Вопрос 2. Какими основными функциональными возможностями обладают SCADA-системы?
+
+P118 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: SCADA-системы выполняют функции настройки на конкретную задачу, диспетчерского и автоматического управления, хранения истории процесса, обеспечения безопасности и общесистемные функции. К диспетчерским задачам относятся взаимодействие с оператором, аварийная сигнализация, ведение журналов событий и архивов, подготовка отчётов. В части автоматического управления SCADA реализует регулирование, управление последовательностями операций и блокировку исполнительных устройств при заданных условиях. Система также собирает, обрабатывает и архивирует данные, управляет базами данных реального времени, обеспечивает взаимодействие с другими программами и диагностику оборудования. Главным отличительным признаком SCADA является наличие пользовательского интерфейса, без которого система теряет функцию диспетчерского управления.
+
+P119 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None, True}, Italics: {None}
+   Text: Вопрос 6. Какие графические формы принято использовать при отображении объектов и параметров АСУТП?
+
+P120 [Style='Normal', Align=None, Indent=None cm, LineSp=None, SpB=None, SpA=None]:
+   Fonts: {'DEFAULT'}, Sizes: {'DEFAULT'}, Bolds: {None}, Italics: {None}
+   Text: При отображении объектов и параметров АСУТП в SCADA-системах применяется широкий набор графических форм, обеспечивающих наглядное и удобное представление информации оператору. Для визуализации аналоговых величин используются стрелочные приборы с настраиваемой шкалой (90° или 135°), позволяющие быстро оценить текущее значение параметра и его отклонение от нормы. Ползунки (слайдеры) горизонтального или вертикального типа с различными формами указателя (квадрат, домик, треугольник) применяются как для отображения, так и для ввода значений оператором. Для анализа динамики процессов во времени используются тренды — многослойные графики с регулируемым масштабом осей, на которые можно выводить несколько параметров одновременно. Числовые и строковые данные отображаются с помощью текстовых индикаторов с возможностью форматирования и цветовой индикации состояний (например, изменение цвета при выходе за допустимые пределы). Для структурного представления технологического процесса применяются мнемосхемы — графические изображения оборудования и коммуникаций с интерактивными элементами, привязанными к каналам данных. Таблицы используются для представления данных в числовом виде с поддержкой сортировки и форматирования ячеек. Всплывающие окна служат для информирования оператора, ввода команд или отображения аварийных сообщений.
+
+
+=== TABLE ANALYSIS ===
+Table 0: 11 rows, 4 cols, Style: 'Normal Table'
+  Alignment: None
+  Row 0: ['Номер варианта по Y', 'Генератор 1 (P1)', 'Генератор 2 (P2)', 'Сумма']
+    Cell (0,0) P: 'Номер варианта по Y' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+    Cell (0,1) P: 'Генератор 1 (P1)' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+  Row 1: ['0', 'Синусоида', 'Пила', 'P1+0.2*P2+Управление']
+    Cell (1,0) P: '0' font: ['Arial'], size: [12.0], align: None
+    Cell (1,1) P: 'Синусоида' font: ['Arial'], size: [12.0], align: None
+  Row 2: ['1', 'Синусоида', 'Треугольник', 'P1+0.25*P2+Управление']
+    Cell (2,0) P: '1' font: ['Arial'], size: [12.0], align: None
+    Cell (2,1) P: 'Синусоида' font: ['Arial'], size: [12.0], align: None
+Table 1: 7 rows, 3 cols, Style: 'Normal Table'
+  Alignment: None
+  Row 0: ['Номер варианта по X', 'Показывающий прибор для Генератора 1', 'Показывающий прибор для Генератора 2']
+    Cell (0,0) P: 'Номер варианта по X' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+    Cell (0,1) P: 'Показывающий прибор для Генера' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+  Row 1: ['0, 1', 'Стрелочный прибор, шкала 135о', 'Стрелочный прибор, шкала 90о']
+    Cell (1,0) P: '0, 1' font: ['Arial'], size: [12.0], align: None
+    Cell (1,1) P: 'Стрелочный прибор, шкала 135о' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: None
+  Row 2: ['2', 'Стрелочный прибор, шкала 135о', 'Ползунок вертикальный, квадрат']
+    Cell (2,0) P: '2' font: ['Arial'], size: [12.0], align: None
+    Cell (2,1) P: 'Стрелочный прибор, шкала 135о' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: None
+Table 2: 2 rows, 3 cols, Style: 'Normal Table'
+  Alignment: None
+  Row 0: ['Генератор 1 (P1)', 'Генератор 2 (P2)', 'Сумма']
+    Cell (0,0) P: 'Генератор 1 (P1)' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: None
+    Cell (0,1) P: 'Генератор 2 (P2)' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: None
+  Row 1: ['Синусоида', 'Треугольник', 'P1+0.25*P2+Управление']
+    Cell (1,0) P: 'Синусоида' font: ['Arial'], size: [12.0], align: None
+    Cell (1,1) P: 'Треугольник' font: ['Arial'], size: [12.0], align: None
+Table 3: 2 rows, 2 cols, Style: 'Normal Table'
+  Alignment: None
+  Row 0: ['Показывающий прибор для Генератора 1', 'Показывающий прибор для Генератора 2']
+    Cell (0,0) P: 'Показывающий прибор для Генера' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+    Cell (0,1) P: 'Показывающий прибор для Генера' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+  Row 1: ['Стрелочный прибор, шкала 135о', 'Ползунок вертикальный, квадрат']
+    Cell (1,0) P: 'Стрелочный прибор, шкала 135о' font: ['Arial', 'Arial'], size: [12.0, 12.0], align: CENTER (1)
+    Cell (1,1) P: 'Ползунок вертикальный, квадрат' font: ['Arial'], size: [12.0], align: CENTER (1)
