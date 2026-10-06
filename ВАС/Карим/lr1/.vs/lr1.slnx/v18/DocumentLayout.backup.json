@@ -1,10 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\",
+  "WorkspaceRootPath": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\lr1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:3_1_hello.c||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{7D0ECA09-D975-4FEE-B021-80A3FBE4FC9C}|lr1\\lr1.vcxproj|C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,12 +20,12 @@
               "DocumentIndex": 0,
               "Title": "3_1_hello.c",
               "DocumentMoniker": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c",
-              "RelativeDocumentMoniker": "3_1_hello.c",
+              "RelativeDocumentMoniker": "..\\3_1_hello.c",
               "ToolTip": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c",
-              "RelativeToolTip": "3_1_hello.c",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "RelativeToolTip": "..\\3_1_hello.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-10-06T06:56:05.794Z",
+              "WhenOpened": "2026-10-06T09:02:10.709Z",
               "EditorCaption": ""
             }
           ]
