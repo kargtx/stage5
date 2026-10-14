@@ -1,0 +1,557 @@
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1652
+  RpcSs
+ [svchost.exe]
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    0.0.0.0:2179           0.0.0.0:0              LISTENING       3036
+ [vmms.exe]
+  TCP    0.0.0.0:3240           0.0.0.0:0              LISTENING       17628
+ [usbipd.exe]
+  TCP    0.0.0.0:3389           0.0.0.0:0              LISTENING       8584
+  TermService
+ [svchost.exe]
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       11760
+  CDPSvc
+ [svchost.exe]
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING       4224
+ Can not obtain ownership information
+  TCP    0.0.0.0:9993           0.0.0.0:0              LISTENING       6432
+ [zerotier-one_x64.exe]
+  TCP    0.0.0.0:9993           0.0.0.0:0              LISTENING       6432
+ [zerotier-one_x64.exe]
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       1312
+ [lsass.exe]
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       1136
+ Can not obtain ownership information
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       2300
+  Schedule
+ [svchost.exe]
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       3520
+  EventLog
+ [svchost.exe]
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       4960
+ [spoolsv.exe]
+  TCP    0.0.0.0:49678          0.0.0.0:0              LISTENING       11212
+  SessionEnv
+ [svchost.exe]
+  TCP    0.0.0.0:49688          0.0.0.0:0              LISTENING       1264
+ Can not obtain ownership information
+  TCP    0.0.0.0:64956          0.0.0.0:0              LISTENING       11468
+  PolicyAgent
+ [svchost.exe]
+  TCP    10.8.1.1:139           0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    10.8.1.1:53241         184.24.77.153:80       TIME_WAIT       0
+  TCP    10.8.1.1:53246         184.24.77.153:80       TIME_WAIT       0
+  TCP    10.8.1.1:56010         140.82.114.26:443      ESTABLISHED     9684
+ [msedge.exe]
+  TCP    10.8.1.1:57215         74.242.255.116:443     ESTABLISHED     9684
+ [msedge.exe]
+  TCP    10.8.1.1:57216         94.139.248.102:443     ESTABLISHED     6900
+ [rudesktop.exe]
+  TCP    10.8.1.1:57222         140.82.114.26:443      ESTABLISHED     9684
+ [msedge.exe]
+  TCP    10.8.1.1:57225         172.211.123.248:443    ESTABLISHED     6404
+  WpnService
+ [svchost.exe]
+  TCP    10.8.1.1:61046         172.217.119.4:443      ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61052         34.54.84.110:443       ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61053         172.217.119.4:443      ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61086         172.217.119.4:443      ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61291         150.171.28.11:443      ESTABLISHED     9684
+ [msedge.exe]
+  TCP    10.8.1.1:61350         150.171.28.11:443      ESTABLISHED     9684
+ [msedge.exe]
+  TCP    10.8.1.1:61359         172.217.112.4:443      ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61360         142.251.20.132:443     ESTABLISHED     16004
+ [language_server.exe]
+  TCP    10.8.1.1:61373         149.154.167.41:443     ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:61374         149.154.167.41:80      TIME_WAIT       0
+  TCP    10.8.1.1:61375         149.154.167.51:80      TIME_WAIT       0
+  TCP    10.8.1.1:61376         149.154.167.51:443     ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:61377         149.154.167.51:443     ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:61379         149.154.167.41:443     TIME_WAIT       0
+  TCP    10.8.1.1:61380         149.154.167.51:80      TIME_WAIT       0
+  TCP    10.8.1.1:61381         149.154.167.51:80      TIME_WAIT       0
+  TCP    10.8.1.1:61382         149.154.167.41:80      TIME_WAIT       0
+  TCP    10.8.1.1:61383         149.154.167.41:80      TIME_WAIT       0
+  TCP    10.8.1.1:62544         20.190.160.4:443       TIME_WAIT       0
+  TCP    10.8.1.1:64095         149.154.167.41:80      ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:64099         149.154.167.51:80      ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:64118         149.154.167.51:443     ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.8.1.1:64119         149.154.167.51:443     ESTABLISHED     5628
+ [Telegram.exe]
+  TCP    10.153.197.108:139     0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    26.228.92.182:139      0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    127.0.0.1:24830        0.0.0.0:0              LISTENING       5396
+ [AsusSoftwareManager.exe]
+  TCP    127.0.0.1:27015        0.0.0.0:0              LISTENING       5060
+ [AppleMobileDeviceProcess.exe]
+  TCP    127.0.0.1:50911        0.0.0.0:0              LISTENING       6284
+ [ss_conn_service.exe]
+  TCP    127.0.0.1:51596        0.0.0.0:0              LISTENING       7216
+ [Antigravity.exe]
+  TCP    127.0.0.1:51597        0.0.0.0:0              LISTENING       7216
+ [Antigravity.exe]
+  TCP    127.0.0.1:51598        0.0.0.0:0              LISTENING       16004
+ [language_server.exe]
+  TCP    127.0.0.1:51598        127.0.0.1:53993        ESTABLISHED     16004
+ [language_server.exe]
+  TCP    127.0.0.1:51598        127.0.0.1:61577        ESTABLISHED     16004
+ [language_server.exe]
+  TCP    127.0.0.1:51599        0.0.0.0:0              LISTENING       16004
+ [language_server.exe]
+  TCP    127.0.0.1:53993        127.0.0.1:51598        ESTABLISHED     18436
+ [Antigravity.exe]
+  TCP    127.0.0.1:59289        0.0.0.0:0              LISTENING       19852
+ [OpenFlux.exe]
+  TCP    127.0.0.1:61577        127.0.0.1:51598        ESTABLISHED     18436
+ [Antigravity.exe]
+  TCP    172.28.112.1:139       0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    192.168.101.6:139      0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    192.168.208.1:139      0.0.0.0:0              LISTENING       4
+ Can not obtain ownership information
+  TCP    [::]:135               [::]:0                 LISTENING       1652
+  RpcSs
+ [svchost.exe]
+  TCP    [::]:445               [::]:0                 LISTENING       4
+ Can not obtain ownership information
+  TCP    [::]:2179              [::]:0                 LISTENING       3036
+ [vmms.exe]
+  TCP    [::]:3240              [::]:0                 LISTENING       17628
+ [usbipd.exe]
+  TCP    [::]:3389              [::]:0                 LISTENING       8584
+  TermService
+ [svchost.exe]
+  TCP    [::]:5357              [::]:0                 LISTENING       4
+ Can not obtain ownership information
+  TCP    [::]:7680              [::]:0                 LISTENING       4224
+ Can not obtain ownership information
+  TCP    [::]:9993              [::]:0                 LISTENING       6432
+ [zerotier-one_x64.exe]
+  TCP    [::]:49664             [::]:0                 LISTENING       1312
+ [lsass.exe]
+  TCP    [::]:49665             [::]:0                 LISTENING       1136
+ Can not obtain ownership information
+  TCP    [::]:49666             [::]:0                 LISTENING       2300
+  Schedule
+ [svchost.exe]
+  TCP    [::]:49667             [::]:0                 LISTENING       3520
+  EventLog
+ [svchost.exe]
+  TCP    [::]:49668             [::]:0                 LISTENING       4960
+ [spoolsv.exe]
+  TCP    [::]:49678             [::]:0                 LISTENING       11212
+  SessionEnv
+ [svchost.exe]
+  TCP    [::]:49688             [::]:0                 LISTENING       1264
+ Can not obtain ownership information
+  TCP    [::]:64956             [::]:0                 LISTENING       11468
+  PolicyAgent
+ [svchost.exe]
+  TCP    [::1]:49669            [::]:0                 LISTENING       5836
+ [jhi_service.exe]
+  UDP    0.0.0.0:53             *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    0.0.0.0:53             *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    0.0.0.0:500            *:*                                    5700
+  IKEEXT
+ [svchost.exe]
+  UDP    0.0.0.0:3389           *:*                                    8584
+  TermService
+ [svchost.exe]
+  UDP    0.0.0.0:3544           *:*                                    4324
+  iphlpsvc
+ [svchost.exe]
+  UDP    0.0.0.0:3702           *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    0.0.0.0:3702           *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    0.0.0.0:4500           *:*                                    5700
+  IKEEXT
+ [svchost.exe]
+  UDP    0.0.0.0:5050           *:*                                    11760
+  CDPSvc
+ [svchost.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    3132
+  Dnscache
+ [svchost.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    2868
+ [jcef_helper.exe]
+  UDP    0.0.0.0:5353           *:*                                    9684
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5353           *:*                                    9944
+ [msedge.exe]
+  UDP    0.0.0.0:5355           *:*                                    3132
+  Dnscache
+ [svchost.exe]
+  UDP    0.0.0.0:21116          *:*                                    6900
+ [rudesktop.exe]
+  UDP    0.0.0.0:50461          *:*                                    28444
+ [AmneziaVPN-service.exe]
+  UDP    0.0.0.0:51430          *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    0.0.0.0:54063          *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    0.0.0.0:54622          *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    0.0.0.0:57251          *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    10.8.1.1:137           *:*                                    4
+ Can not obtain ownership information
+  UDP    10.8.1.1:138           *:*                                    4
+ Can not obtain ownership information
+  UDP    10.8.1.1:1900          *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    10.8.1.1:9993          *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    10.8.1.1:50268         *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    10.8.1.1:53392         *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    10.8.1.1:54550         *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    10.8.1.1:58073         *:*                                    4324
+  iphlpsvc
+ [svchost.exe]
+  UDP    10.153.197.108:137     *:*                                    4
+ Can not obtain ownership information
+  UDP    10.153.197.108:138     *:*                                    4
+ Can not obtain ownership information
+  UDP    10.153.197.108:1900    *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    10.153.197.108:2177    *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    10.153.197.108:50271   *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    26.228.92.182:137      *:*                                    4
+ Can not obtain ownership information
+  UDP    26.228.92.182:138      *:*                                    4
+ Can not obtain ownership information
+  UDP    26.228.92.182:1900     *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    26.228.92.182:2177     *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    26.228.92.182:9993     *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    26.228.92.182:50267    *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    26.228.92.182:51980    *:*                                    1204
+ [RvControlSvc.exe]
+  UDP    26.228.92.182:53392    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    26.228.92.182:54550    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    127.0.0.1:1900         *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    127.0.0.1:50273        *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    127.0.0.1:51981        *:*                                    9628
+ [nvcontainer.exe]
+  UDP    127.0.0.1:54467        127.0.0.1:54468                        5060
+ [AppleMobileDeviceProcess.exe]
+  UDP    127.0.0.1:54468        127.0.0.1:54467                        5060
+ [AppleMobileDeviceProcess.exe]
+  UDP    127.0.0.1:65334        127.0.0.1:65334                        4324
+  iphlpsvc
+ [svchost.exe]
+  UDP    172.28.112.1:137       *:*                                    4
+ Can not obtain ownership information
+  UDP    172.28.112.1:138       *:*                                    4
+ Can not obtain ownership information
+  UDP    172.28.112.1:1900      *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    172.28.112.1:2177      *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    172.28.112.1:9993      *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    172.28.112.1:50270     *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    172.28.112.1:53392     *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    172.28.112.1:54550     *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.101.6:137      *:*                                    4
+ Can not obtain ownership information
+  UDP    192.168.101.6:138      *:*                                    4
+ Can not obtain ownership information
+  UDP    192.168.101.6:1900     *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    192.168.101.6:2177     *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    192.168.101.6:9993     *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.101.6:50272    *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    192.168.101.6:53392    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.101.6:54550    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.208.1:67       *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    192.168.208.1:68       *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    192.168.208.1:137      *:*                                    4
+ Can not obtain ownership information
+  UDP    192.168.208.1:138      *:*                                    4
+ Can not obtain ownership information
+  UDP    192.168.208.1:1900     *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    192.168.208.1:2177     *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    192.168.208.1:9993     *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.208.1:50269    *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    192.168.208.1:53392    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    192.168.208.1:54550    *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [::]:500               *:*                                    5700
+  IKEEXT
+ [svchost.exe]
+  UDP    [::]:3389              *:*                                    8584
+  TermService
+ [svchost.exe]
+  UDP    [::]:3702              *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    [::]:3702              *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    [::]:4500              *:*                                    5700
+  IKEEXT
+ [svchost.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9684
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    3132
+  Dnscache
+ [svchost.exe]
+  UDP    [::]:5353              *:*                                    9684
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9684
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9684
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    2868
+ [jcef_helper.exe]
+  UDP    [::]:5353              *:*                                    9944
+ [msedge.exe]
+  UDP    [::]:5353              *:*                                    9684
+ [msedge.exe]
+  UDP    [::]:5355              *:*                                    3132
+  Dnscache
+ [svchost.exe]
+  UDP    [::]:50461             *:*                                    28444
+ [AmneziaVPN-service.exe]
+  UDP    [::]:54064             *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    [::]:54623             *:*                                    144
+  FDResPub
+ [svchost.exe]
+  UDP    [::]:57252             *:*                                    4600
+  SharedAccess
+ [svchost.exe]
+  UDP    [::1]:1900             *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [::1]:50266            *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fd58:baa6:dead::1]:9993  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fd58:baa6:dead::1]:53392  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fd58:baa6:dead::1]:54550  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fdfd::1ae4:5cb6]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fdfd::1ae4:5cb6]:9993  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fdfd::1ae4:5cb6]:53392  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fdfd::1ae4:5cb6]:54550  *:*                                    6432
+ [zerotier-one_x64.exe]
+  UDP    [fe80::7a4:7797:2719:60d5%42]:1900  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::7a4:7797:2719:60d5%42]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fe80::7a4:7797:2719:60d5%42]:50262  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::c61:1d26:b1ee:96b6%15]:546  *:*                                    3464
+  Dhcp
+ [svchost.exe]
+  UDP    [fe80::2b58:84c1:d90c:8524%25]:1900  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::2b58:84c1:d90c:8524%25]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fe80::2b58:84c1:d90c:8524%25]:50265  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::6445:bc6b:2fe1:bb3c%12]:1900  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::6445:bc6b:2fe1:bb3c%12]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fe80::6445:bc6b:2fe1:bb3c%12]:50261  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::ca94:1958:7fa9:f6fc%60]:1900  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::ca94:1958:7fa9:f6fc%60]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fe80::ca94:1958:7fa9:f6fc%60]:50263  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::ed12:3b4f:7b8d:70cf%16]:1900  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
+  UDP    [fe80::ed12:3b4f:7b8d:70cf%16]:2177  *:*                                    9372
+  QWAVE
+ [svchost.exe]
+  UDP    [fe80::ed12:3b4f:7b8d:70cf%16]:50264  *:*                                    5532
+  SSDPSRV
+ [svchost.exe]
