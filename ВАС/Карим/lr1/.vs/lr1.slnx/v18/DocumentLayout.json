@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\lr1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D0ECA09-D975-4FEE-B021-80A3FBE4FC9C}|lr1\\lr1.vcxproj|C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{7D0ECA09-D975-4FEE-B021-80A3FBE4FC9C}|lr1\\lr1.vcxproj|C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\Lab1\\LR1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,14 +18,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "3_1_hello.c",
-              "DocumentMoniker": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c",
-              "RelativeDocumentMoniker": "..\\3_1_hello.c",
-              "ToolTip": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\3_1_hello.c",
-              "RelativeToolTip": "..\\3_1_hello.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Title": "LR1.c",
+              "DocumentMoniker": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\Lab1\\LR1.c",
+              "RelativeDocumentMoniker": "..\\Lab1\\LR1.c",
+              "ToolTip": "C:\\Users\\kargt\\Desktop\\\u0423\u0427\u0415\u0411\u0410\\5 \u041A\u0423\u0420\u0421\\stage5\\\u0412\u0410\u0421\\\u041A\u0430\u0440\u0438\u043C\\Lab1\\LR1.c",
+              "RelativeToolTip": "..\\Lab1\\LR1.c",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-10-06T09:02:10.709Z",
+              "WhenOpened": "2026-10-19T10:49:58.108Z",
               "EditorCaption": ""
             }
           ]
