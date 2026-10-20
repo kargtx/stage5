@@ -1,7 +1,7 @@
 import win32com.client
 import os
 
-print("=== Generating Perfect Standard Unified ER-Model (ERD) in Microsoft Visio ===")
+print("=== Generating Streamlined Unified ER-Model (8 Tables, 3NF) in Microsoft Visio ===")
 
 visio = win32com.client.Dispatch("Visio.Application")
 visio.Visible = False
@@ -12,17 +12,17 @@ def set_font(shape, size_pt=10.5, bold=False, color="RGB(15, 23, 42)"):
     shape.Cells("Char.Color").FormulaU = color
     shape.Cells("Char.Style").FormulaU = "1" if bold else "0"
 
-def draw_unified_entity(page, x, top_y, w, title, subtitle, pk_list, fk_list, attr_list):
+def draw_streamlined_entity(page, x, top_y, w, title, subtitle, pk_list, fk_list, attr_list):
     """
-    Standard 3-tier ER Entity Card with individual rows and horizontal divider lines:
+    Streamlined 3-tier ER Entity Card with row dividers and large readable fonts:
     1. Header: Royal Navy Blue (RGB 29, 78, 216) with White text (11.5pt / 9pt)
-    2. Keys (PK/FK): Individual rows with light cyan fill (RGB 219, 234, 254), 11pt bold Navy text, distinct border lines
+    2. Keys (PK/FK): Individual rows with soft cyan fill (RGB 219, 234, 254), 11pt bold Navy text, distinct border lines
     3. Attributes: Individual rows with alternating crisp white / soft tint, 10.5pt Slate text, distinct border lines
     4. Crisp outer border around the whole table
     """
     hdr_h = 0.72
-    row_h_key = 0.34
-    row_h_attr = 0.31
+    row_h_key = 0.35
+    row_h_attr = 0.32
 
     x1, x2 = x - w/2, x + w/2
     curr_y = top_y
@@ -76,7 +76,7 @@ def draw_unified_entity(page, x, top_y, w, title, subtitle, pk_list, fk_list, at
         r.Cells("LeftMargin").FormulaU = "0.12 in"
         r.Cells("RightMargin").FormulaU = "0.06 in"
         r.Text = f"       {attr}"
-        set_font(r, 10.0, bold=False, color="RGB(30, 41, 59)")
+        set_font(r, 10.5, bold=False, color="RGB(30, 41, 59)")
         r.Cells("Para.HorzAlign").FormulaU = "0"
         r.Cells("VerticalAlign").FormulaU = "1"
         curr_y -= row_h_attr
@@ -99,9 +99,9 @@ def draw_unified_entity(page, x, top_y, w, title, subtitle, pk_list, fk_list, at
         "right": (x2, center_y)
     }
 
-def draw_pill_label(page, cx, cy, text, w_lbl=2.4, h_lbl=0.32):
+def draw_pill_label(page, cx, cy, text, w_lbl=2.4, h_lbl=0.34):
     """
-    Draws a crisp pill-box badge with white background and soft blue border
+    Draws a crisp inline pill-box badge with white background and soft blue border
     so that lines NEVER cut through the text!
     """
     lbl = page.DrawRectangle(cx - w_lbl/2, cy - h_lbl/2, cx + w_lbl/2, cy + h_lbl/2)
@@ -131,7 +131,7 @@ def connect_erd_crows_foot(page, p_start, p_end, label="", card_start="1", card_
         
     if label:
         cx = label_cx if label_cx is not None else (p_start[0] + p_end[0]) / 2
-        cy = label_cy if label_cy is not None else (p_start[1] + p_end[1]) / 2 + 0.28
+        cy = label_cy if label_cy is not None else (p_start[1] + p_end[1]) / 2
         draw_pill_label(page, cx, cy, label, w_lbl=label_w)
     return line
 
@@ -153,25 +153,25 @@ def connect_erd_crows_foot_elbow(page, points, label="", card_start="1", card_en
     if label and label_cx is not None and label_cy is not None:
         draw_pill_label(page, label_cx, label_cy, label, w_lbl=label_w)
 
-def build_erd_unified():
+def build_erd_streamlined():
     doc = visio.Documents.Add("")
     page = doc.Pages.Item(1)
     
-    W, H = 33.0, 21.5
+    W, H = 30.0, 15.5
     page.PageSheet.Cells("PageWidth").FormulaU = f"{W} in"
     page.PageSheet.Cells("PageHeight").FormulaU = f"{H} in"
     
     # 1. Top Banner
-    tb = page.DrawRectangle(0.8, H - 1.25, W - 0.8, H - 0.45)
-    tb.Text = "ЕДИНАЯ РЕЛЯЦИОННАЯ МОДЕЛЬ ДАННЫХ (ERD) КИС «АВТОСЕРВИС: ЧИП-ТЮНИНГ»\n" \
-              "Сквозная архитектура БД (3NF): Клиенты, Наряд-заказы, Калибровка ЭБУ, Исполнение и Акты выполненных работ"
+    tb = page.DrawRectangle(0.8, H - 1.15, W - 0.8, H - 0.45)
+    tb.Text = "ОБЩАЯ РЕЛЯЦИОННАЯ МОДЕЛЬ ДАННЫХ (ERD) КИС «АВТОСЕРВИС: ЧИП-ТЮНИНГ»\n" \
+              "Базовая архитектура БД (3NF): Клиенты, Заявки, Наряд-заказ, Диагностика, Исполнение и Акт"
     tb.Cells("FillForegnd").FormulaU = "RGB(29, 78, 216)"
     tb.Cells("LineColor").FormulaU = "RGB(30, 58, 138)"
     tb.Cells("LineWeight").FormulaU = "1.5 pt"
     set_font(tb, 14.0, bold=True, color="RGB(255, 255, 255)")
     
     # 2. Bottom Legend
-    lg = page.DrawRectangle(0.8, 0.25, W - 0.8, 0.90)
+    lg = page.DrawRectangle(0.8, 0.35, W - 0.8, 1.00)
     lg.Cells("FillForegnd").FormulaU = "RGB(248, 250, 252)"
     lg.Cells("LineColor").FormulaU = "RGB(191, 219, 254)"
     lg.Cells("LineWeight").FormulaU = "1.2 pt"
@@ -179,116 +179,102 @@ def build_erd_unified():
               "Оформление сущностей: [Синий] Заголовок таблицы   |   [Голубой] Ключевые атрибуты ([PK] / [FK])   |   Разделительные линии между строками   |   Четкие подписи связей"
     set_font(lg, 10.0, bold=False, color="RGB(30, 58, 138)")
 
-    EW = 3.65 # Width for all entity tables
+    EW = 3.80 # Width for all 8 entity tables
     
-    # Column Centers
-    X_COL1 = 4.4
-    X_COL2 = 12.2
-    X_COL3 = 20.0
-    X_COL4 = 27.8
+    # 4 Columns - balanced and spacious across W = 30.0 in
+    X_COL1 = 4.0
+    X_COL2 = 11.3
+    X_COL3 = 18.7
+    X_COL4 = 26.0
 
-    # Row Top Coordinates (Top-aligned for clean architectural rhythm)
-    Y_ROW1_TOP = 19.4
-    Y_ROW2_TOP = 14.6
-    Y_ROW3_TOP = 9.2
+    # 2 Clean Rows:
+    # Row 1 Top = 13.2 in (ends around Y = 10.5 in)
+    # Row 2 Top = 8.5 in  (ends around Y = 5.0 in)
+    Y_ROW1_TOP = 13.2
+    Y_ROW2_TOP = 8.5
 
-    # ---------------- ROW 1 (TOP ENTITIES) ----------------
+    # ================= ROW 1 (TOP ENTITIES: СУБЪЕКТЫ, ОБЪЕКТЫ И ПЕРСОНАЛ) =================
     # 1. CLIENT (Col 1)
-    e_client = draw_unified_entity(
+    e_client = draw_streamlined_entity(
         page, x=X_COL1, top_y=Y_ROW1_TOP, w=EW,
         title="Client (Клиенты)",
-        subtitle="Учет автовладельцев и контрагентов",
+        subtitle="Учет автовладельцев и заказчиков",
         pk_list=["id_client : INT"],
         fk_list=[],
         attr_list=[
-            "client_type : VARCHAR(20)",
-            "full_name : VARCHAR(150)",
+            "full_name : VARCHAR(100)",
             "phone_number : VARCHAR(20)",
-            "email : VARCHAR(100)",
-            "passport_inn : VARCHAR(50)",
-            "discount_rate_pct : DECIMAL(4,2)",
-            "registered_date : DATETIME"
+            "client_type : VARCHAR(20)"
         ]
     )
 
     # 2. VEHICLE (Col 2)
-    e_vehicle = draw_unified_entity(
+    e_vehicle = draw_streamlined_entity(
         page, x=X_COL2, top_y=Y_ROW1_TOP, w=EW,
         title="Vehicle (Автомобили)",
-        subtitle="Реестр обслуживаемых автомобилей",
+        subtitle="Обслуживаемые транспортные средства",
         pk_list=["vin_code : VARCHAR(17)"],
         fk_list=[
-            "id_client : INT (FK)",
-            "id_ecu : INT (FK)"
+            "id_client : INT (FK)"
         ],
         attr_list=[
-            "license_plate : VARCHAR(15)",
-            "brand : VARCHAR(50)",
-            "model : VARCHAR(50)",
-            "production_year : SMALLINT",
-            "engine_code : VARCHAR(30)",
-            "factory_power_hp : SMALLINT",
-            "current_mileage : INT"
+            "brand_model : VARCHAR(100)",
+            "production_year : INT",
+            "engine_and_ecu : VARCHAR(100)"
         ]
     )
 
-    # 3. ECU_SPECIFICATION (Col 3)
-    e_ecu = draw_unified_entity(
+    # 3. DIAGNOSTIC_CARD (Col 3)
+    e_diag = draw_streamlined_entity(
         page, x=X_COL3, top_y=Y_ROW1_TOP, w=EW,
-        title="ECU_Specification (ЭБУ)",
-        subtitle="Справочник микроконтроллеров ДВС",
-        pk_list=["id_ecu : INT"],
-        fk_list=[],
+        title="Diagnostic_Card (Диагностика)",
+        subtitle="Входной и выходной контроль ДВС",
+        pk_list=["id_diag : INT"],
+        fk_list=[
+            "id_order : INT (FK)",
+            "id_diagnostician : INT (FK)"
+        ],
         attr_list=[
-            "ecu_vendor : VARCHAR(50)",
-            "ecu_model : VARCHAR(50)",
-            "mcu_processor : VARCHAR(50)",
-            "flash_capacity_bytes : INT",
-            "protocol_type : VARCHAR(50)",
-            "connection_mode : VARCHAR(30)"
+            "diag_stage : VARCHAR(20)",
+            "dtc_errors : VARCHAR(150)",
+            "diag_conclusion : VARCHAR(50)"
         ]
     )
 
     # 4. EMPLOYEE (Col 4)
-    e_emp = draw_unified_entity(
+    e_emp = draw_streamlined_entity(
         page, x=X_COL4, top_y=Y_ROW1_TOP, w=EW,
         title="Employee (Сотрудники)",
-        subtitle="Штатные роли и персонал КИС",
+        subtitle="Штатные роли автосервиса",
         pk_list=["id_employee : INT"],
         fk_list=[],
         attr_list=[
-            "personnel_number : VARCHAR(20)",
-            "full_name : VARCHAR(150)",
+            "full_name : VARCHAR(100)",
             "role_title : VARCHAR(50)",
-            "phone_number : VARCHAR(20)",
-            "access_level : VARCHAR(30)",
-            "is_active : BOOLEAN"
+            "phone_number : VARCHAR(20)"
         ]
     )
 
-    # ---------------- ROW 2 (MIDDLE-TOP ENTITIES) ----------------
+    # ================= ROW 2 (BOTTOM ENTITIES: ПРОИЗВОДСТВЕННЫЙ ПОТОК) =================
     # 5. SERVICE_REQUEST (Col 1)
-    e_request = draw_unified_entity(
+    e_request = draw_streamlined_entity(
         page, x=X_COL1, top_y=Y_ROW2_TOP, w=EW,
         title="Service_Request (Заявки)",
-        subtitle="Первичные обращения клиентов",
+        subtitle="Первичные обращения на чип-тюнинг",
         pk_list=["id_request : INT"],
         fk_list=[
             "id_client : INT (FK)",
-            "vin_code : VARCHAR(17) (FK)",
-            "id_employee : INT (FK)"
+            "vin_code : VARCHAR(17) (FK)"
         ],
         attr_list=[
-            "request_number : VARCHAR(30)",
             "request_date : DATETIME",
-            "tuning_goals : TEXT",
-            "request_status : VARCHAR(30)",
-            "estimated_budget : DECIMAL(10,2)"
+            "tuning_goals : VARCHAR(200)",
+            "request_status : VARCHAR(30)"
         ]
     )
 
-    # 6. WORK_ORDER (Col 2 - Central Document)
-    e_order = draw_unified_entity(
+    # 6. WORK_ORDER (Col 2 - КЛЮЧЕВОЙ ДОКУМЕНТ ДАНИЛА)
+    e_order = draw_streamlined_entity(
         page, x=X_COL2, top_y=Y_ROW2_TOP, w=EW,
         title="Work_Order (Наряд-заказ)",
         subtitle="Первичный производственный документ",
@@ -301,280 +287,145 @@ def build_erd_unified():
         attr_list=[
             "order_number : VARCHAR(30)",
             "order_date : DATETIME",
-            "planned_deadline : DATETIME",
             "order_status : VARCHAR(30)",
-            "total_agreed_cost : DECIMAL(10,2)",
-            "intake_fuel_level : VARCHAR(20)",
-            "is_client_agreed : BOOLEAN",
-            "client_signature_date : DATETIME"
+            "total_agreed_cost : DECIMAL(10,2)"
         ]
     )
 
-    # 7. STOCK_FIRMWARE (Col 3)
-    e_stock = draw_unified_entity(
+    # 7. ORDER_EXECUTION (Col 3 - ВЫПОЛНЕНИЕ + КОММЕНТАРИЙ КАРИМА)
+    e_exec = draw_streamlined_entity(
         page, x=X_COL3, top_y=Y_ROW2_TOP, w=EW,
-        title="Stock_Firmware (Сток-дамп)",
-        subtitle="Резервный заводской дамп ROM (Бэкап)",
-        pk_list=["id_stock : INT"],
-        fk_list=[
-            "vin_code : VARCHAR(17) (FK)",
-            "id_order : INT (FK)"
-        ],
-        attr_list=[
-            "hw_number : VARCHAR(50)",
-            "sw_number : VARCHAR(50)",
-            "calibration_id : VARCHAR(50)",
-            "file_size_bytes : INT",
-            "sha256_hash : VARCHAR(64)",
-            "storage_path : VARCHAR(255)",
-            "backup_timestamp : DATETIME"
-        ]
-    )
-
-    # 8. EXECUTION_LOG (Col 4 - Выполнение + комментарий)
-    e_log = draw_unified_entity(
-        page, x=X_COL4, top_y=Y_ROW2_TOP, w=EW,
-        title="Execution_Log (Журнал работ)",
-        subtitle="Исполнение и комментарий мастера",
-        pk_list=["id_log : INT"],
+        title="Order_Execution (Исполнение)",
+        subtitle="Выполнение калибровки и коммент мастера",
+        pk_list=["id_execution : INT"],
         fk_list=[
             "id_order : INT (FK)",
-            "id_tuned : INT (FK)",
             "id_tuner : INT (FK)"
         ],
         attr_list=[
-            "flasher_hardware : VARCHAR(50)",
-            "battery_voltage : DECIMAL(4,2)",
-            "write_duration_sec : INT",
-            "write_result_status : VARCHAR(20)",
-            "is_adaptations_reset : BOOLEAN",
+            "firmware_version : VARCHAR(50)",
+            "power_increase_hp : INT",
             "technical_comment : TEXT",
-            "completion_time : DATETIME"
+            "execution_status : VARCHAR(30)"
         ]
     )
 
-    # ---------------- ROW 3 (MIDDLE-BOTTOM ENTITIES) ----------------
-    # 9. PRICE_LIST_SERVICE (Col 1)
-    e_price = draw_unified_entity(
-        page, x=X_COL1, top_y=Y_ROW3_TOP, w=EW,
-        title="Price_List_Service (Услуги)",
-        subtitle="Прейскурант и нормо-часы",
-        pk_list=["id_service : INT"],
-        fk_list=[],
-        attr_list=[
-            "service_code : VARCHAR(30)",
-            "service_name : VARCHAR(150)",
-            "category : VARCHAR(50)",
-            "standard_hours : DECIMAL(4,2)",
-            "base_price : DECIMAL(10,2)",
-            "is_active : BOOLEAN"
-        ]
-    )
-
-    # 10. WORK_ORDER_ITEM (Col 2)
-    e_order_item = draw_unified_entity(
-        page, x=X_COL2, top_y=Y_ROW3_TOP, w=EW,
-        title="Work_Order_Item (Строки наряда)",
-        subtitle="Калькуляция работ и нормо-часов",
-        pk_list=["id_order_item : INT"],
-        fk_list=[
-            "id_order : INT (FK)",
-            "id_service : INT (FK)"
-        ],
-        attr_list=[
-            "quantity : SMALLINT",
-            "unit_price : DECIMAL(10,2)",
-            "discount_pct : DECIMAL(4,2)",
-            "item_total : DECIMAL(10,2)"
-        ]
-    )
-
-    # 11. TUNING_FIRMWARE (Col 3)
-    e_tuned = draw_unified_entity(
-        page, x=X_COL3, top_y=Y_ROW3_TOP, w=EW,
-        title="Tuning_Firmware (Калибровки)",
-        subtitle="Модифицированное калибровочное ПО",
-        pk_list=["id_tuned : INT"],
-        fk_list=[
-            "id_stock : INT (FK)"
-        ],
-        attr_list=[
-            "tuning_name : VARCHAR(100)",
-            "power_increase_hp : SMALLINT",
-            "torque_increase_nm : SMALLINT",
-            "disabled_eco_masks : VARCHAR(150)",
-            "checksum_crc32 : VARCHAR(10)",
-            "tuning_software : VARCHAR(50)",
-            "is_tested_verified : BOOLEAN"
-        ]
-    )
-
-    # 12. WORK_COMPLETION_ACT (Col 4 - Key Output Document)
-    e_act = draw_unified_entity(
-        page, x=X_COL4, top_y=Y_ROW3_TOP, w=EW,
+    # 8. WORK_COMPLETION_ACT (Col 4 - КЛЮЧЕВОЙ ДОКУМЕНТ КАРИМА)
+    e_act = draw_streamlined_entity(
+        page, x=X_COL4, top_y=Y_ROW2_TOP, w=EW,
         title="Work_Completion_Act (Акт)",
         subtitle="Итоговый финансово-отчетный документ",
         pk_list=["id_act : INT"],
         fk_list=[
             "id_order : INT (FK)",
-            "id_tuned : INT (FK)",
             "id_master : INT (FK)"
         ],
         attr_list=[
             "act_number : VARCHAR(30)",
             "act_date : DATETIME",
-            "warranty_period_months : SMALLINT",
             "total_paid_amount : DECIMAL(10,2)",
-            "payment_type : VARCHAR(30)",
-            "client_signed_flag : BOOLEAN",
-            "master_signed_flag : BOOLEAN",
-            "satisfaction_rating : SMALLINT"
-        ]
-    )
-
-    # ---------------- ROW 4 (LOWER COL 3: DIAGNOSTIC) ----------------
-    # 13. DIAGNOSTIC_CARD (Col 3, below Tuning_Firmware)
-    # Tuning_Firmware bottom is Y ≈ 5.63 -> Diagnostic_Card top at 5.00 -> bottom at 1.09
-    e_diag = draw_unified_entity(
-        page, x=X_COL3, top_y=5.00, w=EW,
-        title="Diagnostic_Card (Диагностика)",
-        subtitle="Карты входного и выходного контроля",
-        pk_list=["id_diag : INT"],
-        fk_list=[
-            "id_order : INT (FK)",
-            "id_diagnostician : INT (FK)"
-        ],
-        attr_list=[
-            "diag_stage : VARCHAR(20)",
-            "dtc_codes_list : TEXT",
-            "fuel_pressure_bar : DECIMAL(6,2)",
-            "boost_pressure_bar : DECIMAL(4,2)",
-            "knock_retard_deg : DECIMAL(4,2)",
-            "diag_conclusion : VARCHAR(30)",
-            "diag_timestamp : DATETIME"
+            "warranty_months : INT",
+            "is_signed : BOOLEAN"
         ]
     )
 
     # ================= RELATIONSHIPS / CONNECTORS (ZERO OVERLAPS WITH INLINE BADGES) =================
+    
     # 1. Client (1) -> Vehicle (N)
-    connect_erd_crows_foot(page, (e_client["right"][0], 17.5), (e_vehicle["left"][0], 17.5), 
+    # Horizontal line in Row 1 at Y = 12.0
+    connect_erd_crows_foot(page, (e_client["right"][0], 12.0), (e_vehicle["left"][0], 12.0), 
                            label="1 : N [Владеет]", card_start="1", card_end="N",
-                           label_cx=8.3, label_cy=17.5, label_w=2.1)
+                           label_cx=7.65, label_cy=12.0, label_w=2.1)
 
     # 2. Client (1) -> Service_Request (N)
+    # Vertical line in Col 1 at X = 4.0
     connect_erd_crows_foot(page, e_client["bottom"], e_request["top"], 
                            label="1 : N [Подает]", card_start="1", card_end="N",
-                           label_cx=4.4, label_cy=15.38, label_w=1.9)
+                           label_cx=4.0, label_cy=9.8, label_w=1.9)
 
     # 3. Vehicle (1) -> Service_Request (N)
-    connect_erd_crows_foot_elbow(page, [(e_vehicle["left"][0], 16.0),
-                                        (8.3, 16.0),
-                                        (8.3, 13.5),
-                                        (e_request["right"][0], 13.5)],
+    # Elbow in Gutter 1-2
+    connect_erd_crows_foot_elbow(page, [(e_vehicle["left"][0], 11.2),
+                                        (7.65, 11.2),
+                                        (7.65, 7.5),
+                                        (e_request["right"][0], 7.5)],
                                  label="1 : N [Указан в заявке]", card_start="1", card_end="N",
-                                 label_cx=9.3, label_cy=16.0, label_w=2.4)
+                                 label_cx=7.65, label_cy=9.3, label_w=2.4)
 
     # 4. Service_Request (1) -> Work_Order (1)
-    connect_erd_crows_foot(page, (e_request["right"][0], 12.8), (e_order["left"][0], 12.8), 
+    # Horizontal line in Row 2 at Y = 6.8 (dashed)
+    connect_erd_crows_foot(page, (e_request["right"][0], 6.8), (e_order["left"][0], 6.8), 
                            label="1 : 1 [Порождает]", card_start="1", card_end="1", dashed=True,
-                           label_cx=8.3, label_cy=12.8, label_w=2.1)
+                           label_cx=7.65, label_cy=6.8, label_w=2.1)
 
     # 5. Vehicle (1) -> Work_Order (N)
+    # Vertical line in Col 2 at X = 11.3
     connect_erd_crows_foot(page, e_vehicle["bottom"], e_order["top"], 
                            label="1 : N [Обслуживается]", card_start="1", card_end="N",
-                           label_cx=12.2, label_cy=15.05, label_w=2.4)
+                           label_cx=11.3, label_cy=9.6, label_w=2.4)
 
-    # 6. Work_Order (1) -> Work_Order_Item (N)
-    connect_erd_crows_foot(page, e_order["bottom"], e_order_item["top"], 
-                           label="1 : N [Содержит строки]", card_start="1", card_end="N",
-                           label_cx=12.2, label_cy=9.62, label_w=2.4)
+    # 6. Work_Order (1) -> Diagnostic_Card (N)
+    # Elbow between Col 2 and Col 3
+    connect_erd_crows_foot_elbow(page, [(e_order["right"][0], 7.8),
+                                        (15.0, 7.8),
+                                        (15.0, 11.8),
+                                        (e_diag["left"][0], 11.8)],
+                                 label="1 : N [Диагностика]", card_start="1", card_end="N",
+                                 label_cx=15.0, label_cy=9.8, label_w=2.3)
 
-    # 7. Price_List_Service (1) -> Work_Order_Item (N)
-    connect_erd_crows_foot(page, (e_price["right"][0], 7.7), (e_order_item["left"][0], 7.7), 
-                           label="1 : N [Тарифицирует]", card_start="1", card_end="N",
-                           label_cx=8.3, label_cy=7.7, label_w=2.2)
+    # 7. Work_Order (1) -> Order_Execution (1)
+    # Horizontal line in Row 2 at Y = 6.8
+    connect_erd_crows_foot(page, (e_order["right"][0], 6.8), (e_exec["left"][0], 6.8), 
+                           label="1 : 1 [Исполнение]", card_start="1", card_end="1",
+                           label_cx=15.0, label_cy=6.8, label_w=2.1)
 
-    # 8. ECU_Specification (1) -> Vehicle (N)
-    connect_erd_crows_foot(page, (e_ecu["left"][0], 17.5), (e_vehicle["right"][0], 17.5), 
-                           label="1 : N [Комплектует]", card_start="1", card_end="N",
-                           label_cx=16.1, label_cy=17.5, label_w=2.2)
+    # 8. Order_Execution (1) -> Work_Completion_Act (1)
+    # Horizontal line in Row 2 at Y = 6.8
+    connect_erd_crows_foot(page, (e_exec["right"][0], 6.8), (e_act["left"][0], 6.8), 
+                           label="1 : 1 [Закрытие]", card_start="1", card_end="1",
+                           label_cx=22.35, label_cy=6.8, label_w=2.0)
 
-    # 9. Work_Order (1) -> Stock_Firmware (1)
-    connect_erd_crows_foot(page, (e_order["right"][0], 13.5), (e_stock["left"][0], 13.5), 
-                           label="1 : 1 [Считывание дампа]", card_start="1", card_end="1",
-                           label_cx=16.1, label_cy=13.5, label_w=2.5)
-
-    # 10. Stock_Firmware (1) -> Tuning_Firmware (N)
-    connect_erd_crows_foot(page, e_stock["bottom"], e_tuned["top"], 
-                           label="1 : N [Модификация ROM]", card_start="1", card_end="N",
-                           label_cx=20.0, label_cy=9.94, label_w=2.4)
-
-    # 11. Work_Order (1) -> Diagnostic_Card (N)
-    connect_erd_crows_foot_elbow(page, [(e_order["right"][0], 11.2),
-                                        (16.8, 11.2),
-                                        (16.8, 3.8),
-                                        (e_diag["left"][0], 3.8)],
-                                 label="1 : N [Вход/Выход ДВС]", card_start="1", card_end="N",
-                                 label_cx=15.4, label_cy=11.2, label_w=2.3)
-
-    # 12. Work_Order (1) -> Execution_Log (N)
-    connect_erd_crows_foot_elbow(page, [(e_order["right"][0], 10.5),
-                                        (15.2, 10.5),
-                                        (15.2, 9.60),
-                                        (24.5, 9.60),
-                                        (24.5, 12.0),
-                                        (e_log["left"][0], 12.0)],
-                                 label="1 : N [Выполнение + Коммент]", card_start="1", card_end="N",
-                                 label_cx=16.5, label_cy=9.60, label_w=2.6)
-
-    # 13. Tuning_Firmware (1) -> Execution_Log (N)
-    connect_erd_crows_foot_elbow(page, [(e_tuned["right"][0], 8.0),
-                                        (23.8, 8.0),
-                                        (23.8, 11.0),
-                                        (e_log["left"][0], 11.0)],
-                                 label="1 : N [Запись ПО в ЭБУ]", card_start="1", card_end="N",
-                                 label_cx=22.8, label_cy=8.0, label_w=2.3)
-
-    # 14. Work_Order (1) -> Work_Completion_Act (1)
-    # Highway at Y = 5.20 between Tuning and Diag
-    connect_erd_crows_foot_elbow(page, [(e_order["right"][0], 10.2),
-                                        (14.6, 10.2),
-                                        (14.6, 5.20),
-                                        (24.8, 5.20),
-                                        (24.8, 7.5),
-                                        (e_act["left"][0], 7.5)],
+    # 9. Work_Order (1) -> Work_Completion_Act (1)
+    # Highway underneath Row 2 at Y = 4.0 (dashed)
+    connect_erd_crows_foot_elbow(page, [(e_order["right"][0], 5.6),
+                                        (14.2, 5.6),
+                                        (14.2, 4.0),
+                                        (23.2, 4.0),
+                                        (23.2, 5.6),
+                                        (e_act["left"][0], 5.6)],
                                  label="1 : 1 [Выдача Акта]", card_start="1", card_end="1", dashed=True,
-                                 label_cx=18.0, label_cy=5.20, label_w=2.2)
+                                 label_cx=18.7, label_cy=4.0, label_w=2.1)
 
-    # 15. Tuning_Firmware (1) -> Work_Completion_Act (N)
-    connect_erd_crows_foot_elbow(page, [(e_tuned["right"][0], 6.5),
-                                        (23.2, 6.5),
-                                        (23.2, 8.2),
-                                        (e_act["left"][0], 8.2)],
-                                 label="1 : N [Сертификация]", card_start="1", card_end="N",
-                                 label_cx=22.5, label_cy=6.5, label_w=2.2)
+    # 10. Employee (1) -> Work_Order (N)
+    # Overhead highway at Y = 13.9, down through Gutter 2-3 at X = 14.3 into Work_Order right edge at Y = 8.2
+    connect_erd_crows_foot_elbow(page, [(e_emp["top"][0], 13.2),
+                                        (e_emp["top"][0], 13.9),
+                                        (14.3, 13.9),
+                                        (14.3, 8.2),
+                                        (e_order["right"][0], 8.2)],
+                                 label="1 : N [Мастер]", card_start="1", card_end="N",
+                                 label_cx=20.0, label_cy=13.9, label_w=2.0)
 
-    # 16. Employee (1) -> Work_Order (N)
-    # Overhead highway at Y = 19.80
-    connect_erd_crows_foot_elbow(page, [(e_emp["top"][0], 19.4),
-                                        (e_emp["top"][0], 19.80),
-                                        (12.8, 19.80),
-                                        (12.8, 14.6)],
-                                 label="1 : N [Мастер-приемщик]", card_start="1", card_end="N",
-                                 label_cx=20.3, label_cy=19.80, label_w=2.4)
+    # 11. Employee (1) -> Diagnostic_Card (N)
+    # Horizontal line in Row 1 at Y = 12.0
+    connect_erd_crows_foot(page, (e_emp["left"][0], 12.0), (e_diag["right"][0], 12.0), 
+                           label="1 : N [Диагност]", card_start="1", card_end="N",
+                           label_cx=22.35, label_cy=12.0, label_w=2.0)
 
-    # 17. Employee (1) -> Execution_Log (N)
-    connect_erd_crows_foot(page, e_emp["bottom"], e_log["top"], 
-                           label="1 : N [Специалист-тюнер]", card_start="1", card_end="N",
-                           label_cx=27.8, label_cy=15.54, label_w=2.4)
+    # 12. Employee (1) -> Order_Execution (N)
+    # Elbow in Gutter 3-4 at X = 21.6
+    connect_erd_crows_foot_elbow(page, [(e_emp["left"][0], 11.2),
+                                        (21.6, 11.2),
+                                        (21.6, 7.8),
+                                        (e_exec["right"][0], 7.8)],
+                                 label="1 : N [Тюнер]", card_start="1", card_end="N",
+                                 label_cx=21.6, label_cy=9.5, label_w=1.8)
 
-    # 18. Employee (1) -> Diagnostic_Card (N)
-    connect_erd_crows_foot_elbow(page, [(e_emp["left"][0], 17.0),
-                                        (25.4, 17.0),
-                                        (25.4, 3.0),
-                                        (e_diag["right"][0], 3.0)],
-                                 label="1 : N [Диагност]", card_start="1", card_end="N",
-                                 label_cx=24.2, label_cy=17.0, label_w=1.9)
+    # 13. Employee (1) -> Work_Completion_Act (N)
+    # Vertical line in Col 4 at X = 26.0
+    connect_erd_crows_foot(page, e_emp["bottom"], e_act["top"], 
+                           label="1 : N [Подписание]", card_start="1", card_end="N",
+                           label_cx=26.0, label_cy=9.8, label_w=2.2)
 
     # Output paths
     p_vsdx = os.path.abspath(r"c:\Users\danch\OneDrive\Рабочий стол\stage5\КИС\ER_модель_КИС_ЧипТюнинг_Общая.vsdx")
@@ -591,12 +442,12 @@ def build_erd_unified():
     page.Export(p_png)
     doc.Saved = True
     doc.Close()
-    print("SUCCESS: Standard Unified ERD generated at:")
+    print("SUCCESS: Streamlined Unified ERD generated at:")
     print(" - VSDX:", p_vsdx)
     print(" - PNG:", p_png)
 
 try:
-    build_erd_unified()
+    build_erd_streamlined()
 except Exception as e:
     print("Error:", e)
     import traceback
