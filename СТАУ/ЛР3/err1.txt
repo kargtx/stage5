@@ -1,0 +1,4 @@
+dns_master_load: gr_b_17.txt:2: unexpected end of line
+dns_master_load: gr_b_17.txt:1: unexpected end of input
+dns_master_load: gr_b_17.txt:9: using RFC 1035 TTL semantics
+zone gr16.ugatu.ru/IN: loading master file gr_b_17.txt: unexpected end of input

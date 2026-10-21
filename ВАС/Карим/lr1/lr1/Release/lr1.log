@@ -1,6 +1,7 @@
 ﻿  LR1.c
   Создание кода
-  Previous IPDB not found, fall back to full compilation.
-  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  0 of 5 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   lr1.vcxproj -> C:\Users\kargt\Desktop\УЧЕБА\5 КУРС\stage5\ВАС\Карим\lr1\Release\lr1.exe

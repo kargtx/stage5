@@ -1,0 +1,207 @@
+$TTL 3600
+@	IN	SOA	ns1.gr16.ugatu.ru. admin.gr16.ugatu.ru. (
+			2026102001 ; Serial
+			10800      ; Refresh
+			1800       ; Retry
+			3600000    ; Expire
+			259200 )   ; Minimum
+
+; Name Servers
+@	IN	NS	ns1.gr16.ugatu.ru.
+@	IN	NS	ns2.gr16.ugatu.ru.
+
+ns1	IN	A	10.10.16.1
+ns2	IN	A	10.10.16.2
+
+; Hosts (10.10.16.1 - 10.10.16.32)
+stud161	IN	A	10.10.16.1
+stud161	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud161	IN	MX 10	stud161.gr16.ugatu.ru.
+stud161	IN	TXT	"Student 161 Workstation"
+www-stud161	IN	CNAME	stud161
+
+stud162	IN	A	10.10.16.2
+stud162	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud162	IN	MX 10	stud162.gr16.ugatu.ru.
+stud162	IN	TXT	"Student 162 Workstation"
+www-stud162	IN	CNAME	stud162
+
+stud163	IN	A	10.10.16.3
+stud163	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud163	IN	MX 10	stud163.gr16.ugatu.ru.
+stud163	IN	TXT	"Student 163 Workstation"
+www-stud163	IN	CNAME	stud163
+
+stud164	IN	A	10.10.16.4
+stud164	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud164	IN	MX 10	stud164.gr16.ugatu.ru.
+stud164	IN	TXT	"Student 164 Workstation"
+www-stud164	IN	CNAME	stud164
+
+stud165	IN	A	10.10.16.5
+stud165	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud165	IN	MX 10	stud165.gr16.ugatu.ru.
+stud165	IN	TXT	"Student 165 Workstation"
+www-stud165	IN	CNAME	stud165
+
+stud166	IN	A	10.10.16.6
+stud166	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud166	IN	MX 10	stud166.gr16.ugatu.ru.
+stud166	IN	TXT	"Student 166 Workstation"
+www-stud166	IN	CNAME	stud166
+
+stud167	IN	A	10.10.16.7
+stud167	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud167	IN	MX 10	stud167.gr16.ugatu.ru.
+stud167	IN	TXT	"Student 167 Workstation"
+www-stud167	IN	CNAME	stud167
+
+stud168	IN	A	10.10.16.8
+stud168	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud168	IN	MX 10	stud168.gr16.ugatu.ru.
+stud168	IN	TXT	"Student 168 Workstation"
+www-stud168	IN	CNAME	stud168
+
+stud169	IN	A	10.10.16.9
+stud169	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud169	IN	MX 10	stud169.gr16.ugatu.ru.
+stud169	IN	TXT	"Student 169 Workstation"
+www-stud169	IN	CNAME	stud169
+
+stud1610	IN	A	10.10.16.10
+stud1610	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1610	IN	MX 10	stud1610.gr16.ugatu.ru.
+stud1610	IN	TXT	"Student 1610 Workstation"
+www-stud1610	IN	CNAME	stud1610
+
+stud1611	IN	A	10.10.16.11
+stud1611	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1611	IN	MX 10	stud1611.gr16.ugatu.ru.
+stud1611	IN	TXT	"Student 1611 Workstation"
+www-stud1611	IN	CNAME	stud1611
+
+stud1612	IN	A	10.10.16.12
+stud1612	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1612	IN	MX 10	stud1612.gr16.ugatu.ru.
+stud1612	IN	TXT	"Student 1612 Workstation"
+www-stud1612	IN	CNAME	stud1612
+
+stud1613	IN	A	10.10.16.13
+stud1613	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1613	IN	MX 10	stud1613.gr16.ugatu.ru.
+stud1613	IN	TXT	"Student 1613 Workstation"
+www-stud1613	IN	CNAME	stud1613
+
+stud1614	IN	A	10.10.16.14
+stud1614	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1614	IN	MX 10	stud1614.gr16.ugatu.ru.
+stud1614	IN	TXT	"Student 1614 Workstation"
+www-stud1614	IN	CNAME	stud1614
+
+stud1615	IN	A	10.10.16.15
+stud1615	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1615	IN	MX 10	stud1615.gr16.ugatu.ru.
+stud1615	IN	TXT	"Student 1615 Workstation"
+www-stud1615	IN	CNAME	stud1615
+
+stud1616	IN	A	10.10.16.16
+stud1616	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1616	IN	MX 10	stud1616.gr16.ugatu.ru.
+stud1616	IN	TXT	"Student 1616 Workstation"
+www-stud1616	IN	CNAME	stud1616
+
+stud1617	IN	A	10.10.16.17
+stud1617	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1617	IN	MX 10	stud1617.gr16.ugatu.ru.
+stud1617	IN	TXT	"Student 1617 Workstation"
+www-stud1617	IN	CNAME	stud1617
+
+stud1618	IN	A	10.10.16.18
+stud1618	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1618	IN	MX 10	stud1618.gr16.ugatu.ru.
+stud1618	IN	TXT	"Student 1618 Workstation"
+www-stud1618	IN	CNAME	stud1618
+
+stud1619	IN	A	10.10.16.19
+stud1619	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1619	IN	MX 10	stud1619.gr16.ugatu.ru.
+stud1619	IN	TXT	"Student 1619 Workstation"
+www-stud1619	IN	CNAME	stud1619
+
+stud1620	IN	A	10.10.16.20
+stud1620	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1620	IN	MX 10	stud1620.gr16.ugatu.ru.
+stud1620	IN	TXT	"Student 1620 Workstation"
+www-stud1620	IN	CNAME	stud1620
+
+stud1621	IN	A	10.10.16.21
+stud1621	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1621	IN	MX 10	stud1621.gr16.ugatu.ru.
+stud1621	IN	TXT	"Student 1621 Workstation"
+www-stud1621	IN	CNAME	stud1621
+
+stud1622	IN	A	10.10.16.22
+stud1622	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1622	IN	MX 10	stud1622.gr16.ugatu.ru.
+stud1622	IN	TXT	"Student 1622 Workstation"
+www-stud1622	IN	CNAME	stud1622
+
+stud1623	IN	A	10.10.16.23
+stud1623	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1623	IN	MX 10	stud1623.gr16.ugatu.ru.
+stud1623	IN	TXT	"Student 1623 Workstation"
+www-stud1623	IN	CNAME	stud1623
+
+stud1624	IN	A	10.10.16.24
+stud1624	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1624	IN	MX 10	stud1624.gr16.ugatu.ru.
+stud1624	IN	TXT	"Student 1624 Workstation"
+www-stud1624	IN	CNAME	stud1624
+
+stud1625	IN	A	10.10.16.25
+stud1625	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1625	IN	MX 10	stud1625.gr16.ugatu.ru.
+stud1625	IN	TXT	"Student 1625 Workstation"
+www-stud1625	IN	CNAME	stud1625
+
+stud1626	IN	A	10.10.16.26
+stud1626	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1626	IN	MX 10	stud1626.gr16.ugatu.ru.
+stud1626	IN	TXT	"Student 1626 Workstation"
+www-stud1626	IN	CNAME	stud1626
+
+stud1627	IN	A	10.10.16.27
+stud1627	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1627	IN	MX 10	stud1627.gr16.ugatu.ru.
+stud1627	IN	TXT	"Student 1627 Workstation"
+www-stud1627	IN	CNAME	stud1627
+
+stud1628	IN	A	10.10.16.28
+stud1628	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1628	IN	MX 10	stud1628.gr16.ugatu.ru.
+stud1628	IN	TXT	"Student 1628 Workstation"
+www-stud1628	IN	CNAME	stud1628
+
+stud1629	IN	A	10.10.16.29
+stud1629	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1629	IN	MX 10	stud1629.gr16.ugatu.ru.
+stud1629	IN	TXT	"Student 1629 Workstation"
+www-stud1629	IN	CNAME	stud1629
+
+stud1630	IN	A	10.10.16.30
+stud1630	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1630	IN	MX 10	stud1630.gr16.ugatu.ru.
+stud1630	IN	TXT	"Student 1630 Workstation"
+www-stud1630	IN	CNAME	stud1630
+
+stud1631	IN	A	10.10.16.31
+stud1631	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1631	IN	MX 10	stud1631.gr16.ugatu.ru.
+stud1631	IN	TXT	"Student 1631 Workstation"
+www-stud1631	IN	CNAME	stud1631
+
+stud1632	IN	A	10.10.16.32
+stud1632	IN	HINFO	"INTEL-CORE" "UBUNTU-LINUX"
+stud1632	IN	MX 10	stud1632.gr16.ugatu.ru.
+stud1632	IN	TXT	"Student 1632 Workstation"
+www-stud1632	IN	CNAME	stud1632

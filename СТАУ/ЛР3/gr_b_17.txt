@@ -1,0 +1,49 @@
+$TTL 3600
+@	IN	SOA	ns1.gr16.ugatu.ru. admin.gr16.ugatu.ru. (
+			2026102001 ; Serial
+			10800      ; Refresh
+			1800       ; Retry
+			3600000    ; Expire
+			259200 )   ; Minimum
+
+; Name Servers
+@	IN	NS	ns1.gr16.ugatu.ru.
+@	IN	NS	ns2.gr16.ugatu.ru.
+
+; Name Server PTRs
+1	IN	PTR	ns1.gr16.ugatu.ru.
+2	IN	PTR	ns2.gr16.ugatu.ru.
+
+; Host PTRs (10.10.16.1 - 10.10.16.32)
+1	IN	PTR	stud161.gr16.ugatu.ru.
+2	IN	PTR	stud162.gr16.ugatu.ru.
+3	IN	PTR	stud163.gr16.ugatu.ru.
+4	IN	PTR	stud164.gr16.ugatu.ru.
+5	IN	PTR	stud165.gr16.ugatu.ru.
+6	IN	PTR	stud166.gr16.ugatu.ru.
+7	IN	PTR	stud167.gr16.ugatu.ru.
+8	IN	PTR	stud168.gr16.ugatu.ru.
+9	IN	PTR	stud169.gr16.ugatu.ru.
+10	IN	PTR	stud1610.gr16.ugatu.ru.
+11	IN	PTR	stud1611.gr16.ugatu.ru.
+12	IN	PTR	stud1612.gr16.ugatu.ru.
+13	IN	PTR	stud1613.gr16.ugatu.ru.
+14	IN	PTR	stud1614.gr16.ugatu.ru.
+15	IN	PTR	stud1615.gr16.ugatu.ru.
+16	IN	PTR	stud1616.gr16.ugatu.ru.
+17	IN	PTR	stud1617.gr16.ugatu.ru.
+18	IN	PTR	stud1618.gr16.ugatu.ru.
+19	IN	PTR	stud1619.gr16.ugatu.ru.
+20	IN	PTR	stud1620.gr16.ugatu.ru.
+21	IN	PTR	stud1621.gr16.ugatu.ru.
+22	IN	PTR	stud1622.gr16.ugatu.ru.
+23	IN	PTR	stud1623.gr16.ugatu.ru.
+24	IN	PTR	stud1624.gr16.ugatu.ru.
+25	IN	PTR	stud1625.gr16.ugatu.ru.
+26	IN	PTR	stud1626.gr16.ugatu.ru.
+27	IN	PTR	stud1627.gr16.ugatu.ru.
+28	IN	PTR	stud1628.gr16.ugatu.ru.
+29	IN	PTR	stud1629.gr16.ugatu.ru.
+30	IN	PTR	stud1630.gr16.ugatu.ru.
+31	IN	PTR	stud1631.gr16.ugatu.ru.
+32	IN	PTR	stud1632.gr16.ugatu.ru.
