@@ -1,0 +1,247 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="428F2583-08DE-6161-343D-BB1016F1FCC4" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PRODUCT_INFORMATION">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRODUCT_INFORMATION</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Non-industry-specific data in various categories.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCT_ID" id="9F9DF4FC-BADE-B350-CF5A-BD86785AD382">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>PRODUCT_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_NAME" id="FCF6EFED-7277-C494-9463-1FAAF9856BC7">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>PRODUCT_NAME</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_DESCRIPTION" id="11CBBF10-CAE9-43E9-53B9-EE885D58EE66">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>PRODUCT_DESCRIPTION</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary language description corresponding to translated_description in
+oe.product_descriptions, added to provide non-NLS text columns for OC views
+to accss.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000 BYTE</dataTypeSize>
+<ownDataTypeParameters>2000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORY_ID" id="05F94047-E589-3F10-D725-EE733034D124">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>CATEGORY_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Low cardinality column, can be used for bitmap index.
+Schema SH uses it as foreign key]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WEIGHT_CLASS" id="AFB2C299-68CC-5FC7-3BF2-B71DBBF1E162">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>WEIGHT_CLASS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Low cardinality column, can be used for bitmap index.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WARRANTY_PERIOD" id="02079F8F-C384-6B6B-9870-A4D640F74BE7">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>WARRANTY_PERIOD</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[INTERVAL YEAER TO MONTH column, low cardinality, can be used for bitmap
+index.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT048</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUPPLIER_ID" id="06AFBEDF-C4A1-FB7A-1D01-CA0612FE21C2">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>SUPPLIER_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Offers possibility of extensions outside Common Schema.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_STATUS" id="EFB1B9FC-F527-9C82-211E-FF6034356D8C">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>PRODUCT_STATUS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Check constraint. Appropriate for complex rules, such as "All products in
+status PRODUCTION must have at least one inventory entry." Also appropriate
+for a trigger auditing status change.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<constraintName>PRODUCT_STATUS_LOV</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;obsolete&apos;" description=""/>
+<valueDef value="&apos;orderable&apos;" description=""/>
+<valueDef value="&apos;planned&apos;" description=""/>
+<valueDef value="&apos;under development&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIST_PRICE" id="84966D6B-130B-725B-BC70-3F2643F295B0">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>LIST_PRICE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MIN_PRICE" id="37531C13-3F0C-D92B-1257-25E0889258A5">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>MIN_PRICE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATALOG_URL" id="02159998-E64F-1C89-93B1-F2DA3BF99BDB">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_INFORMATION</sourceObjSchema>
+<sourceObjName>CATALOG_URL</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7B90BED-880E-E58B-E6CD-65CAC0E829CA" name="PRODUCT_INFORMATION_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRODUCT_INFORMATION_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F9DF4FC-BADE-B350-CF5A-BD86785AD382"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="85C1CC5C-D675-38FD-6244-99C593E9BB91" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PROD_SUPPLIER_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PROD_SUPPLIER_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06AFBEDF-C4A1-FB7A-1D01-CA0612FE21C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="030309E3-65B0-7DE2-9CF8-FEE9BA98BB8D" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PRODUCT_INFORMATION_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRODUCT_INFORMATION_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F9DF4FC-BADE-B350-CF5A-BD86785AD382"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

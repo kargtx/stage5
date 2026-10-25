@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="535FF9A1-5667-6200-4A86-1404CD43A288" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="INVENTORIES">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>INVENTORIES</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tracks availability of products by product_it and warehouse_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCT_ID" id="624F4693-B479-C824-8D79-D68587BF45F3">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>INVENTORIES</sourceObjSchema>
+<sourceObjName>PRODUCT_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Part of concatenated primary key, references product_information.product_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68A7C799-C38A-540E-086D-10885589EF91" referredColumn="9F9DF4FC-BADE-B350-CF5A-BD86785AD382"/>
+</associations>
+</Column>
+<Column name="WAREHOUSE_ID" id="5BAF2053-FEDE-6B9D-BEE0-0C82A9385231">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>INVENTORIES</sourceObjSchema>
+<sourceObjName>WAREHOUSE_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Part of concatenated primary key, references warehouses.warehouse_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>INVENTORY_WAREHOUSE_ID_NN</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="4050A3D0-95D9-7FE7-E41E-0AFC118ECB54" referredColumn="9F460A8A-80F9-C876-4EDB-97E5AD475AAF"/>
+</associations>
+</Column>
+<Column name="QUANTITY_ON_HAND" id="753381D8-6298-5B1A-2599-0D005985316A">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>INVENTORIES</sourceObjSchema>
+<sourceObjName>QUANTITY_ON_HAND</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,8,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>INVENTORY_QOH_NN</notNullConstraintName>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A4058949-6174-7FD7-5AE5-0017C711C6F8" name="INVENTORY_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>INVENTORY_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="624F4693-B479-C824-8D79-D68587BF45F3"/>
+<colUsage columnID="5BAF2053-FEDE-6B9D-BEE0-0C82A9385231"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B05773C0-68A1-18F2-924C-9197531D0721" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="INVENTORY_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>INVENTORY_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BAF2053-FEDE-6B9D-BEE0-0C82A9385231"/>
+<colUsage columnID="624F4693-B479-C824-8D79-D68587BF45F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5C47BAFD-65B9-7EB1-EF70-2BBE4DE6C221" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="INV_PRODUCT_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>INV_PRODUCT_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="624F4693-B479-C824-8D79-D68587BF45F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B1D2935-AE91-1F9A-DED7-5F90AC0C7727" name="INVENTORIES_PRODUCT_ID_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="624F4693-B479-C824-8D79-D68587BF45F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0287073E-20FF-D3B5-D915-10A5C2D0D115" name="INVENTORIES_WAREHOUSES_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BAF2053-FEDE-6B9D-BEE0-0C82A9385231"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

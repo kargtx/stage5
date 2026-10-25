@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PRODUCT_INFORMATION" directorySegmentName="seg_0" id="428F2583-08DE-6161-343D-BB1016F1FCC4">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>560B7C30-8853-3CD6-6A8D-036373CCAA02</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="WARRANTY_PERIOD" id="02079F8F-C384-6B6B-9870-A4D640F74BE7">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CATALOG_URL" id="02159998-E64F-1C89-93B1-F2DA3BF99BDB">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CATEGORY_ID" id="05F94047-E589-3F10-D725-EE733034D124">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SUPPLIER_ID" id="06AFBEDF-C4A1-FB7A-1D01-CA0612FE21C2">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_DESCRIPTION" id="11CBBF10-CAE9-43E9-53B9-EE885D58EE66">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MIN_PRICE" id="37531C13-3F0C-D92B-1257-25E0889258A5">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LIST_PRICE" id="84966D6B-130B-725B-BC70-3F2643F295B0">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_ID" id="9F9DF4FC-BADE-B350-CF5A-BD86785AD382">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="WEIGHT_CLASS" id="AFB2C299-68CC-5FC7-3BF2-B71DBBF1E162">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_STATUS" id="EFB1B9FC-F527-9C82-211E-FF6034356D8C">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_NAME" id="FCF6EFED-7277-C494-9463-1FAAF9856BC7">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PRODUCT_INFORMATION_PK" id="030309E3-65B0-7DE2-9CF8-FEE9BA98BB8D">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PROD_SUPPLIER_IX" id="85C1CC5C-D675-38FD-6244-99C593E9BB91">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PRODUCT_INFORMATION_PK" id="C7B90BED-880E-E58B-E6CD-65CAC0E829CA">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<existingIndex>030309E3-65B0-7DE2-9CF8-FEE9BA98BB8D</existingIndex>
+<indexSegment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

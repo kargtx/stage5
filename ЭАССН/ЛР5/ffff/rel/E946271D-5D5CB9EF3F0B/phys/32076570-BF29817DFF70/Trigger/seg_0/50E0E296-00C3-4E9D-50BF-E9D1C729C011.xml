@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="INSERT_ORD_LINE" directorySegmentName="seg_0" id="50E0E296-00C3-4E9D-50BF-E9D1C729C011">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>INSERT_ORD_LINE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[DECLARE
+    new_line number;
+  BEGIN
+    SELECT (NVL(MAX(line_item_id),0)+1) INTO new_line
+      FROM order_items
+      WHERE order_id = :new.order_id;
+    :new.line_item_id := new_line;
+  END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>B465806B-BE86-47C7-7391-13BE2F0CA91E</owner>
+<table>4FC25E08-EDD6-1455-9354-AFC5DFCC6847</table>
+</TriggerOraclev10g>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StructuredType class="oracle.dbtools.crest.model.design.datatypes.StructuredType" name="CATEGORY_TYP" directorySegmentName="seg_0" id="BFA76B18-7D07-8B4C-F946-072AC70B953E">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CATEGORY_TYP</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<predefined>false</predefined>
+<final>false</final>
+<instantiable>false</instantiable>
+<attributes itemClass="oracle.dbtools.crest.model.design.datatypes.TypeElement">
+<Attribute name="CATEGORY_NAME" id="8CB1E0B5-8008-6E0F-F6D7-49DDE09878C6">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<size>50</size>
+<type>LOGDT024</type>
+</Attribute>
+<Attribute name="CATEGORY_DESCRIPTION" id="6D75D6A7-0766-1861-DE25-93F32786D174">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<size>1000</size>
+<type>LOGDT024</type>
+</Attribute>
+<Attribute name="CATEGORY_ID" id="15B7074B-781D-991B-324F-6FA62500D590">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>2</precision>
+<reference>false</reference>
+<scale>0</scale>
+<type>LOGDT019</type>
+</Attribute>
+<Attribute name="PARENT_CATEGORY_ID" id="DCD46D02-6D6E-CDA1-B9D7-D17A01884D77">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>2</precision>
+<reference>false</reference>
+<scale>0</scale>
+<type>LOGDT019</type>
+</Attribute>
+</attributes>
+<methods itemClass="oracle.dbtools.crest.model.design.datatypes.Method">
+<Method name="CATEGORY_DESCRIBE" id="C572432F-6ACC-D419-02AF-7186B517A1C0">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<number>1</number>
+<returnValue class="oracle.dbtools.crest.model.design.datatypes.MethodParam" name="CATEGORY_DESCRIBE" id="C0615E2E-AFD2-FE33-D8DD-0F13C21F7EE2">
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<typeID>LOGDT024</typeID>
+</returnValue>
+</Method>
+</methods>
+</StructuredType>

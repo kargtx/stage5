@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5B8C03D9-B738-9B3A-51D4-D379178C9631" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PURCHASEORDER">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PURCHASEORDER</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<basedOnStructuredType>F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1</basedOnStructuredType>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CFD05E66-BA76-8D33-D5A2-476A985FFC2A" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ACTION_TABLE_MEMBERS">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ACTION_TABLE_MEMBERS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexExpression>&quot;XMLDATA&quot;.&quot;ACTIONS&quot;.&quot;ACTION&quot;</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="4A76D4AB-B20A-0876-2C0F-97BEBFB82596" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="LINEITEM_TABLE_MEMBERS">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>LINEITEM_TABLE_MEMBERS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexExpression>&quot;XMLDATA&quot;.&quot;LINEITEMS&quot;.&quot;LINEITEM&quot;</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

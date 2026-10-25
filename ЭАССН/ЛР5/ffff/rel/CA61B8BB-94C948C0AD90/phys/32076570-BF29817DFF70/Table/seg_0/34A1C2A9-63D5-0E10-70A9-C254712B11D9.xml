@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="COUNTRIES" directorySegmentName="seg_0" id="34A1C2A9-63D5-0E10-70A9-C254712B11D9">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:17 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>0560BF32-4B28-CFD9-263E-F76116DBA8AF</schemaObject>
+<iotPctThreshold>50</iotPctThreshold>
+<logging>YES</logging>
+<organization>INDEX</organization>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>BBD8D30A-6B88-C15B-7BA4-85F16782033C</segment>
+<tableSpace>15D6FC02-B4EF-B432-3111-DEFBBF810B73</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="COUNTRY_NAME" id="0AAE08F0-5C37-F54C-0DA5-8557502DDC77">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:17 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY_ID" id="3684ADC4-BC4C-1EFC-A97F-FF4010E674C4">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:17 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REGION_ID" id="8CB44EC9-5FC3-F583-1D02-3E5E6C73E27A">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:17 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="COUNTR_REG_FK" id="E226D06C-9F64-16AB-6CAD-080868C5C7FF">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:18 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="COUNTRY_C_ID_PK" id="99533EEC-1F52-3ACA-1FF1-D4E2AA41895E">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:47:18 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>0560BF32-4B28-CFD9-263E-F76116DBA8AF</schemaObject>
+<segment>BBD8D30A-6B88-C15B-7BA4-85F16782033C</segment>
+<tableSpace>15D6FC02-B4EF-B432-3111-DEFBBF810B73</tableSpace>
+<indexSegment>BBD8D30A-6B88-C15B-7BA4-85F16782033C</indexSegment>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

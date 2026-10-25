@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PURCHASEORDER" directorySegmentName="seg_0" id="5B8C03D9-B738-9B3A-51D4-D379178C9631">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>560B7C30-8853-3CD6-6A8D-036373CCAA02</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<xmlSchemaElement>PurchaseOrder</xmlSchemaElement>
+<xmlSchemaUrl>http://localhost:8080/source/schemas/poSource/xsd/purchaseOrder.xsd</xmlSchemaUrl>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<storeAs>OBJECT RELATIONAL</storeAs>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LINEITEM_TABLE_MEMBERS" id="4A76D4AB-B20A-0876-2C0F-97BEBFB82596">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ACTION_TABLE_MEMBERS" id="CFD05E66-BA76-8D33-D5A2-476A985FFC2A">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+</indexProxies>
+</TableProxyOraclev11g>

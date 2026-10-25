@@ -1,0 +1,249 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A629F111-A85E-FBEF-E231-B93C05062CE8" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ORDERS">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Contains orders entered by a salesperson as well as over the Web.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_ID" id="46F3E6BF-6747-6FC4-E5A9-C695C91CD411">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[PRIMARY KEY column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,12,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_DATE" id="B6ED99E7-CC76-057C-6F68-B49B7F091CDA">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_DATE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[TIMESTAMP WITH LOCAL TIME ZONE column, NOT NULL constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT047</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>ORDER_DATE_NN</notNullConstraintName>
+</Column>
+<Column name="ORDER_MODE" id="E23674D6-442C-CFC8-C4EC-77CCC29E8B81">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_MODE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[CHECK constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<constraintName>ORDER_MODE_LOV</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;direct&apos;" description=""/>
+<valueDef value="&apos;online&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUSTOMER_ID" id="09B441E5-97BC-7E20-0738-815005D6EFAA">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>ORDER_CUSTOMER_ID_NN</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="5A2D1F8F-1631-E3EC-7674-C3EA137BF6DD" referredColumn="CDECC277-0F5C-C26E-7F8B-BA343E606497"/>
+</associations>
+</Column>
+<Column name="ORDER_STATUS" id="AA25822C-DA31-328A-502C-FC6E0491D0E4">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_STATUS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[0: Not fully entered, 1: Entered, 2: Canceled - bad credit, -
+3: Canceled - by customer, 4: Shipped - whole order, -
+5: Shipped - replacement items, 6: Shipped - backlog on items, -
+7: Shipped - special delivery, 8: Shipped - billed, 9: Shipped - payment plan,-
+10: Shipped - paid]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORDER_TOTAL" id="49FF5CEC-C9FD-51F7-016C-65DEAAB81364">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ORDER_TOTAL</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[CHECK constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<constraintName>ORDER_TOTAL_MIN</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="order_total &gt;= 0"/>
+<implementationDef dbType="Oracle Database 11g" definition="order_total &gt;= 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALES_REP_ID" id="D3F94680-375C-B06A-904F-B6C59A6EAF91">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>SALES_REP_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[References hr.employees.employee_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROMOTION_ID" id="4B6F2D67-223D-F332-3465-985782A9B540">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>PROMOTION_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sales promotion ID. Used in SH schema]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE8C2B0B-DD9D-46C0-2CD3-B3A0722A3075" name="ORDER_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORDER_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46F3E6BF-6747-6FC4-E5A9-C695C91CD411"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="292591A6-AFCD-C38E-7740-81C057F601E7" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ORD_CUSTOMER_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORD_CUSTOMER_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09B441E5-97BC-7E20-0738-815005D6EFAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="759ADDDB-7210-DACE-FC95-E877965AE214" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ORDER_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORDER_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46F3E6BF-6747-6FC4-E5A9-C695C91CD411"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A65ED17E-E353-5667-C959-E2F3159829C2" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ORD_ORDER_DATE_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORD_ORDER_DATE_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6ED99E7-CC76-057C-6F68-B49B7F091CDA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE07E24A-1C4F-C152-8069-D27BEA3ADD03" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="ORD_SALES_REP_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>ORD_SALES_REP_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3F94680-375C-B06A-904F-B6C59A6EAF91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0102F17-3518-30DD-83CB-5EF85C7ACCBC" name="ORDERS_CUSTOMER_ID_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09B441E5-97BC-7E20-0738-815005D6EFAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18215831-4F3D-2977-AB5B-6B8C7EE81343" name="ORDERS_SALES_REP_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3F94680-375C-B06A-904F-B6C59A6EAF91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

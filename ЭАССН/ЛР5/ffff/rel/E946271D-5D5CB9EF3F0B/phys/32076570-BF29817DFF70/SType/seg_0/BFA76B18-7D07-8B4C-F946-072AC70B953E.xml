@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StructuredTypeProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StructuredTypeProxyOraclev10g" name="CATEGORY_TYP" directorySegmentName="seg_0" id="BFA76B18-7D07-8B4C-F946-072AC70B953E">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CATEGORY_TYP</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<owner>B465806B-BE86-47C7-7391-13BE2F0CA91E</owner>
+<attributes itemClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.TypeElementProxyOraclev9i">
+<Attribute name="CATEGORY_ID" id="15B7074B-781D-991B-324F-6FA62500D590">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</Attribute>
+<Attribute name="CATEGORY_DESCRIPTION" id="6D75D6A7-0766-1861-DE25-93F32786D174">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</Attribute>
+<Attribute name="CATEGORY_NAME" id="8CB1E0B5-8008-6E0F-F6D7-49DDE09878C6">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</Attribute>
+<Attribute name="PARENT_CATEGORY_ID" id="DCD46D02-6D6E-CDA1-B9D7-D17A01884D77">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</Attribute>
+</attributes>
+<methods itemClass="oracle.dbtools.crest.model.design.storage.oracle.v9i.MethodProxyOraclev9i">
+<Method name="CATEGORY_DESCRIBE" id="C572432F-6ACC-D419-02AF-7186B517A1C0">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:12 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<bodyChanged>false</bodyChanged>
+<instantiable>NO</instantiable>
+</Method>
+</methods>
+</StructuredTypeProxyOraclev10g>
