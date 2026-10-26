@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КИС «Автосервис: Чип-тюнинг» — Версия 2026 (СТП УГАТУ)</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Главный каркас приложения КИС -->
+  <div class="app-layout">
+    
+    <!-- Боковая панель навигации (Sidebar) -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-mark">
+          <span class="logo-icon">⚡</span>
+          <div>
+            <div class="logo-title">КИС «АВТОСЕРВИС»</div>
+            <div class="logo-subtitle">Чип-тюнинг & Калибровка ЭБУ</div>
+          </div>
+        </div>
+        <div class="corp-badge">ВЕРСИЯ 2026 КОРП</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">ОПЕРАЦИОННАЯ ДЕЯТЕЛЬНОСТЬ</div>
+        <button class="nav-btn active" data-tab="tab-dashboard" id="btn-tab-dashboard">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Панель управления (Дашборд)</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-clients" id="btn-tab-clients">
+          <span class="nav-icon">👤</span>
+          <span class="nav-label">Клиенты и Авто (Сеанс 1.3)</span>
+          <span class="badge" id="badge-clients-count">0</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-requests" id="btn-tab-requests">
+          <span class="nav-icon">📝</span>
+          <span class="nav-label">Заявки на тюнинг (Сеанс 1.5)</span>
+          <span class="badge" id="badge-requests-count">0</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-orders" id="btn-tab-orders">
+          <span class="nav-icon">📋</span>
+          <span class="nav-label">Наряд-заказы [Данил] (1.8)</span>
+          <span class="badge badge-accent" id="badge-orders-count">0</span>
+        </button>
+
+        <div class="nav-section-title">ТЕХНИЧЕСКИЙ ЦЕХ</div>
+        <button class="nav-btn" data-tab="tab-diagnostics" id="btn-tab-diagnostics">
+          <span class="nav-icon">🔍</span>
+          <span class="nav-label">Диагностика ДВС (Сеанс 1.10)</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-execution" id="btn-tab-execution">
+          <span class="nav-icon">💻</span>
+          <span class="nav-label">АРМ Калибровщика [Карим] (1.13)</span>
+          <span class="badge badge-pulse" id="badge-tuning-count">1</span>
+        </button>
+        <button class="nav-btn" data-tab="tab-acts" id="btn-tab-acts">
+          <span class="nav-icon">📜</span>
+          <span class="nav-label">Акты и Гарантия [Карим] (1.16)</span>
+        </button>
+
+        <div class="nav-section-title">АРХИТЕКТУРА И ДАННЫЕ</div>
+        <button class="nav-btn" data-tab="tab-database" id="btn-tab-database">
+          <span class="nav-icon">🗄️</span>
+          <span class="nav-label">Таблицы БД (3NF, 8 сущностей)</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">ЭАС</div>
+          <div class="user-info">
+            <div class="user-name">Гайнанов Д.И. / Гарифуллин К.Р.</div>
+            <div class="user-role">Группа ЭАС-514С • УУНиТ (2026)</div>
+          </div>
+        </div>
+        <button class="btn-reset-demo" id="btn-reset-demo" title="Сбросить БД к исходным демонстрационным данным 2026 года">
+          🔄 Сбросить демо-данные
+        </button>
+      </div>
+    </aside>
+
+    <!-- Основной контент страницы -->
+    <main class="main-content">
+      
+      <!-- Верхний статус-бар -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <span class="status-indicator"></span>
+          <span class="top-title" id="page-title">Сводный мониторинг и сквозной процесс КИС</span>
+        </div>
+        <div class="top-bar-right">
+          <div class="header-stat">
+            <span class="stat-label">Текущая дата:</span>
+            <span class="stat-val font-mono" id="current-system-date">2026-03-20</span>
+          </div>
+          <div class="header-stat">
+            <span class="stat-label">Руководитель:</span>
+            <span class="stat-val">ст. преп. Демченко М.С.</span>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btn-quick-new-order">+ Новый клиент и заказ</button>
+        </div>
+      </header>
+
+      <!-- Вкладка 1: Панель управления (Дашборд) -->
+      <section class="tab-panel active" id="tab-dashboard">
+        <!-- Карточки KPI -->
+        <div class="stats-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Общая выручка сервиса</span>
+              <span class="kpi-icon">💰</span>
+            </div>
+            <div class="kpi-value" id="kpi-revenue">0 ₽</div>
+            <div class="kpi-subtext">По закрытым наряд-заказам (54-ФЗ)</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Наряд-заказы в работе</span>
+              <span class="kpi-icon">⚙️</span>
+            </div>
+            <div class="kpi-value kpi-warning" id="kpi-active-orders">0</div>
+            <div class="kpi-subtext">На этапах согласования, диагностики и калибровки</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Парк обслуженных авто</span>
+              <span class="kpi-icon">🚘</span>
+            </div>
+            <div class="kpi-value" id="kpi-cars-count">0</div>
+            <div class="kpi-subtext">Уникальных VIN-номеров в базе 3NF</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Активировано гарантий</span>
+              <span class="kpi-icon">🛡️</span>
+            </div>
+            <div class="kpi-value kpi-success" id="kpi-warranty-count">0</div>
+            <div class="kpi-subtext">Официальная гарантия 24 мес. на прошивку</div>
+          </div>
+        </div>
+
+        <!-- Интерактивная карта сквозного процесса (BPMN Workflow Stepper) -->
+        <div class="card process-map-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сквозной технологический процесс КИС «Автосервис: Чип-тюнинг» (BPMN 2.0)</h2>
+              <p class="card-subtitle">Интерактивный маршрутизатор задач по 5 ролевым дорожкам и двум подпроцессам соисполнителей</p>
+            </div>
+            <span class="badge badge-accent">СТП УГАТУ • 2026</span>
+          </div>
+          
+          <div class="workflow-stepper">
+            <!-- Шаг 1: Регистрация -->
+            <div class="step-box step-done" onclick="switchTab('tab-clients')">
+              <div class="step-num">1.1–1.3</div>
+              <div class="step-name">Регистрация клиента и ТС</div>
+              <div class="step-role">Мастер (Гайнанов Д.И.)</div>
+              <div class="step-badge">Клиент + Car</div>
+            </div>
+
+            <div class="step-arrow">➔</div>
+
+            <!-- Шаг 2: Заявка -->
+            <div class="step-box step-done" onclick="switchTab('tab-requests')">
+              <div class="step-num">1.4–1.6</div>
+              <div class="step-name">Подбор пакета тюнинга</div>
+              <div class="step-role">Мастер (Гайнанов Д.И.)</div>
+              <div class="step-badge">Stage 1 / Stage 2</div>
+            </div>
+
+            <div class="step-arrow">➔</div>
+
+            <!-- Шаг 3: Наряд-заказ -->
+            <div class="step-box step-active" onclick="switchTab('tab-orders')">
+              <div class="step-num">1.8</div>
+              <div class="step-name">Утверждение Наряд-заказа</div>
+              <div class="step-role">Гайнанов Д.И. (Данил)</div>
+              <div class="step-badge badge-doc">[Документ: Work_Order]</div>
+            </div>
+
+            <div class="step-arrow">➔</div>
+
+            <!-- Шаг 4: Диагностика -->
+            <div class="step-box" onclick="switchTab('tab-diagnostics')">
+              <div class="step-num">1.10</div>
+              <div class="step-name">Входная диагностика ДВС</div>
+              <div class="step-role">Инженер-диагност</div>
+              <div class="step-badge badge-gate">Quality Gate (DTC)</div>
+            </div>
+
+            <div class="step-arrow">➔</div>
+
+            <!-- Шаг 5: АРМ Калибровщика -->
+            <div class="step-box step-special" onclick="switchTab('tab-execution')">
+              <div class="step-num">1.13</div>
+              <div class="step-name">Калибровка + Комментарий</div>
+              <div class="step-role">Гарифуллин К.Р. (Карим)</div>
+              <div class="step-badge badge-comment">Тех. комментарий мастера</div>
+            </div>
+
+            <div class="step-arrow">➔</div>
+
+            <!-- Шаг 6: Акт и гарантия -->
+            <div class="step-box" onclick="switchTab('tab-acts')">
+              <div class="step-num">1.16</div>
+              <div class="step-name">Акт и гарантийный талон</div>
+              <div class="step-role">Гарифуллин К.Р. + Кассир</div>
+              <div class="step-badge badge-doc">[Документ: Act 24 мес]</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Журнал оперативного мониторинга заказов -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Текущие заказы в работе КИС</h3>
+              <p class="card-subtitle">Оперативный мониторинг движения автомобилей по цехам сервиса</p>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="switchTab('tab-orders')">Открыть полный журнал нарядов ➔</button>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="table-dashboard-orders">
+              <thead>
+                <tr>
+                  <th>№ Наряда</th>
+                  <th>Автомобиль / Двигатель</th>
+                  <th>Контрагент</th>
+                  <th>Пакет калибровки</th>
+                  <th>Мастер-приемщик</th>
+                  <th>Инженер-калибровщик</th>
+                  <th>Сумма (₽)</th>
+                  <th>Статус</th>
+                  <th>Действие</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-dashboard-orders">
+                <!-- Заполняется динамически -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 2: Клиенты и Автомобили (Сеанс 1.3) -->
+      <section class="tab-panel" id="tab-clients">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.3: Регистрация клиентов и автомобилей</h2>
+              <p class="card-subtitle">Ведение справочников Client и Car в 3-й нормальной форме (3NF)</p>
+            </div>
+            <button class="btn btn-primary" id="btn-open-modal-client">+ Зарегистрировать клиента и ТС</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>ФИО Клиента</th>
+                  <th>Телефон</th>
+                  <th>E-mail</th>
+                  <th>Привязанных ТС</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-clients">
+                <!-- Данные клиентов -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Список автомобилей -->
+        <div class="card" style="margin-top: 24px;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Парк автомобилей (Реестр ТС)</h3>
+              <p class="card-subtitle">Идентификация по VIN-коду, привязка модели контроллера ЭБУ и владельца</p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>VIN-код автомобиля</th>
+                  <th>Марка и модель</th>
+                  <th>Двигатель</th>
+                  <th>Тип ЭБУ (ECU)</th>
+                  <th>Госномер</th>
+                  <th>Владелец</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-cars">
+                <!-- Данные автомобилей -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 3: Заявки на чип-тюнинг (Сеанс 1.5) -->
+      <section class="tab-panel" id="tab-requests">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.5: Оформление заявки на чип-тюнинг</h2>
+              <p class="card-subtitle">Подбор конфигурации Stage 1 / Stage 2, опций экологии Euro-2/Decat и расчет сметы</p>
+            </div>
+            <button class="btn btn-primary" id="btn-open-modal-request">+ Новая заявка на тюнинг</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>№ Заявки</th>
+                  <th>Дата</th>
+                  <th>Автомобиль / Госномер</th>
+                  <th>Клиент</th>
+                  <th>Пакет тюнинга</th>
+                  <th>Прирост</th>
+                  <th>Эко-опции</th>
+                  <th>Стоимость (₽)</th>
+                  <th>Статус</th>
+                  <th>Действия</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-requests">
+                <!-- Данные заявок -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 4: Наряд-заказы — Зона Данила (Сеанс 1.8) -->
+      <section class="tab-panel" id="tab-orders">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.8: Утверждение Наряд-заказа (Зона ответственности Данила)</h2>
+              <p class="card-subtitle">Юридический договор подряда на оказание услуг чип-тюнинга (Гайнанов Д.И.)</p>
+            </div>
+            <div class="header-actions">
+              <button class="btn btn-primary" id="btn-open-modal-order">+ Утвердить Наряд-заказ</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>№ Наряд-заказа</th>
+                  <th>Дата утверждения</th>
+                  <th>Автомобиль (VIN / Модель)</th>
+                  <th>Клиент</th>
+                  <th>Мастер-приемщик</th>
+                  <th>Инженер-калибровщик</th>
+                  <th>Итоговая сумма</th>
+                  <th>Подпись клиента</th>
+                  <th>Статус</th>
+                  <th>Операции</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-orders">
+                <!-- Данные наряд-заказов -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 5: Входная диагностика ДВС (Сеанс 1.10) -->
+      <section class="tab-panel" id="tab-diagnostics">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.10: Входная инструментальная диагностика ДВС</h2>
+              <p class="card-subtitle">Аппаратный Quality Gate: проверка ошибок DTC, коррекций LTFT и давления турбонаддува</p>
+            </div>
+            <button class="btn btn-primary" id="btn-open-modal-diag">+ Провести диагностику по наряду</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>№ Карты</th>
+                  <th>№ Наряда</th>
+                  <th>Дата проверки</th>
+                  <th>Автомобиль</th>
+                  <th>Ошибки DTC</th>
+                  <th>Давление наддува</th>
+                  <th>Коррекция LTFT</th>
+                  <th>Вердикт Quality Gate</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-diagnostics">
+                <!-- Диагностические карты -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 6: АРМ Калибровщика — Зона Карима (Сеанс 1.13) -->
+      <section class="tab-panel" id="tab-execution">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.13: АРМ Калибровщика (Зона ответственности Карима)</h2>
+              <p class="card-subtitle">Инженерная прошивка ЭБУ, контроль Checksum и обязательный «Технический комментарий мастера»</p>
+            </div>
+            <span class="badge badge-accent">Инженер: Гарифуллин К.Р.</span>
+          </div>
+
+          <div class="arm-wrapper">
+            <!-- Список заказов, ожидающих калибровку -->
+            <div class="arm-orders-list">
+              <h3 class="panel-section-title">Заказы в работе тюнинг-цеха:</h3>
+              <div id="arm-orders-container" class="arm-cards-list">
+                <!-- Заполняется динамически -->
+              </div>
+            </div>
+
+            <!-- Рабочая панель программатора -->
+            <div class="arm-flashing-panel" id="arm-flashing-panel">
+              <div class="empty-state-notice" id="arm-empty-state">
+                <span class="empty-icon">🔌</span>
+                <h3>Выберите наряд-заказ слева для начала процедуры калибровки</h3>
+                <p>Система загрузит заводские параметры ЭБУ и проверит результаты входной диагностики</p>
+              </div>
+
+              <div class="arm-active-box" id="arm-active-box" style="display: none;">
+                <div class="active-order-header">
+                  <div>
+                    <h3 id="arm-car-title">BMW 330i G20 (VIN: WBA5R11090F123456)</h3>
+                    <div class="arm-meta-tags">
+                      <span class="tag" id="arm-ecu-tag">ECU: Bosch MG1CS024</span>
+                      <span class="tag" id="arm-pkg-tag">Пакет: Stage 1 (+52 л.с.)</span>
+                      <span class="tag tag-success" id="arm-gate-tag">Quality Gate: Допущен</span>
+                    </div>
+                  </div>
+                  <div class="arm-tool-select">
+                    <label class="form-label" for="arm-tool">Оборудование:</label>
+                    <select class="form-control form-control-sm" id="arm-tool">
+                      <option value="Autotuner OBD-II Master">Autotuner OBD-II Master</option>
+                      <option value="Autotuner Bench Mode (14.2V)">Autotuner Bench Mode (14.2V)</option>
+                      <option value="CMDFlash OBD/Boot">CMDFlash OBD/Boot</option>
+                      <option value="Alientech K-TAG TriCore">Alientech K-TAG TriCore</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Контрольные хэши и Checksum -->
+                <div class="hashes-grid">
+                  <div class="hash-box">
+                    <div class="hash-label">Стоковый дамп ROM (Заводской бэкап):</div>
+                    <div class="hash-val font-mono" id="arm-stock-hash">SHA256:7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069</div>
+                  </div>
+                  <div class="hash-box">
+                    <div class="hash-label">Модифицированный файл (WinOLS тюнинг):</div>
+                    <div class="hash-val font-mono" id="arm-mod-hash">SHA256:4c2a1e9f8821049ad567bce123f89012345678abcdef0123456789abcdef02</div>
+                  </div>
+                  <div class="hash-box">
+                    <div class="hash-label">Контрольная сумма (Checksum CRC32):</div>
+                    <div class="hash-val font-mono text-success" id="arm-checksum">0x9F4C2A1E [Корректна • Защита от блокировки ЭБУ]</div>
+                  </div>
+                </div>
+
+                <!-- Прогресс-бар прошивки -->
+                <div class="flash-progress-wrap" id="flash-progress-wrap" style="display: none;">
+                  <div class="flash-status-text" id="flash-status-text">Стирание флеш-памяти микроконтроллера...</div>
+                  <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="flash-progress-bar" style="width: 0%;"></div>
+                  </div>
+                  <div class="flash-percent font-mono" id="flash-percent">0%</div>
+                </div>
+
+                <!-- ОБЯЗАТЕЛЬНОЕ ПОЛЕ: ТЕХНИЧЕСКИЙ КОММЕНТАРИЙ МАСТЕРА -->
+                <div class="comment-field-wrap">
+                  <label class="form-label font-bold" for="arm-tech-comment">
+                    Обязательный технический комментарий мастера-калибровщика (Гарифуллин К.Р.):
+                    <span class="required-star">*</span>
+                  </label>
+                  <p class="field-hint">Укажите давление наддува, коррекции УОЗ, качество смеси Lambda, состав топлива АИ-98/100 и параметры диностенда.</p>
+                  <textarea class="form-control" id="arm-tech-comment" rows="4" placeholder="Пример: Прошивка Stage 1 записана успешно. Давление наддува поднято до 1.35 бар (+0.22). Смесь Lambda 0.82 под полной нагрузкой. Откатов зажигания нет. Рекомендован бензин не ниже АИ-98."></textarea>
+                  <div class="comment-validation-msg" id="comment-val-msg"></div>
+                </div>
+
+                <div class="arm-actions-footer">
+                  <button class="btn btn-danger" id="btn-arm-recovery" title="Аварийное восстановление на заводской дамп ROM в режиме Boot/Bench">
+                    ⚠️ Recovery Mode (Откат на сток)
+                  </button>
+                  <button class="btn btn-secondary" id="btn-arm-read-stock">
+                    📥 1. Вычитать сток ROM
+                  </button>
+                  <button class="btn btn-primary" id="btn-arm-write-flash">
+                    ⚡ 2. Записать тюнинг ПО и зафиксировать комментарий
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 7: Акты выполненных работ и гарантия (Сеанс 1.16) -->
+      <section class="tab-panel" id="tab-acts">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Сеанс 1.16: Закрытие наряда, Акт выполненных работ и Гарантия</h2>
+              <p class="card-subtitle">Фискальный расчет по 54-ФЗ, выдача гарантийного сертификата на 24 месяца (Гарифуллин К.Р. & Кассир)</p>
+            </div>
+            <button class="btn btn-primary" id="btn-open-modal-act">+ Оформить Акт и выдать авто</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>№ Акта</th>
+                  <th>№ Наряд-заказа</th>
+                  <th>Дата закрытия</th>
+                  <th>Автомобиль / Госномер</th>
+                  <th>Клиент</th>
+                  <th>Сумма (₽)</th>
+                  <th>Способ оплаты</th>
+                  <th>Фискальный чек</th>
+                  <th>Срок гарантии</th>
+                  <th>Документ</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-acts">
+                <!-- Акты выполненных работ -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Вкладка 8: Просмотр базы данных (3NF) -->
+      <section class="tab-panel" id="tab-database">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Архитектура информационной базы КИС (3-я нормальная форма, 3NF)</h2>
+              <p class="card-subtitle">Верификация отсутствия избыточности: атрибут vin_code исключен из Work_Order (связь через id_request)</p>
+            </div>
+            <div class="db-schema-badge">8 РЕЛЯЦИОННЫХ ТАБЛИЦ SQLite</div>
+          </div>
+
+          <div class="db-tables-tabs">
+            <button class="db-tab-btn active" data-dbtable="Client">Client (Клиенты)</button>
+            <button class="db-tab-btn" data-dbtable="Car">Car (Автомобили)</button>
+            <button class="db-tab-btn" data-dbtable="Tuning_Package">Tuning_Package (Пакеты)</button>
+            <button class="db-tab-btn" data-dbtable="Service_Request">Service_Request (Заявки)</button>
+            <button class="db-tab-btn" data-dbtable="Work_Order">Work_Order (Наряды в 3NF)</button>
+            <button class="db-tab-btn" data-dbtable="Diagnostics_Card">Diagnostics_Card (Диагностика)</button>
+            <button class="db-tab-btn" data-dbtable="Order_Execution">Order_Execution (Исполнение + Коммент)</button>
+            <button class="db-tab-btn" data-dbtable="Work_Completion_Act">Work_Completion_Act (Акты)</button>
+          </div>
+
+          <div class="db-table-viewer">
+            <div class="table-responsive">
+              <table class="data-table font-mono" id="table-raw-db">
+                <thead id="thead-raw-db"></thead>
+                <tbody id="tbody-raw-db"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- МОДАЛЬНЫЕ ОКНА (DIALOGS) -->
+
+  <!-- Модальное окно 1: Регистрация клиента и ТС -->
+  <dialog class="modal-dialog" id="modal-client">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Сеанс 1.3: Регистрация клиента и ТС в КИС</h3>
+        <button class="btn-close" onclick="closeModal('modal-client')">✕</button>
+      </div>
+      <form id="form-client" onsubmit="handleClientSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label class="form-label" for="client-fio">ФИО Клиента / Представителя:<span class="required-star">*</span></label>
+            <input type="text" class="form-control" id="client-fio" required placeholder="Например: Петров Денис Владимирович">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-phone">Контактный телефон:<span class="required-star">*</span></label>
+            <input type="tel" class="form-control" id="client-phone" required placeholder="+7 (917) 000-00-00">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="client-email">Электронная почта (E-mail):</label>
+            <input type="email" class="form-control" id="client-email" placeholder="client@mail.ru">
+          </div>
+
+          <div class="col-span-2 form-divider">ДАННЫЕ АВТОМОБИЛЯ (С ПРИВЯЗКОЙ К ПРОФИЛЮ КЛИЕНТА)</div>
+
+          <div class="form-group col-span-2">
+            <label class="form-label" for="car-vin">Идентификационный номер VIN (17 знаков):<span class="required-star">*</span></label>
+            <div class="input-action-group">
+              <input type="text" class="form-control font-mono" id="car-vin" maxlength="17" required placeholder="WBA5R11090F123456" oninput="autoFillCarByVin(this.value)">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="simulateVinDecode()">⚡ Авто-декодер</button>
+            </div>
+            <span class="field-hint">Поддерживается автоматическое сопоставление контроллера ЭБУ по каталогу VIN</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="car-model">Марка и модель ТС:<span class="required-star">*</span></label>
+            <input type="text" class="form-control" id="car-model" required placeholder="BMW 330i G20">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="car-engine">Модель двигателя и объем:<span class="required-star">*</span></label>
+            <input type="text" class="form-control" id="car-engine" required placeholder="2.0 B48B20 258 л.с.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="car-ecu">Тип установленного ЭБУ (ECU):<span class="required-star">*</span></label>
+            <input type="text" class="form-control font-mono" id="car-ecu" required placeholder="Bosch MG1CS024">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="car-plate">Государственный номер:</label>
+            <input type="text" class="form-control font-mono" id="car-plate" placeholder="У102УУ 102">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('modal-client')">Отмена</button>
+          <button type="submit" class="btn btn-primary">Сохранить в базу КИС</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно 2: Оформление заявки -->
+  <dialog class="modal-dialog" id="modal-request">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Сеанс 1.5: Оформление заявки на чип-тюнинг</h3>
+        <button class="btn-close" onclick="closeModal('modal-request')">✕</button>
+      </div>
+      <form id="form-request" onsubmit="handleRequestSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="req-car-vin">Выберите обслуживаемый автомобиль:<span class="required-star">*</span></label>
+          <select class="form-control" id="req-car-vin" required onchange="updateRequestCalc()">
+            <!-- Заполняется автомобилями -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="req-package">Выберите пакет программной модификации:<span class="required-star">*</span></label>
+          <select class="form-control" id="req-package" required onchange="updateRequestCalc()">
+            <!-- Заполняется пакетами -->
+          </select>
+        </div>
+
+        <!-- Карточка предварительного расчета мощности -->
+        <div class="tuning-preview-box" id="tuning-preview-box">
+          <div class="preview-item">
+            <span class="preview-label">Прирост мощности:</span>
+            <span class="preview-val text-success" id="prev-power">+52 л.с.</span>
+          </div>
+          <div class="preview-item">
+            <span class="preview-label">Прирост крутящего момента:</span>
+            <span class="preview-val text-success" id="prev-torque">+90 Нм</span>
+          </div>
+          <div class="preview-item">
+            <span class="preview-label">Сметная стоимость:</span>
+            <span class="preview-val font-bold" id="prev-cost">28 000 ₽</span>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 14px;">
+          <label class="form-label">Дополнительные опции калибровки:</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="opt-euro2" onchange="updateRequestCalc()"> Отключение катализатора Euro-2 (+5 000 ₽)
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="opt-popbang" onchange="updateRequestCalc()"> Активация Pop & Bang (отстрелы) (+4 000 ₽)
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="opt-speedlim"> Снятие ограничителя максимальной скорости V-Max
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('modal-request')">Отмена</button>
+          <button type="submit" class="btn btn-primary">Сформировать заявку в КИС</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно 3: Утверждение Наряд-заказа -->
+  <dialog class="modal-dialog" id="modal-order">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Сеанс 1.8: Утверждение Наряд-заказа (Гайнанов Д.И.)</h3>
+        <button class="btn-close" onclick="closeModal('modal-order')">✕</button>
+      </div>
+      <form id="form-order" onsubmit="handleOrderSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="order-req-id">Выберите заявку-основание:<span class="required-star">*</span></label>
+          <select class="form-control" id="order-req-id" required>
+            <!-- Заполняется новыми заявками -->
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="order-master">Мастер-приемщик (Ответственный):</label>
+            <input type="text" class="form-control" id="order-master" value="Гайнанов Д.И." readonly>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="order-tuner">Назначенный калибровщик:</label>
+            <input type="text" class="form-control" id="order-tuner" value="Гарифуллин К.Р." readonly>
+          </div>
+        </div>
+
+        <div class="agreement-notice">
+          <label class="checkbox-label font-bold">
+            <input type="checkbox" id="order-signature" checked required>
+            Подтверждено согласие клиента с условиями вмешательства в ПО ЭБУ и сметой
+          </label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('modal-order')">Отмена</button>
+          <button type="submit" class="btn btn-primary">Утвердить и направить на диагностику</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно 4: Проведение диагностики (Quality Gate) -->
+  <dialog class="modal-dialog" id="modal-diag">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Сеанс 1.10: Входная диагностическая карта ДВС</h3>
+        <button class="btn-close" onclick="closeModal('modal-diag')">✕</button>
+      </div>
+      <form id="form-diag" onsubmit="handleDiagSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="diag-order-id">Выберите наряд-заказ на диагностике:<span class="required-star">*</span></label>
+          <select class="form-control" id="diag-order-id" required>
+            <!-- Заполняется заказами на диагностике -->
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="diag-boost">Фактическое давление наддува (бар):</label>
+            <input type="number" step="0.05" class="form-control" id="diag-boost" value="1.15" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="diag-ltft">Топливная коррекция LTFT (%):</label>
+            <input type="number" step="0.1" class="form-control" id="diag-ltft" value="0.8" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="diag-dtc-select">Результат сканирования памяти ЭБУ на коды DTC:<span class="required-star">*</span></label>
+          <select class="form-control" id="diag-dtc-select" onchange="handleDiagDtcChange(this.value)">
+            <option value="0">✅ Ошибок DTC нет (Параметры ДВС в заводской норме)</option>
+            <option value="1">❌ Обнаружены критические ошибки DTC (P0300 Пропуски, P0234 Передув)</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="diag-codes-wrap" style="display: none;">
+          <label class="form-label" for="diag-codes-text">Список обнаруженных кодов неисправностей:</label>
+          <input type="text" class="form-control text-danger font-mono" id="diag-codes-text" value="P0302 Cylinder 2 Misfire, P0087 Fuel Rail Low Pressure">
+          <span class="field-hint text-danger font-bold">Внимание! При фиксации ошибок система заблокирует чип-тюнинг и перенаправит автомобиль на ремонт!</span>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('modal-diag')">Отмена</button>
+          <button type="submit" class="btn btn-primary">Зафиксировать результат Quality Gate</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно 5: Выдача Акта и оплата -->
+  <dialog class="modal-dialog" id="modal-act">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Сеанс 1.16: Выпуск Акта выполненных работ и кассовый расчет</h3>
+        <button class="btn-close" onclick="closeModal('modal-act')">✕</button>
+      </div>
+      <form id="form-act" onsubmit="handleActSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="act-order-id">Выберите выполненный заказ:<span class="required-star">*</span></label>
+          <select class="form-control" id="act-order-id" required>
+            <!-- Заполняется заказами со статусом Выполнен -->
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="act-payment">Способ оплаты (54-ФЗ):</label>
+            <select class="form-control" id="act-payment">
+              <option value="Банковская карта (Эквайринг)">Банковская карта (Эквайринг)</option>
+              <option value="Система быстрых платежей (СБП QR)">Система быстрых платежей (СБП QR)</option>
+              <option value="Наличный расчет в кассу">Наличный расчет в кассу</option>
+              <option value="Безналичный расчет (юр. лица)">Безналичный расчет (юр. лица)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="act-warranty">Срок официальной гарантии:</label>
+            <select class="form-control font-bold" id="act-warranty">
+              <option value="24" selected>24 месяца (Корпоративная гарантия)</option>
+              <option value="12">12 месяцев</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('modal-act')">Отмена</button>
+          <button type="submit" class="btn btn-success">Сформировать Акт, пробить чек и выдать авто</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Модальное окно 6: Просмотр официального печатного бланка -->
+  <dialog class="modal-dialog modal-lg" id="modal-doc-viewer">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="doc-viewer-title">Официальный документ КИС</h3>
+        <div>
+          <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Печать</button>
+          <button class="btn-close" onclick="closeModal('modal-doc-viewer')">✕</button>
+        </div>
+      </div>
+      <div class="printable-doc-body" id="doc-viewer-body">
+        <!-- Генерируемый бланк -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Уведомления Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Подключение скриптов приложения -->
+  <script src="app.js"></script>
+</body>
+</html>
