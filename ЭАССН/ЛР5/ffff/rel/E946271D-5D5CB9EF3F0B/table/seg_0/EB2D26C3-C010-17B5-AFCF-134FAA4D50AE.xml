@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB2D26C3-C010-17B5-AFCF-134FAA4D50AE" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="WAREHOUSES">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>WAREHOUSES</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Warehouse data unspecific to any industry.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="WAREHOUSE_ID" id="9F460A8A-80F9-C876-4EDB-97E5AD475AAF">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>WAREHOUSES</sourceObjSchema>
+<sourceObjName>WAREHOUSE_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WAREHOUSE_SPEC" id="C62B56F5-C6BB-7CAA-A333-9963ED86477D">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>WAREHOUSES</sourceObjSchema>
+<sourceObjName>WAREHOUSE_SPEC</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT050</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WAREHOUSE_NAME" id="91778377-7CC4-FAB4-2063-EBF1E47FB230">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>WAREHOUSES</sourceObjSchema>
+<sourceObjName>WAREHOUSE_NAME</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>35 BYTE</dataTypeSize>
+<ownDataTypeParameters>35 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOCATION_ID" id="F11D9E13-8DF3-F9F6-69C0-12EDBAE77ABF">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>WAREHOUSES</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column, references hr.locations.location_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,4,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WH_GEO_LOCATION" id="49AE8CA8-957F-A2F2-4E48-C81E4C074109">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>WAREHOUSES</sourceObjSchema>
+<sourceObjName>WH_GEO_LOCATION</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[SDO (spatial) column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<allowSubtypeSubstitution>false</allowSubtypeSubstitution>
+<use>3</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26BDF7C7-8612-D10B-DEF8-3A84C6C0BE68" name="WAREHOUSES_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>WAREHOUSES_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F460A8A-80F9-C876-4EDB-97E5AD475AAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC4B975F-5099-FED2-C94E-4149056F407B" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="WAREHOUSES_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>WAREHOUSES_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F460A8A-80F9-C876-4EDB-97E5AD475AAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3023AA9A-D477-308D-78DF-09A7024DB916" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="WHS_LOCATION_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>WHS_LOCATION_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F11D9E13-8DF3-F9F6-69C0-12EDBAE77ABF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="564D53A6-BA11-5F21-F3ED-B4BFA2373A5F" name="WAREHOUSES_LOCATION_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F11D9E13-8DF3-F9F6-69C0-12EDBAE77ABF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="PURCHASEORDER$xd" directorySegmentName="seg_0" id="5E1AEFB7-7935-26EC-E354-D24D382A48CA">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PURCHASEORDER$xd</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<actions>UPDATE, DELETE</actions>
+<body><![CDATA[BEGIN  IF (deleting) THEN xdb.xdb_pitrig_pkg.pitrig_del('OE','PURCHASEORDER', :old.sys_nc_oid$, '5798A71A7CE94631BB1A9CB1F637FE28' ); END IF;   IF (updating) THEN xdb.xdb_pitrig_pkg.pitrig_upd('OE','PURCHASEORDER', :old.sys_nc_oid$, '5798A71A7CE94631BB1A9CB1F637FE28', user ); END IF; END;]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>B465806B-BE86-47C7-7391-13BE2F0CA91E</owner>
+<table>5B8C03D9-B738-9B3A-51D4-D379178C9631</table>
+</TriggerOraclev10g>

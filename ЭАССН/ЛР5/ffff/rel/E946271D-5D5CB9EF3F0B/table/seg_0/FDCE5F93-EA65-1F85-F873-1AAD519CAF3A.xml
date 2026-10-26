@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDCE5F93-EA65-1F85-F873-1AAD519CAF3A" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PRODUCT_DESCRIPTIONS">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRODUCT_DESCRIPTIONS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Non-industry-specific design, allows selection of NLS-setting-specific data
+derived at runtime, for example using the products view.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCT_ID" id="3118571A-9B84-C4CF-5CD8-FB2D711F3139">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_DESCRIPTIONS</sourceObjSchema>
+<sourceObjName>PRODUCT_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F34BA561-072F-3C25-7C6B-68D14B286E3E" referredColumn="9F9DF4FC-BADE-B350-CF5A-BD86785AD382"/>
+</associations>
+</Column>
+<Column name="LANGUAGE_ID" id="676B0420-B7E4-8B29-5CB7-87B0476C280B">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_DESCRIPTIONS</sourceObjSchema>
+<sourceObjName>LANGUAGE_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 BYTE</dataTypeSize>
+<ownDataTypeParameters>3 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSLATED_NAME" id="446E83E5-8596-A27D-1570-1D687C7D0BC8">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_DESCRIPTIONS</sourceObjSchema>
+<sourceObjName>TRANSLATED_NAME</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>TRANSLATED_NAME_NN</notNullConstraintName>
+</Column>
+<Column name="TRANSLATED_DESCRIPTION" id="BC5C3AE4-041C-C65E-CA7D-75AE55F3F180">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>PRODUCT_DESCRIPTIONS</sourceObjSchema>
+<sourceObjName>TRANSLATED_DESCRIPTION</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>TRANSLATED_DESC_NN</notNullConstraintName>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E5D95BC1-54B8-C495-DE26-D6388AEDDF5C" name="PRODUCT_DESCRIPTIONS_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRODUCT_DESCRIPTIONS_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3118571A-9B84-C4CF-5CD8-FB2D711F3139"/>
+<colUsage columnID="676B0420-B7E4-8B29-5CB7-87B0476C280B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B37A10E6-BBC1-24F9-F48B-F6A97D405D98" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PRD_DESC_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PRD_DESC_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3118571A-9B84-C4CF-5CD8-FB2D711F3139"/>
+<colUsage columnID="676B0420-B7E4-8B29-5CB7-87B0476C280B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B50ED5C5-CEFE-8B0F-75E6-CE962DA6D5A3" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="PROD_NAME_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>PROD_NAME_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="446E83E5-8596-A27D-1570-1D687C7D0BC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F480123-3301-AAB9-44F9-264ECEE9B041" name="PD_PRODUCT_ID_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3118571A-9B84-C4CF-5CD8-FB2D711F3139"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

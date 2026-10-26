@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="INVENTORIES" directorySegmentName="seg_0" id="535FF9A1-5667-6200-4A86-1404CD43A288">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>560B7C30-8853-3CD6-6A8D-036373CCAA02</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="WAREHOUSE_ID" id="5BAF2053-FEDE-6B9D-BEE0-0C82A9385231">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_ID" id="624F4693-B479-C824-8D79-D68587BF45F3">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="QUANTITY_ON_HAND" id="753381D8-6298-5B1A-2599-0D005985316A">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="INV_PRODUCT_IX" id="5C47BAFD-65B9-7EB1-EF70-2BBE4DE6C221">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="INVENTORY_IX" id="B05773C0-68A1-18F2-924C-9197531D0721">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="INVENTORIES_WAREHOUSES_FK" id="0287073E-20FF-D3B5-D915-10A5C2D0D115">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<validate>NO</validate>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="INVENTORIES_PRODUCT_ID_FK" id="4B1D2935-AE91-1F9A-DED7-5F90AC0C7727">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="INVENTORY_PK" id="A4058949-6174-7FD7-5AE5-0017C711C6F8">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<existingIndex>B05773C0-68A1-18F2-924C-9197531D0721</existingIndex>
+<indexSegment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

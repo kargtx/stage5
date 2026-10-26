@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ORDERS" directorySegmentName="seg_0" id="A629F111-A85E-FBEF-E231-B93C05062CE8">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>560B7C30-8853-3CD6-6A8D-036373CCAA02</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CUSTOMER_ID" id="09B441E5-97BC-7E20-0738-815005D6EFAA">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_ID" id="46F3E6BF-6747-6FC4-E5A9-C695C91CD411">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_TOTAL" id="49FF5CEC-C9FD-51F7-016C-65DEAAB81364">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROMOTION_ID" id="4B6F2D67-223D-F332-3465-985782A9B540">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_STATUS" id="AA25822C-DA31-328A-502C-FC6E0491D0E4">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_DATE" id="B6ED99E7-CC76-057C-6F68-B49B7F091CDA">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SALES_REP_ID" id="D3F94680-375C-B06A-904F-B6C59A6EAF91">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ORDER_MODE" id="E23674D6-442C-CFC8-C4EC-77CCC29E8B81">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ORD_CUSTOMER_IX" id="292591A6-AFCD-C38E-7740-81C057F601E7">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ORDER_PK" id="759ADDDB-7210-DACE-FC95-E877965AE214">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ORD_ORDER_DATE_IX" id="A65ED17E-E353-5667-C959-E2F3159829C2">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ORD_SALES_REP_IX" id="FE07E24A-1C4F-C152-8069-D27BEA3ADD03">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<schemaObject>51CE58EC-FE36-D214-B8B7-6562CD608D52</schemaObject>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDERS_SALES_REP_FK" id="18215831-4F3D-2977-AB5B-6B8C7EE81343">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDERS_CUSTOMER_ID_FK" id="F0102F17-3518-30DD-83CB-5EF85C7ACCBC">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ORDER_PK" id="FE8C2B0B-DD9D-46C0-2CD3-B3A0722A3075">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<segment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</segment>
+<tableSpace>59D07C02-F783-5D1E-582C-16DAEFE4A5A7</tableSpace>
+<existingIndex>759ADDDB-7210-DACE-FC95-E877965AE214</existingIndex>
+<indexSegment>AB9F38BE-0DC4-27F9-0F7F-BEC499157DE4</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,343 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C46D619E-85FC-A914-0417-939641BB2FB5" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUSTOMERS">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUSTOMERS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Contains customers data either entered by an employee or by the customer
+him/herself over the Web.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUSTOMER_ID" id="CDECC277-0F5C-C26E-7F8B-BA343E606497">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUSTOMER_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary key column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<constraintName>CUSTOMER_ID_MIN</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="customer_id &gt; 0"/>
+<implementationDef dbType="Oracle Database 11g" definition="customer_id &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUST_FIRST_NAME" id="DB6766F7-3C74-0B1E-B478-FC26B44E047E">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUST_FIRST_NAME</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[NOT NULL constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>CUST_FNAME_NN</notNullConstraintName>
+</Column>
+<Column name="CUST_LAST_NAME" id="6B010E9C-7604-0F4F-0FC0-820DB62C09CA">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUST_LAST_NAME</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[NOT NULL constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>CUST_LNAME_NN</notNullConstraintName>
+</Column>
+<Column name="CUST_ADDRESS" id="686BD0A6-1386-36C8-1E54-2D20AE3DBE2C">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUST_ADDRESS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Object column of type address_typ.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<allowSubtypeSubstitution>false</allowSubtypeSubstitution>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PHONE_NUMBERS" id="897686E3-A539-94C8-385C-58E29EDA17F3">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>PHONE_NUMBERS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Varray column of type phone_list_typ]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NLS_LANGUAGE" id="54E5EF11-23AC-22CB-9031-7F4BC3834651">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>NLS_LANGUAGE</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 BYTE</dataTypeSize>
+<ownDataTypeParameters>3 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NLS_TERRITORY" id="9A921D60-0C0B-0B93-B0B2-BC0E0461F689">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>NLS_TERRITORY</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREDIT_LIMIT" id="90311E7F-2A6F-B518-1344-A58A471D1992">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CREDIT_LIMIT</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Check constraint.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<constraintName>CUSTOMER_CREDIT_LIMIT_MAX</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="credit_limit &lt;= 5000"/>
+<implementationDef dbType="Oracle Database 11g" definition="credit_limit &lt;= 5000"/>
+</checkConstraint>
+<ownDataTypeParameters>,9,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUST_EMAIL" id="C3D346DE-4DC5-F72B-3ED2-8094D192A679">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUST_EMAIL</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_MGR_ID" id="46DCF862-A040-5715-D6EC-E5E67C2ED989">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>ACCOUNT_MGR_ID</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[References hr.employees.employee_id.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CUST_GEO_LOCATION" id="1B0A407A-720A-2D89-01AC-90A19C688E1C">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>CUST_GEO_LOCATION</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[SDO (spatial) column.]]></commentInRDBMS>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<allowSubtypeSubstitution>false</allowSubtypeSubstitution>
+<use>3</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATE_OF_BIRTH" id="B52FC7B6-2A10-4077-D643-134A9F989FBA">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>DATE_OF_BIRTH</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARITAL_STATUS" id="3FCFB078-74B6-A47C-6AD2-75DF98D25FFE">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>MARITAL_STATUS</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENDER" id="79064DB6-D512-EBC8-4AA0-F6A676B3171E">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>GENDER</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INCOME_LEVEL" id="8EF53988-ED46-C319-12CB-D81EA462E491">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>CUSTOMERS</sourceObjSchema>
+<sourceObjName>INCOME_LEVEL</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6DF31231-238E-2F32-765B-CE70AC24B46B" name="CUSTOMERS_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUSTOMERS_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDECC277-0F5C-C26E-7F8B-BA343E606497"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F60627C-EF41-1D93-7A4E-75A7B3292261" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUST_ACCOUNT_MANAGER_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUST_ACCOUNT_MANAGER_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46DCF862-A040-5715-D6EC-E5E67C2ED989"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4BF64CD1-067A-57E7-6A0B-3FE5B03B6755" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUST_EMAIL_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUST_EMAIL_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C3D346DE-4DC5-F72B-3ED2-8094D192A679"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F155479-8D14-610A-F88B-F6560AB6144B" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUST_LNAME_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUST_LNAME_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B010E9C-7604-0F4F-0FC0-820DB62C09CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2C6AF8A7-4F4C-60ED-F772-5C0E7430286F" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUSTOMERS_PK">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUSTOMERS_PK</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDECC277-0F5C-C26E-7F8B-BA343E606497"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36268E42-E9E9-B230-1678-498DE18FE6D6" schemaObject="51CE58EC-FE36-D214-B8B7-6562CD608D52" name="CUST_UPPER_NAME_IX">
+<sourceConnName>OE</sourceConnName>
+<sourceObjSchema>OE</sourceObjSchema>
+<sourceObjName>CUST_UPPER_NAME_IX</sourceObjName>
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexExpression>UPPER(&quot;CUST_LAST_NAME&quot;), UPPER(&quot;CUST_FIRST_NAME&quot;)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="2ECD1C5E-9B98-66CE-955E-2D290952E824" name="CUSTOMERS_ACCOUNT_MANAGER_FK">
+<createdBy>danch</createdBy>
+<createdTime>2026-10-22 08:50:13 UTC</createdTime>
+<ownerDesignName>ffff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46DCF862-A040-5715-D6EC-E5E67C2ED989"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
