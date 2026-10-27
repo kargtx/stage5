@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLim xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lim>
+    <LimID>1</LimID>
+    <Name>Граница для канала 1</Name>
+    <IsBoundToCnl>true</IsBoundToCnl>
+    <IsShared>false</IsShared>
+    <LoLo>20</LoLo>
+    <Low>30</Low>
+    <High>70</High>
+    <HiHi>80</HiHi>
+    <Deadband xsi:nil="true" />
+  </Lim>
+  <Lim>
+    <LimID>2</LimID>
+    <Name>Граница для канала 2</Name>
+    <IsBoundToCnl>false</IsBoundToCnl>
+    <IsShared>false</IsShared>
+    <LoLo>0</LoLo>
+    <Low>1</Low>
+    <High>9</High>
+    <HiHi>10</HiHi>
+    <Deadband xsi:nil="true" />
+  </Lim>
+  <Lim>
+    <LimID>3</LimID>
+    <Name>Граница для канала 3</Name>
+    <IsBoundToCnl>false</IsBoundToCnl>
+    <IsShared>false</IsShared>
+    <LoLo>0</LoLo>
+    <Low>10</Low>
+    <High>90</High>
+    <HiHi>100</HiHi>
+    <Deadband xsi:nil="true" />
+  </Lim>
+</ArrayOfLim>
