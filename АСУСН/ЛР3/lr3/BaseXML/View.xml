@@ -3,7 +3,7 @@
   <View>
     <ViewID>1</ViewID>
     <Path>Lab3_Mimic.mim</Path>
-    <ViewTypeID>6</ViewTypeID>
+    <ViewTypeID>7</ViewTypeID>
     <Title>Мнемосхема узла</Title>
     <Ord xsi:nil="true" />
     <Hidden>false</Hidden>
