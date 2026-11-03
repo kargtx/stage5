@@ -473,7 +473,7 @@ int main(int argc, char *argv[])
 // Аналитическое значение: S_exact = 4054.6875
 // Запуск: integ.exe N NTh [pin] [wait]
 // 
-
+/*
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>

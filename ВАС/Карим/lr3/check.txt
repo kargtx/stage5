@@ -1,0 +1,72 @@
+==== gcc 
+C:\Users\kargt\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\gcc.exe
+gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r2) 16.2.0
+Copyright (C) 2026 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==== mpiexec 
+ИНФОРМАЦИЯ: не удается найти файлы по заданным шаблонам.
+ИНФОРМАЦИЯ: не удается найти файлы по заданным шаблонам.
+==== MSMPI env 
+Переменная среды MSMPI  не определена
+==== dirs 
+Не удается найти указанный файл.
+Файл не найден
+Файл не найден
+Файл не найден
+autorebase.bat
+clang64
+clang64.exe
+clang64.ico
+clang64.ini
+clangarm64
+clangarm64.exe
+clangarm64.ico
+clangarm64.ini
+components.xml
+dev
+etc
+home
+InstallationLog.txt
+installer.dat
+installerResources
+mingw32
+mingw32.exe
+mingw32.ico
+mingw32.ini
+mingw64
+mingw64.exe
+mingw64.ico
+mingw64.ini
+msys2.exe
+msys2.ico
+msys2.ini
+msys2_shell.cmd
+network.xml
+opt
+tmp
+ucrt64
+ucrt64.exe
+ucrt64.ico
+ucrt64.ini
+uninstall.dat
+uninstall.exe
+uninstall.ini
+usr
+var
+Файл не найден
+Файл не найден
+Файл не найден
+Файл не найден
+==== PATH 
+C:\Python314\Scripts\;C:\Python314\;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;d:\ediabas\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\WireGuard\;C:\Program Files\RuDesktop\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\ZeroTier\One\;C:\Users\kargt\AppData\Local\Programs\Python\Launcher\;C:\Users\kargt\AppData\Local\Microsoft\WindowsApps;C:\Users\kargt\.dotnet\tools;C:\Users\kargt\AppData\Local\Programs\Antigravity\bin;C:\Users\kargt\AppData\Local\Programs\Microsoft VS Code\bin;C:\adb;C:\ADB\;C:\Program Files\nodejs\;C:\Program Files\WSL\;C:\Users\kargt\AppData\Local\agy\bin;C:\Users\kargt\AppData\Local\Programs\Python\Launcher\;C:\Users\kargt\AppData\Local\Microsoft\WindowsApps;C:\Users\kargt\.dotnet\tools;C:\Users\kargt\AppData\Local\Programs\Antigravity\bin;C:\Users\kargt\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kargt\AppData\Local\Microsoft\WinGet\Links;C:\Program Files\Antigravity IDE\bin;C:\Users\kargt\AppData\Roaming\npm;C:\Users\kargt\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin; 
+==== cpu 
+
+
+Name                      : Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+NumberOfCores             : 4
+NumberOfLogicalProcessors : 8
+
+
+
