@@ -1,0 +1,472 @@
+0: Методические указания к лабораторной работе №6 
+1: Тема: Комплексная работа: сборка и отладка макета распределённой системы управления (программная реализация на Python)
+2: 1. Цель работы
+3: Закрепить навыки, полученные в лабораторных работах №1–5. Построить полностью программный макет распределённой системы управления, включающий два виртуальных ПЛК, SCADA-эмулятор, имитатор технологического объекта и промышленную сеть (Modbus TCP). Провести комплексное тестирование в штатных и нештатных режимах.
+4: Задачи работы:
+5: Реализовать имитатор технологического объекта на Python;
+6: Реализовать два виртуальных ПЛК на Python (каждый – отдельный процесс);
+7: Организовать обмен данными между ПЛК и SCADA через Modbus TCP;
+8: Реализовать SCADA-эмулятор с мнемосхемой и трендами;
+9: Провести испытания в нормальном и аварийном режимах;
+10: Проанализировать работу распределённой архитектуры.
+11: 2. Теоретическая часть
+12: 2.1. Что такое «виртуальный ПЛК» на Python
+13: Реальный ПЛК – это промышленный компьютер, который циклически выполняет программу управления. Мы можем смоделировать его поведение на Python:
+14: Цикл ПЛК – бесконечный цикл с фиксированным периодом (например, 100 мс). На каждом шаге:
+15: Читаются входные сигналы (от датчиков/имитатора);
+16: Выполняется программа управления (ПИД, логика);
+17: Записываются выходные сигналы (в Modbus-регистры или напрямую имитатору).
+18: Modbus TCP Server – виртуальный ПЛК «выставляет» свои регистры в сеть, чтобы SCADA и другие ПЛК могли их читать.
+19: Modbus TCP Client – виртуальный ПЛК может читать данные других ПЛК и записывать команды.
+20: Таким образом, каждый «ПЛК» – это Python-скрипт, который:
+21: запускает Modbus TCP Server (через pymodbus);
+22: выполняет циклическую программу управления;
+23: обменивается данными с имитатором объекта (через сокет или файл).
+24: 2.2. Архитектура макета
+25: text
+26: ┌────────────────────────────────────────────────────────────────┐
+27: │                     Компьютер (localhost)                      │
+28: │                                                                │
+29: │  ┌──────────────┐    Modbus TCP    ┌──────────────────┐        │
+30: │  │  SCADA       │◄────────────────►│  ПЛК №1 (Python) │        │
+31: │  │  (Python)    │   порт 5020      │  ПИД-регулятор   │        │
+32: │  └──────────────┘                  └────────┬─────────┘        │
+33: │                                             │                  │
+34: │                                    Modbus TCP (порт 5021)      │
+35: │                                             ▼                  │
+36: │                                    ┌──────────────────┐        │
+37: │                                    │  ПЛК №2 (Python) │        │
+38: │                                    │  Насос + клапан  │        │
+39: │                                    └────────┬─────────┘        │
+40: │                                             │                  │
+41: │                                    TCP-сокет (порт 9999)       │
+42: │                                             ▼                  │
+43: │                                    ┌──────────────────┐        │
+44: │                                    │  Имитатор объекта│        │
+45: │                                    │  (Python)        │        │
+46: │                                    └──────────────────┘        │
+47: └────────────────────────────────────────────────────────────────┘
+48: Важно: все компоненты запускаются как отдельные процессы на одном компьютере и общаются через localhost (127.0.0.1).
+49: 2.3. Функции компонентов
+50: 3. Оборудование и программное обеспечение
+51: Персональный компьютер с ОС Windows/Linux;
+52: Python 3.9+;
+53: Библиотеки:
+54: pymodbus – Modbus TCP;
+55: numpy – расчёты;
+56: matplotlib – графики (для SCADA);
+57: tkinter (встроен в Python) – простой GUI для SCADA.
+58: Установка библиотек:
+59: text
+60: pip install pymodbus numpy matplotlib
+62: 4. Порядок выполнения работы
+63: 4.1. Подготовительный этап 
+64: Изучить теоретическую часть.
+65: Получить у преподавателя индивидуальный вариант (см. Приложение).
+66: Убедиться, что все библиотеки установлены.
+67: 4.2. Реализация имитатора объекта 
+68: Создать файл plant_simulator.py:
+69: python
+70: import socket
+71: import json
+72: import time
+74: class PlantSimulator:
+75:     """
+76:     Имитатор технологического объекта:
+77:     резервуар с жидкостью, нагреватель, насос, клапан.
+78:     """
+79:     def __init__(self):
+80:         self.temperature = 20.0
+81:         self.level = 50.0
+82:         self.pressure = 1.0
+83:         self.env_temp = 20.0
+85:         self.K_heat = 0.5
+86:         self.K_cool = 0.05
+87:         self.K_in = 2.0
+88:         self.K_out = 1.0
+90:         # Управляющие воздействия (от ПЛК №2)
+91:         self.heater_power = 0.0
+92:         self.pump_on = False
+93:         self.valve_open = False
+95:     def step(self, dt=0.1):
+96:         """Один шаг моделирования."""
+97:         # Нагрев/охлаждение
+98:         dT = (self.heater_power * self.K_heat
+99:               - self.K_cool * (self.temperature - self.env_temp)) * dt
+100:         self.temperature += dT
+102:         # Уровень
+103:         q_in = self.K_in if self.pump_on else 0.0
+104:         q_out = self.K_out if self.valve_open else 0.0
+105:         self.level += (q_in - q_out) * dt
+107:         # Ограничения
+108:         self.level = max(0.0, min(100.0, self.level))
+109:         self.temperature = max(0.0, min(200.0, self.temperature))
+111:         # Давление
+112:         self.pressure = 0.5 + 0.05 * self.level + 0.02 * self.temperature
+114:         return {
+115:             'temperature': round(self.temperature, 2),
+116:             'level': round(self.level, 2),
+117:             'pressure': round(self.pressure, 3)
+118:         }
+121: def run_server(host='127.0.0.1', port=9999):
+122:     plant = PlantSimulator()
+123:     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+124:     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+125:     server.bind((host, port))
+126:     server.listen(1)
+127:     print(f"Имитатор объекта запущен на {host}:{port}")
+129:     conn, addr = server.accept()
+130:     print(f"Подключение от {addr}")
+132:     try:
+133:         while True:
+134:             # Приём команд от ПЛК №2
+135:             data = conn.recv(1024)
+136:             if not data:
+137:                 break
+138:             commands = json.loads(data.decode('utf-8'))
+139:             plant.heater_power = commands.get('heater_power', 0.0)
+140:             plant.pump_on = commands.get('pump_on', False)
+141:             plant.valve_open = commands.get('valve_open', False)
+143:             # Шаг моделирования
+144:             state = plant.step(dt=0.1)
+146:             # Отправка состояния
+147:             conn.sendall(json.dumps(state).encode('utf-8'))
+148:             time.sleep(0.1)
+149:     finally:
+150:         conn.close()
+151:         server.close()
+154: if __name__ == '__main__':
+155:     run_server()
+156: Пояснение: имитатор – это TCP-сервер. ПЛК №2 подключается к нему как клиент, отправляет команды (мощность нагрева, насос, клапан) и получает текущее состояние объекта.
+157: 4.3. Реализация ПЛК №1 
+158: Создать файл plc1.py:
+159: python
+160: from pymodbus.server import StartTcpServer
+161: from pymodbus.datastore import (
+162:     ModbusSequentialDataBlock,
+163:     ModbusSlaveContext,
+164:     ModbusServerContext
+165: )
+166: import threading
+167: import time
+169: # Хранилище данных ПЛК №1
+170: # HR[0] = Temperature × 10
+171: # HR[1] = Heater_Power × 10
+172: # HR[2] = Setpoint × 10
+173: # HR[3] = Level
+174: # HR[4] = Pressure × 100
+175: # CO[0] = Pump_On
+176: # CO[1] = Valve_Open
+177: store = ModbusSlaveContext(
+178:     di=ModbusSequentialDataBlock(0, [0]*100),
+179:     co=ModbusSequentialDataBlock(0, [0]*100),
+180:     hr=ModbusSequentialDataBlock(0, [0]*100),
+181:     ir=ModbusSequentialDataBlock(0, [0]*100)
+182: )
+183: context = ModbusServerContext(slaves=store, single=True)
+185: # Состояние ПЛК
+186: state = {
+187:     'temperature': 20.0,
+188:     'setpoint': 60.0,
+189:     'heater_power': 0.0,
+190:     'integral': 0.0,
+191:     'prev_error': 0.0,
+192:     'Kp': 2.0, 'Ki': 0.5, 'Kd': 0.1
+193: }
+196: def pid_step():
+197:     """Один шаг ПИД-регулятора."""
+198:     error = state['setpoint'] - state['temperature']
+199:     state['integral'] += error * 0.1
+200:     derivative = (error - state['prev_error']) / 0.1
+201:     output = (state['Kp'] * error
+202:               + state['Ki'] * state['integral']
+203:               + state['Kd'] * derivative)
+204:     state['prev_error'] = error
+206:     # Ограничение
+207:     output = max(0.0, min(100.0, output))
+208:     state['heater_power'] = output
+209:     return output
+212: def control_loop():
+213:     """Цикл управления ПЛК №1 (100 мс)."""
+214:     while True:
+215:         # Чтение данных от ПЛК №2 через Modbus (или из локального состояния)
+216:         # В упрощённом варианте – температура обновляется через Modbus-клиент
+217:         # Здесь для простоты: температура берётся из глобального состояния,
+218:         # которое обновляет отдельный клиент (см. plc1_modbus_client.py)
+220:         heater = pid_step()
+222:         # Запись в Modbus-регистры
+223:         store.setValues(3, 0, [int(state['temperature'] * 10)])
+224:         store.setValues(3, 1, [int(heater * 10)])
+225:         store.setValues(3, 2, [int(state['setpoint'] * 10)])
+227:         time.sleep(0.1)
+230: def modbus_server():
+231:     """Запуск Modbus TCP сервера ПЛК №1."""
+232:     StartTcpServer(context, address=("127.0.0.1", 5020))
+235: if __name__ == '__main__':
+236:     # Запуск сервера в отдельном потоке
+237:     t_server = threading.Thread(target=modbus_server, daemon=True)
+238:     t_server.start()
+240:     print("ПЛК №1 запущен. Modbus TCP на порту 5020.")
+241:     print("HR[0]=T, HR[1]=Heater, HR[2]=Setpoint")
+243:     # Запуск цикла управления
+244:     control_loop()
+245: Пояснение: ПЛК №1 реализует ПИД-регулятор и выставляет свои регистры в Modbus TCP на порту 5020. SCADA и ПЛК №2 могут их читать.
+246: 4.4. Реализация ПЛК №2 
+247: Создать файл plc2.py:
+248: python
+249: from pymodbus.server import StartTcpServer
+250: from pymodbus.datastore import (
+251:     ModbusSequentialDataBlock,
+252:     ModbusSlaveContext,
+253:     ModbusServerContext
+254: )
+255: from pymodbus.client import ModbusTcpClient
+256: import socket
+257: import json
+258: import threading
+259: import time
+261: # Хранилище данных ПЛК №2
+262: store = ModbusSlaveContext(
+263:     di=ModbusSequentialDataBlock(0, [0]*100),
+264:     co=ModbusSequentialDataBlock(0, [0]*100),
+265:     hr=ModbusSequentialDataBlock(0, [0]*100),
+266:     ir=ModbusSequentialDataBlock(0, [0]*100)
+267: )
+268: context = ModbusServerContext(slaves=store, single=True)
+270: # Состояние ПЛК №2
+271: state = {
+272:     'temperature': 20.0,
+273:     'level': 50.0,
+274:     'pressure': 1.0,
+275:     'pump_on': False,
+276:     'valve_open': False,
+277:     'heater_power': 0.0
+278: }
+280: # Соединение с имитатором объекта
+281: plant_socket = None
+284: def connect_to_plant():
+285:     """Подключение к имитатору объекта."""
+286:     global plant_socket
+287:     plant_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+288:     plant_socket.connect(('127.0.0.1', 9999))
+289:     print("ПЛК №2 подключён к имитатору объекта")
+292: def read_from_plc1():
+293:     """Чтение данных от ПЛК №1 через Modbus TCP."""
+294:     client = ModbusTcpClient('127.0.0.1', port=5020)
+295:     client.connect()
+296:     try:
+297:         hr = client.read_holding_registers(0, 3, slave=1)
+298:         if not hr.isError():
+299:             state['temperature'] = hr.registers[0] / 10.0
+300:             state['heater_power'] = hr.registers[1] / 10.0
+301:             setpoint = hr.registers[2] / 10.0
+302:     finally:
+303:         client.close()
+306: def control_loop():
+307:     """Цикл управления ПЛК №2 (100 мс)."""
+308:     while True:
+309:         # Чтение данных от ПЛК №1
+310:         read_from_plc1()
+312:         # Логика управления (по варианту)
+313:         if state['temperature'] > 70.0:
+314:             state['pump_on'] = True
+315:         elif state['temperature'] < 50.0:
+316:             state['pump_on'] = False
+318:         if state['level'] > 80.0:
+319:             state['valve_open'] = True
+320:         elif state['level'] < 30.0:
+321:             state['valve_open'] = False
+323:         # Отправка команд имитатору объекта
+324:         if plant_socket:
+325:             commands = {
+326:                 'heater_power': state['heater_power'],
+327:                 'pump_on': state['pump_on'],
+328:                 'valve_open': state['valve_open']
+329:             }
+330:             try:
+331:                 plant_socket.sendall(json.dumps(commands).encode('utf-8'))
+332:                 data = plant_socket.recv(1024)
+333:                 if data:
+334:                     plant_state = json.loads(data.decode('utf-8'))
+335:                     state['level'] = plant_state['level']
+336:                     state['pressure'] = plant_state['pressure']
+337:             except Exception as e:
+338:                 print(f"Ошибка связи с имитатором: {e}")
+340:         # Запись в Modbus-регистры ПЛК №2
+341:         store.setValues(3, 0, [int(state['temperature'] * 10)])
+342:         store.setValues(3, 1, [int(state['level'])])
+343:         store.setValues(3, 2, [int(state['pressure'] * 100)])
+344:         store.setValues(2, 0, [1 if state['pump_on'] else 0])
+345:         store.setValues(2, 1, [1 if state['valve_open'] else 0])
+347:         time.sleep(0.1)
+350: def modbus_server():
+351:     """Запуск Modbus TCP сервера ПЛК №2."""
+352:     StartTcpServer(context, address=("127.0.0.1", 5021))
+355: if __name__ == '__main__':
+356:     # Подключение к имитатору
+357:     connect_to_plant()
+359:     # Запуск Modbus-сервера в отдельном потоке
+360:     t_server = threading.Thread(target=modbus_server, daemon=True)
+361:     t_server.start()
+363:     print("ПЛК №2 запущен. Modbus TCP на порту 5021.")
+365:     # Запуск цикла управления
+366:     control_loop()
+367: Пояснение: ПЛК №2 читает данные от ПЛК №1 (через Modbus TCP), принимает решение о включении насоса и клапана, отправляет команды имитатору объекта и выставляет свои регистры в Modbus TCP на порту 5021.
+368: 4.5. Реализация SCADA-эмулятора 
+369: Создать файл scada.py:
+370: python
+371: from pymodbus.client import ModbusTcpClient
+372: import matplotlib.pyplot as plt
+373: import matplotlib.animation as animation
+374: import time
+376: # Подключение к ПЛК №1
+377: client1 = ModbusTcpClient('127.0.0.1', port=5020)
+378: client1.connect()
+380: # Подключение к ПЛК №2
+381: client2 = ModbusTcpClient('127.0.0.1', port=5021)
+382: client2.connect()
+384: # История данных
+385: history = {'t': [], 'temp': [], 'setpoint': [], 'level': [], 'pressure': []}
+386: start = time.time()
+389: def read_all():
+390:     """Чтение данных от обоих ПЛК."""
+391:     data = {}
+393:     hr1 = client1.read_holding_registers(0, 3, slave=1)
+394:     if not hr1.isError():
+395:         data['temp'] = hr1.registers[0] / 10.0
+396:         data['heater'] = hr1.registers[1] / 10.0
+397:         data['setpoint'] = hr1.registers[2] / 10.0
+399:     hr2 = client2.read_holding_registers(0, 3, slave=1)
+400:     if not hr2.isError():
+401:         data['level'] = hr2.registers[1]
+402:         data['pressure'] = hr2.registers[2] / 100.0
+404:     co2 = client2.read_coils(0, 2, slave=1)
+405:     if not co2.isError():
+406:         data['pump'] = co2.bits[0]
+407:         data['valve'] = co2.bits[1]
+409:     return data
+412: def update(frame):
+413:     data = read_all()
+414:     if not data or 'temp' not in data:
+415:         return
+417:     t = time.time() - start
+418:     history['t'].append(t)
+419:     history['temp'].append(data['temp'])
+420:     history['setpoint'].append(data.get('setpoint', 60.0))
+421:     history['level'].append(data.get('level', 0))
+422:     history['pressure'].append(data.get('pressure', 0))
+424:     for k in history:
+425:         if len(history[k]) > 300:
+426:             history[k].pop(0)
+428:     ax1.clear()
+429:     ax1.plot(history['t'], history['temp'], 'r-', label='Температура')
+430:     ax1.plot(history['t'], history['setpoint'], 'g--', label='Уставка')
+431:     ax1.set_ylabel('°C')
+432:     ax1.legend()
+433:     ax1.grid(True)
+435:     ax2.clear()
+436:     ax2.plot(history['t'], history['level'], 'b-', label='Уровень')
+437:     ax2.set_ylabel('%')
+438:     ax2.legend()
+439:     ax2.grid(True)
+441:     ax3.clear()
+442:     ax3.plot(history['t'], history['pressure'], 'k-', label='Давление')
+443:     ax3.set_ylabel('бар')
+444:     ax3.set_xlabel('Время, с')
+445:     ax3.legend()
+446:     ax3.grid(True)
+449: if __name__ == '__main__':
+450:     fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(10, 8))
+451:     ani = animation.FuncAnimation(fig, update, interval=500)
+452:     plt.tight_layout()
+453:     plt.show()
+454: Пояснение: SCADA-эмулятор подключается к обоим ПЛК через Modbus TCP, читает данные и строит графики в реальном времени.
+455: 4.6. Порядок запуска 
+456: Открыть 4 терминала (или 4 окна командной строки) и запустить в следующем порядке:
+457: Терминал 1: python plant_simulator.py – имитатор объекта;
+458: Терминал 2: python plc1.py – ПЛК №1 (ПИД-регулятор);
+459: Терминал 3: python plc2.py – ПЛК №2 (насос, клапан);
+460: Терминал 4: python scada.py – SCADA-эмулятор.
+461: Проверка: в SCADA должны появиться графики температуры, уровня и давления.
+462: 4.7. Комплексные испытания 
+463: Тест 1: Нормальный режим 
+464: Уставка 60 °C;
+465: Система должна выйти на режим за 2–3 минуты;
+466: Зафиксировать переходный процесс.
+467: Тест 2: Изменение уставки 
+468: В файле plc1.py изменить state['setpoint'] = 75.0;
+469: Перезапустить ПЛК №1;
+470: Наблюдать за реакцией системы.
+471: Тест 3: Отказ датчика температуры 
+472: В plant_simulator.py внести отказ: например, при temperature > 80 возвращать -50;
+473: Наблюдать за реакцией ПЛК №1 и SCADA;
+474: Зафиксировать время реакции.
+475: Тест 4: Перегрузка 
+476: Установить уставку 120 °C;
+477: Система должна ограничить нагрев;
+478: Зафиксировать поведение.
+479: Тест 5: Потеря связи 
+480: Остановить plc1.py (Ctrl+C);
+481: Проверить, как SCADA и ПЛК №2 реагируют на потерю связи;
+482: Зафиксировать поведение.
+483: 4.8. Анализ результатов 
+484: Заполнить таблицу:
+485: 4.9. Оформление результатов 
+486: Сохранить:
+487: Графики из SCADA;
+488: Скриншоты терминалов;
+489: Листинги всех программ;
+490: Таблицу тестов.
+491: 5. Требования к отчёту
+492: Отчёт должен содержать:
+493: Титульный лист.
+494: Цель работы и задачи.
+495: Краткое теоретическое введение (распределённая АС СН).
+496: Схема макета.
+497: Листинги программ (plant_simulator.py, plc1.py, plc2.py, scada.py).
+498: Результаты испытаний (таблица, графики).
+499: Анализ результатов.
+500: Выводы.
+501: Ответы на контрольные вопросы.
+502: Список источников.
+503: 6. Контрольные вопросы
+504: Какие преимущества даёт распределённая архитектура?
+505: Что произойдёт, если один из ПЛК потеряет связь? Как система должна себя вести?
+506: Как в SCADA реализовать переключение между основным и резервным датчиком?
+507: Какой протокол использован для связи между ПЛК? Почему?
+508: Что такое «цикл ПЛК»? Как реализован цикл в вашей программе?
+509: Как обеспечить детерминизм в распределённой системе на Python?
+510: Какие компоненты реальной системы заменены виртуальными?
+511: Какие ограничения у программной модели по сравнению с реальной АС СН?
+515: 7. Типичные ошибки и способы их устранения
+516: Приложение. Варианты заданий
+517: Требование: реализовать имитатор с 3 параметрами, ПИД-регулятор, логику ПЛК №2 по варианту, SCADA с трендами, провести 5 тестов.
+--- TABLE 0 ---
+['Компонент', 'Роль', 'Порт']
+['Имитатор объекта', 'Моделирует физику: нагрев, уровень, давление', '9999 (TCP-сокет)']
+['ПЛК №1', 'ПИД-регулятор температуры, Modbus TCP Server', '5020']
+['ПЛК №2', 'Управление насосом и клапаном, Modbus TCP Server', '5021']
+['SCADA', 'Отображение, архивирование, Modbus TCP Client', '–']
+--- TABLE 1 ---
+['Тест', 'Время реакции', 'Обнаруженные проблемы', 'Оценка работы']
+['Нормальный режим', '', '', '']
+['Изменение уставки', '', '', '']
+['Отказ датчика', '', '', '']
+['Перегрузка', '', '', '']
+['Потеря связи', '', '', '']
+--- TABLE 2 ---
+['Ошибка', 'Причина', 'Решение']
+['Порт занят', 'Другой процесс использует порт', 'Сменить порт или закрыть процесс']
+['SCADA не подключается', 'ПЛК не запущен', 'Запустить ПЛК первым']
+['Modbus timeout', 'Неверный Unit ID', 'Указать slave=1']
+['Имитатор не отвечает', 'Не подключён ПЛК №2', 'Проверить порядок запуска']
+['График не обновляется', 'Не установлен backend', "matplotlib.use('TkAgg')"]
+['ПИД «уходит»', 'Неверные коэффициенты', 'Подобрать Kp, Ki, Kd']
+--- TABLE 3 ---
+['Вариант', 'Объект', 'Уставка', 'Логика ПЛК №2']
+['1', 'Резервуар + нагреватель', '60 °C', 'Насос при T > 70, клапан при T < 50']
+['2', 'Теплообменник', '80 °C', 'Насос при T > 85, клапан при T < 70']
+['3', 'Реактор', '120 °C', 'Аварийное охлаждение при T > 130']
+['4', 'Котёл', '95 °C', 'Насос при P > 5, клапан при P < 3']
+['5', 'Сушильная камера', '70 °C', 'Насос при влажности > 80%']
+['6', 'Химический реактор', '150 °C', 'Двойной контур охлаждения']
