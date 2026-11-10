@@ -2,12 +2,12 @@
 <ArrayOfDevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Device>
     <DeviceNum>1</DeviceNum>
-    <Name>Эмулятор</Name>
-    <Code />
-    <DevTypeID>230</DevTypeID>
-    <NumAddress xsi:nil="true" />
+    <Name>PLC_Lab3</Name>
+    <Code>PLC</Code>
+    <DevTypeID>214</DevTypeID>
+    <NumAddress>1</NumAddress>
     <StrAddress />
     <CommLineNum>1</CommLineNum>
-    <Descr />
+    <Descr>Виртуальный ПЛК (Modbus TCP Slave, ID 1)</Descr>
   </Device>
 </ArrayOfDevice>

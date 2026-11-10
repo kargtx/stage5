@@ -401,4 +401,10 @@
     <Name>Пользовательская размерность</Name>
     <Descr>Добавляйте пользовательские элементы, начиная с этой строки</Descr>
   </Unit>
+  <Unit>
+    <UnitID>1002</UnitID>
+    <Name>бар</Name>
+    <Code>bar</Code>
+    <Descr>Бар</Descr>
+  </Unit>
 </ArrayOfUnit>

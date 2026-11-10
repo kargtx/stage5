@@ -2,6 +2,7 @@
 <ArrayOfCommLine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <CommLine>
     <CommLineNum>1</CommLineNum>
-    <Name>Эмулятор</Name>
+    <Name>Lab3_Modbus</Name>
+    <Descr>Modbus TCP, 127.0.0.1:502</Descr>
   </CommLine>
 </ArrayOfCommLine>

@@ -38,19 +38,28 @@
     </DataSource>
   </DataSources>
   <Lines>
-    <Line active="true" isBound="true" number="1" name="Эмулятор">
+    <Line active="true" isBound="true" number="1" name="Lab3_Modbus">
       <LineOptions>
         <ReqRetries>3</ReqRetries>
-        <CycleDelay>0</CycleDelay>
+        <CycleDelay>1000</CycleDelay>
         <CmdEnabled>true</CmdEnabled>
         <PollAfterCmd>true</PollAfterCmd>
         <DetailedLog>true</DetailedLog>
       </LineOptions>
-      <Channel type="" driver="" />
-      <CustomOptions />
+      <Channel type="TcpClient" driver="DrvCnlBasic">
+        <Option name="Behavior" value="Master" />
+        <Option name="ConnectionMode" value="Shared" />
+        <Option name="DisconnectOnError" value="true" />
+        <Option name="Host" value="127.0.0.1" />
+        <Option name="ReconnectAfter" value="5" />
+        <Option name="StayConnected" value="true" />
+        <Option name="TcpPort" value="502" />
+      </Channel>
+      <CustomOptions>
+        <Option name="TransMode" value="TCP" />
+      </CustomOptions>
       <DevicePolling>
-        <Device active="true" isBound="true" number="1" name="Эмулятор" driver="DrvSimulator" numAddress="0" strAddress="" pollOnCmd="false" timeout="0" delay="1000" time="00:00:00" period="00:00:00" cmdLine="" />
-        <Device active="true" isBound="true" number="2" name="qwerty" driver="DrvSimulator" numAddress="0" strAddress="" pollOnCmd="false" timeout="0" delay="1000" time="00:00:00" period="00:00:00" cmdLine="" />
+        <Device active="true" isBound="true" number="1" name="PLC_Lab3" driver="DrvModbus" numAddress="1" strAddress="" pollOnCmd="false" timeout="1000" delay="200" time="00:00:00" period="00:00:00" cmdLine="DrvModbus_Lab3.xml" />
       </DevicePolling>
     </Line>
   </Lines>

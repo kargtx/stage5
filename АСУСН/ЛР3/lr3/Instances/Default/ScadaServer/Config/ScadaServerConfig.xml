@@ -26,6 +26,18 @@
       <Option name="ReadOnly" value="false" />
       <Option name="UseCopyDir" value="false" />
     </Archive>
+    <Archive active="true" code="Min" name="Minute archive" kind="Historical" module="ModArcBasic">
+      <Option name="IsPeriodic" value="true" />
+      <Option name="LogEnabled" value="false" />
+      <Option name="MaxQueueSize" value="1000" />
+      <Option name="PullToPeriod" value="0" />
+      <Option name="ReadOnly" value="false" />
+      <Option name="Retention" value="365" />
+      <Option name="UseCopyDir" value="false" />
+      <Option name="WriteWithPeriod" value="true" />
+      <Option name="WritingPeriod" value="1" />
+      <Option name="WritingPeriodUnit" value="Minute" />
+    </Archive>
     <Archive active="true" code="Lab3" name="Lab3_Archive" kind="Historical" module="ModArcBasic">
       <Option name="IsPeriodic" value="true" />
       <Option name="LogEnabled" value="true" />

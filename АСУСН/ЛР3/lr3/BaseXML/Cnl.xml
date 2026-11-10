@@ -3,85 +3,136 @@
   <Cnl>
     <CnlNum>1</CnlNum>
     <Active>true</Active>
-    <Name>Temp_Value </Name>
-    <Code />
-    <DataTypeID>0</DataTypeID>
+    <Name>Temp_Value</Name>
+    <Code>Temp</Code>
+    <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
     <ObjNum>1</ObjNum>
     <DeviceNum>1</DeviceNum>
-    <TagNum>1</TagNum>
-    <TagCode />
-    <FormulaEnabled>false</FormulaEnabled>
-    <InFormula />
+    <TagNum xsi:nil="true" />
+    <TagCode>Temp</TagCode>
+    <FormulaEnabled>true</FormulaEnabled>
+    <InFormula>Cnl / 10</InFormula>
     <OutFormula />
-    <FormatID xsi:nil="true" />
+    <FormatID>3</FormatID>
     <OutFormatID xsi:nil="true" />
-    <QuantityID xsi:nil="true" />
+    <QuantityID>4</QuantityID>
     <UnitID>22</UnitID>
     <LimID>1</LimID>
-    <ArchiveMask>65538</ArchiveMask>
-    <EventMask xsi:nil="true" />
+    <ArchiveMask xsi:nil="true" />
+    <EventMask>19</EventMask>
   </Cnl>
   <Cnl>
     <CnlNum>2</CnlNum>
     <Active>true</Active>
     <Name>Pressure_Value</Name>
-    <Code />
-    <DataTypeID>0</DataTypeID>
+    <Code>Pressure</Code>
+    <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
     <ObjNum>1</ObjNum>
     <DeviceNum>1</DeviceNum>
-    <TagNum>3</TagNum>
-    <TagCode />
-    <FormulaEnabled>false</FormulaEnabled>
-    <InFormula />
+    <TagNum xsi:nil="true" />
+    <TagCode>Pressure</TagCode>
+    <FormulaEnabled>true</FormulaEnabled>
+    <InFormula>Cnl / 100</InFormula>
     <OutFormula />
-    <FormatID xsi:nil="true" />
+    <FormatID>4</FormatID>
     <OutFormatID xsi:nil="true" />
-    <QuantityID xsi:nil="true" />
-    <UnitID>75</UnitID>
+    <QuantityID>41</QuantityID>
+    <UnitID>1002</UnitID>
     <LimID>2</LimID>
-    <ArchiveMask>65538</ArchiveMask>
-    <EventMask xsi:nil="true" />
+    <ArchiveMask xsi:nil="true" />
+    <EventMask>19</EventMask>
   </Cnl>
   <Cnl>
     <CnlNum>3</CnlNum>
     <Active>true</Active>
     <Name>Level_Value</Name>
-    <Code />
-    <DataTypeID>0</DataTypeID>
+    <Code>Level</Code>
+    <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
     <ObjNum>1</ObjNum>
     <DeviceNum>1</DeviceNum>
-    <TagNum>1</TagNum>
-    <TagCode />
-    <FormulaEnabled>false</FormulaEnabled>
-    <InFormula />
+    <TagNum xsi:nil="true" />
+    <TagCode>Level</TagCode>
+    <FormulaEnabled>true</FormulaEnabled>
+    <InFormula>Cnl / 10</InFormula>
     <OutFormula />
-    <FormatID xsi:nil="true" />
+    <FormatID>3</FormatID>
     <OutFormatID xsi:nil="true" />
     <QuantityID xsi:nil="true" />
     <UnitID>101</UnitID>
     <LimID>3</LimID>
-    <ArchiveMask>65538</ArchiveMask>
-    <EventMask xsi:nil="true" />
+    <ArchiveMask xsi:nil="true" />
+    <EventMask>17</EventMask>
   </Cnl>
   <Cnl>
-    <CnlNum>5</CnlNum>
-    <Active>false</Active>
+    <CnlNum>4</CnlNum>
+    <Active>true</Active>
+    <Name>Pump_State</Name>
+    <Code>PumpState</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
-    <ObjNum xsi:nil="true" />
+    <ObjNum>1</ObjNum>
+    <DeviceNum>1</DeviceNum>
+    <TagNum xsi:nil="true" />
+    <TagCode>PumpState</TagCode>
+    <FormulaEnabled>false</FormulaEnabled>
+    <InFormula />
+    <OutFormula />
+    <FormatID>21</FormatID>
+    <OutFormatID xsi:nil="true" />
+    <QuantityID>11</QuantityID>
+    <UnitID xsi:nil="true" />
+    <LimID xsi:nil="true" />
+    <ArchiveMask xsi:nil="true" />
+    <EventMask>25</EventMask>
+  </Cnl>
+  <Cnl>
+    <CnlNum>5</CnlNum>
+    <Active>true</Active>
+    <Name>Pump_Control</Name>
+    <Code>PumpCtrl</Code>
+    <DataTypeID xsi:nil="true" />
+    <DataLen xsi:nil="true" />
+    <CnlTypeID>2</CnlTypeID>
+    <ObjNum>1</ObjNum>
+    <DeviceNum>1</DeviceNum>
+    <TagNum xsi:nil="true" />
+    <TagCode>PumpCtrl</TagCode>
+    <FormulaEnabled>false</FormulaEnabled>
+    <InFormula />
+    <OutFormula />
+    <FormatID>21</FormatID>
+    <OutFormatID xsi:nil="true" />
+    <QuantityID>11</QuantityID>
+    <UnitID xsi:nil="true" />
+    <LimID xsi:nil="true" />
+    <ArchiveMask xsi:nil="true" />
+    <EventMask>65</EventMask>
+  </Cnl>
+  <Cnl>
+    <CnlNum>6</CnlNum>
+    <Active>true</Active>
+    <Name>Alarm_Flag</Name>
+    <Code>Alarm</Code>
+    <DataTypeID xsi:nil="true" />
+    <DataLen xsi:nil="true" />
+    <CnlTypeID>3</CnlTypeID>
+    <ObjNum>1</ObjNum>
     <DeviceNum xsi:nil="true" />
     <TagNum xsi:nil="true" />
-    <FormulaEnabled>false</FormulaEnabled>
-    <FormatID xsi:nil="true" />
+    <TagCode />
+    <FormulaEnabled>true</FormulaEnabled>
+    <InFormula>(Val(1) &gt; 80 || Val(2) &gt; 8) ? 1.0 : 0.0</InFormula>
+    <OutFormula />
+    <FormatID>26</FormatID>
     <OutFormatID xsi:nil="true" />
-    <QuantityID xsi:nil="true" />
+    <QuantityID>11</QuantityID>
     <UnitID xsi:nil="true" />
     <LimID xsi:nil="true" />
     <ArchiveMask xsi:nil="true" />

@@ -3,7 +3,7 @@
   <GeneralOptions>
     <DefaultCulture />
     <DefaultTimeZone />
-    <DefaultStartPage />
+    <DefaultStartPage>~/View/1</DefaultStartPage>
     <EnableCommands>true</EnableCommands>
     <ShareStats>true</ShareStats>
     <MaxLogSize>1</MaxLogSize>
@@ -53,8 +53,8 @@
       <Option name="Retension" value="365" />
     </OptionGroup>
     <OptionGroup name="Chart">
-      <Option name="ChartArchiveCode" value="Min" />
-      <Option name="GapBetweenPoints" value="90" />
+      <Option name="ChartArchiveCode" value="Lab3" />
+      <Option name="GapBetweenPoints" value="10" />
     </OptionGroup>
     <OptionGroup name="Main">
       <Option name="AllowAuthApi" value="false" />

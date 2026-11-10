@@ -2,8 +2,8 @@
 <ArrayOfObj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Obj>
     <ObjNum>1</ObjNum>
-    <Name>Enterprise</Name>
-    <Code>Ent</Code>
+    <Name>Узел подготовки теплоносителя</Name>
+    <Code>Lab3</Code>
     <ParentObjNum xsi:nil="true" />
   </Obj>
 </ArrayOfObj>

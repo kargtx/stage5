@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceTemplate>
+  <Options>
+    <ZeroAddr>true</ZeroAddr>
+    <DecAddr>true</DecAddr>
+    <DefByteOrder2 />
+    <DefByteOrder4 />
+    <DefByteOrder8 />
+  </Options>
+  <ElemGroups>
+    <ElemGroup active="true" dataBlock="HoldingRegisters" address="0" name="Технологические параметры">
+      <Elem type="ushort" readOnly="true" tagCode="Temp" name="Температура x10" />
+      <Elem type="ushort" readOnly="true" tagCode="Pressure" name="Давление x100" />
+      <Elem type="ushort" readOnly="true" tagCode="Level" name="Уровень x10" />
+      <Elem type="ushort" readOnly="true" tagCode="PumpState" name="Состояние насоса" />
+      <Elem type="ushort" tagCode="PumpCtrl" name="Команда управления насосом" />
+    </ElemGroup>
+  </ElemGroups>
+  <Cmds />
+</DeviceTemplate>

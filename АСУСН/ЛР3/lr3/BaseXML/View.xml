@@ -4,8 +4,17 @@
     <ViewID>1</ViewID>
     <Path>Lab3_Mimic.mim</Path>
     <ViewTypeID>7</ViewTypeID>
-    <Title>Мнемосхема узла</Title>
-    <Ord xsi:nil="true" />
+    <Title>Lab3_Mimic — мнемосхема узла</Title>
+    <Ord>1</Ord>
+    <Hidden>false</Hidden>
+    <ObjNum>1</ObjNum>
+  </View>
+  <View>
+    <ViewID>2</ViewID>
+    <Path>Lab3_Table.tbl</Path>
+    <ViewTypeID>1</ViewTypeID>
+    <Title>Lab3 — таблица каналов</Title>
+    <Ord>2</Ord>
     <Hidden>false</Hidden>
     <ObjNum>1</ObjNum>
   </View>

@@ -1,595 +1,342 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Mimic editorVersion="6.0.2.1">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mimic editorVersion="6.0.0.0">
   <Dependencies />
   <Document>
-    <backColor>#1A202C</backColor>
-    <size>
-      <width>1050</width>
-      <height>650</height>
-    </size>
+    <BackColor>#F1F5F9</BackColor>
+    <Font><Inherit>false</Inherit><Name>Arial</Name><Size>14</Size></Font>
+    <Size><Width>1000</Width><Height>610</Height></Size>
   </Document>
   <Components>
-    <!-- 1. Header Panel -->
     <Panel>
       <ID>1</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2A4365</backColor>
-      <cornerRadius>
-        <topLeft>4</topLeft>
-        <topRight>4</topRight>
-        <bottomLeft>4</bottomLeft>
-        <bottomRight>4</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>25</x>
-        <y>20</y>
-      </location>
-      <size>
-        <width>1000</width>
-        <height>55</height>
-      </size>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>0</X><Y>0</Y></Location>
+      <Size><Width>1000</Width><Height>60</Height></Size>
+      <BackColor>#1F3A5F</BackColor>
     </Panel>
-    <!-- 2. Header Title Text -->
     <Text>
       <ID>2</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#FFFFFF</foreColor>
-      <font>
-        <size>16</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>35</x>
-        <y>30</y>
-      </location>
-      <size>
-        <width>980</width>
-        <height>35</height>
-      </size>
-      <text>АСУ СН: Мнемосхема технологического узла подготовки и сбора теплоносителя</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>20</X><Y>10</Y></Location>
+      <Size><Width>960</Width><Height>40</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>20</Size><Bold>true</Bold></Font><ForeColor>#FFFFFF</ForeColor>
+      <TextAlign>MiddleCenter</TextAlign>
+      <Text>АСУ СН — ЛР3. Мнемосхема Lab3_Mimic: узел подготовки теплоносителя (вариант 1)</Text>
     </Text>
-
-    <!-- 3. Left Tank Frame Panel -->
     <Panel>
       <ID>3</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2D3748</backColor>
-      <border>
-        <color>#4A5568</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>8</topLeft>
-        <topRight>8</topRight>
-        <bottomLeft>8</bottomLeft>
-        <bottomRight>8</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>50</x>
-        <y>95</y>
-      </location>
-      <size>
-        <width>280</width>
-        <height>460</height>
-      </size>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>30</X><Y>80</Y></Location>
+      <Size><Width>300</Width><Height>510</Height></Size>
+      <BackColor>#FFFFFF</BackColor><Border><Width>1</Width><Color>#CBD5E1</Color></Border><CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
     </Panel>
-    <!-- 4. Left Tank Title -->
     <Text>
       <ID>4</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#E2E8F0</foreColor>
-      <font>
-        <size>15</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>60</x>
-        <y>110</y>
-      </location>
-      <size>
-        <width>260</width>
-        <height>25</height>
-      </size>
-      <text>Резервуар ТН-01</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>50</X><Y>95</Y></Location>
+      <Size><Width>260</Width><Height>30</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>18</Size><Bold>true</Bold></Font><ForeColor>#1F2937</ForeColor>
+      <TextAlign>MiddleCenter</TextAlign>
+      <Text>Резервуар ТН-01</Text>
     </Text>
-    <!-- 5. Tank Internal Area (dark) -->
     <Panel>
       <ID>5</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#1A202C</backColor>
-      <border>
-        <color>#718096</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>4</topLeft>
-        <topRight>4</topRight>
-        <bottomLeft>4</bottomLeft>
-        <bottomRight>4</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>70</x>
-        <y>150</y>
-      </location>
-      <size>
-        <width>240</width>
-        <height>320</height>
-      </size>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>108</X><Y>160</Y></Location>
+      <Size><Width>144</Width><Height>204</Height></Size>
+      <BackColor>#E5E7EB</BackColor><Border><Width>2</Width><Color>#374151</Color></Border>
     </Panel>
-    <!-- 6. Liquid Level Bar (Blue) -->
     <Panel>
       <ID>6</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#3182CE</backColor>
-      <cornerRadius>
-        <topLeft>0</topLeft>
-        <topRight>0</topRight>
-        <bottomLeft>3</bottomLeft>
-        <bottomRight>3</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>72</x>
-        <y>260</y>
-      </location>
-      <size>
-        <width>236</width>
-        <height>208</height>
-      </size>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>110</X><Y>262</Y></Location>
+      <Size><Width>140</Width><Height>100</Height></Size>
+      <BackColor>#2F80ED</BackColor>
+      <PropertyBindings isArray="true">
+        <Item><PropertyName>size.height</PropertyName><DataSource>3</DataSource><DataMember>Value</DataMember><Expression>isNaN(x) ? 0 : Math.round(Math.max(0, Math.min(100, x)) * 2)</Expression><Format /></Item>
+        <Item><PropertyName>location.y</PropertyName><DataSource>3</DataSource><DataMember>Value</DataMember><Expression>362 - (isNaN(x) ? 0 : Math.round(Math.max(0, Math.min(100, x)) * 2))</Expression><Format /></Item>
+      </PropertyBindings>
     </Panel>
-    <!-- 7. Level Channel Value Label -->
     <Text>
       <ID>7</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#68D391</foreColor>
-      <font>
-        <size>14</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <inCnlNum>3</inCnlNum>
-      <location>
-        <x>60</x>
-        <y>495</y>
-      </location>
-      <size>
-        <width>260</width>
-        <height>35</height>
-      </size>
-      <text>Уровень (L): [3] %</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>260</X><Y>150</Y></Location>
+      <Size><Width>60</Width><Height>24</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>13</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>100 %</Text>
     </Text>
-
-    <!-- 8. Temperature Card Panel -->
-    <Panel>
+    <Text>
       <ID>8</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2D3748</backColor>
-      <border>
-        <color>#4A5568</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>8</topLeft>
-        <topRight>8</topRight>
-        <bottomLeft>8</bottomLeft>
-        <bottomRight>8</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>360</x>
-        <y>95</y>
-      </location>
-      <size>
-        <width>315</width>
-        <height>140</height>
-      </size>
-    </Panel>
-    <!-- 9. Temperature Title -->
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>260</X><Y>250</Y></Location>
+      <Size><Width>60</Width><Height>24</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>13</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>50 %</Text>
+    </Text>
     <Text>
       <ID>9</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#CBD5E0</foreColor>
-      <font>
-        <size>13</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <location>
-        <x>380</x>
-        <y>110</y>
-      </location>
-      <size>
-        <width>280</width>
-        <height>25</height>
-      </size>
-      <text>Температура TT-01 (°C):</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>260</X><Y>350</Y></Location>
+      <Size><Width>60</Width><Height>24</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>13</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>0 %</Text>
     </Text>
-    <!-- 10. Temperature Value -->
     <Text>
       <ID>10</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#68D391</foreColor>
-      <font>
-        <size>24</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <inCnlNum>1</inCnlNum>
-      <location>
-        <x>380</x>
-        <y>150</y>
-      </location>
-      <size>
-        <width>280</width>
-        <height>60</height>
-      </size>
-      <text>[1] °C</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>50</X><Y>385</Y></Location>
+      <Size><Width>260</Width><Height>26</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>14</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleCenter</TextAlign>
+      <Text>Уровень LT-01 (Level_Value)</Text>
     </Text>
-
-    <!-- 11. Pressure Card Panel -->
-    <Panel>
+    <Text>
       <ID>11</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2D3748</backColor>
-      <border>
-        <color>#4A5568</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>8</topLeft>
-        <topRight>8</topRight>
-        <bottomLeft>8</bottomLeft>
-        <bottomRight>8</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>710</x>
-        <y>95</y>
-      </location>
-      <size>
-        <width>315</width>
-        <height>140</height>
-      </size>
-    </Panel>
-    <!-- 12. Pressure Title -->
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>50</X><Y>415</Y></Location>
+      <Size><Width>260</Width><Height>50</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>30</Size><Bold>true</Bold></Font>
+      <TextAlign>MiddleCenter</TextAlign>
+      <Text>---</Text><InCnlNum>3</InCnlNum><ClickAction><ActionType>DrawChart</ActionType></ClickAction><Tooltip>Нажмите, чтобы открыть график</Tooltip>
+    </Text>
     <Text>
       <ID>12</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#CBD5E0</foreColor>
-      <font>
-        <size>13</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <location>
-        <x>730</x>
-        <y>110</y>
-      </location>
-      <size>
-        <width>280</width>
-        <height>25</height>
-      </size>
-      <text>Давление PT-01 (бар):</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>50</X><Y>480</Y></Location>
+      <Size><Width>260</Width><Height>90</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>12</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleCenter</TextAlign>
+      <Text>Высота столба жидкости привязана к каналу 3: 0–100 % → 0–200 px</Text><WordWrap>true</WordWrap>
     </Text>
-    <!-- 13. Pressure Value -->
-    <Text>
-      <ID>13</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#68D391</foreColor>
-      <font>
-        <size>24</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <inCnlNum>2</inCnlNum>
-      <location>
-        <x>730</x>
-        <y>150</y>
-      </location>
-      <size>
-        <width>280</width>
-        <height>60</height>
-      </size>
-      <text>[2] бар</text>
-    </Text>
-
-    <!-- 14. Alarm Indicator Card -->
     <Panel>
-      <ID>14</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2D3748</backColor>
-      <border>
-        <color>#4A5568</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>8</topLeft>
-        <topRight>8</topRight>
-        <bottomLeft>8</bottomLeft>
-        <bottomRight>8</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>360</x>
-        <y>255</y>
-      </location>
-      <size>
-        <width>665</width>
-        <height>95</height>
-      </size>
+      <ID>13</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>360</X><Y>80</Y></Location>
+      <Size><Width>300</Width><Height>160</Height></Size>
+      <BackColor>#FFFFFF</BackColor><Border><Width>1</Width><Color>#CBD5E1</Color></Border><CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
     </Panel>
-    <!-- 15. Alarm Title -->
+    <Text>
+      <ID>14</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>380</X><Y>92</Y></Location>
+      <Size><Width>260</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>14</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Температура TT-01 (Temp_Value)</Text>
+    </Text>
     <Text>
       <ID>15</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#E2E8F0</foreColor>
-      <font>
-        <size>13</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <location>
-        <x>380</x>
-        <y>270</y>
-      </location>
-      <size>
-        <width>620</width>
-        <height>25</height>
-      </size>
-      <text>Индикатор аварийной тревоги (T &gt; 80 °C, P &gt; 8 бар)</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>380</X><Y>125</Y></Location>
+      <Size><Width>260</Width><Height>60</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>34</Size><Bold>true</Bold></Font>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>---</Text><InCnlNum>1</InCnlNum><ClickAction><ActionType>DrawChart</ActionType></ClickAction><Tooltip>Нажмите, чтобы открыть график</Tooltip>
     </Text>
-    <!-- 16. Alarm Status Badge Panel -->
-    <Panel>
-      <ID>16</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#22543D</backColor>
-      <border>
-        <color>#38A169</color>
-        <width>1</width>
-      </border>
-      <cornerRadius>
-        <topLeft>4</topLeft>
-        <topRight>4</topRight>
-        <bottomLeft>4</bottomLeft>
-        <bottomRight>4</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>380</x>
-        <y>305</y>
-      </location>
-      <size>
-        <width>220</width>
-        <height>30</height>
-      </size>
-    </Panel>
-    <!-- 17. Alarm Status Badge Text -->
     <Text>
-      <ID>17</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#9AE6B4</foreColor>
-      <font>
-        <size>11</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>380</x>
-        <y>305</y>
-      </location>
-      <size>
-        <width>220</width>
-        <height>30</height>
-      </size>
-      <text>● НОРМА (ПАРАМЕТРЫ ОК)</text>
+      <ID>16</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>380</X><Y>195</Y></Location>
+      <Size><Width>260</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>13</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Тревога «Перегрев»: T &gt; 80 °C</Text>
     </Text>
-
-    <!-- 18. Remote Control Card -->
     <Panel>
-      <ID>18</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2D3748</backColor>
-      <border>
-        <color>#4A5568</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>8</topLeft>
-        <topRight>8</topRight>
-        <bottomLeft>8</bottomLeft>
-        <bottomRight>8</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>360</x>
-        <y>370</y>
-      </location>
-      <size>
-        <width>665</width>
-        <height>185</height>
-      </size>
+      <ID>17</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>680</X><Y>80</Y></Location>
+      <Size><Width>290</Width><Height>160</Height></Size>
+      <BackColor>#FFFFFF</BackColor><Border><Width>1</Width><Color>#CBD5E1</Color></Border><CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
     </Panel>
-    <!-- 19. Remote Control Title -->
+    <Text>
+      <ID>18</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>700</X><Y>92</Y></Location>
+      <Size><Width>250</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>14</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Давление PT-01 (Pressure_Value)</Text>
+    </Text>
     <Text>
       <ID>19</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#CBD5E0</foreColor>
-      <font>
-        <size>13</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleLeft</textAlign>
-      <location>
-        <x>380</x>
-        <y>385</y>
-      </location>
-      <size>
-        <width>620</width>
-        <height>25</height>
-      </size>
-      <text>Дистанционное управление агрегатом:</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>700</X><Y>125</Y></Location>
+      <Size><Width>250</Width><Height>60</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>34</Size><Bold>true</Bold></Font>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>---</Text><InCnlNum>2</InCnlNum><ClickAction><ActionType>DrawChart</ActionType></ClickAction><Tooltip>Нажмите, чтобы открыть график</Tooltip>
     </Text>
-    <!-- 20. START Button Panel -->
-    <Panel>
+    <Text>
       <ID>20</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2F855A</backColor>
-      <border>
-        <color>#48BB78</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>6</topLeft>
-        <topRight>6</topRight>
-        <bottomLeft>6</bottomLeft>
-        <bottomRight>6</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>380</x>
-        <y>435</y>
-      </location>
-      <size>
-        <width>295</width>
-        <height>85</height>
-      </size>
-    </Panel>
-    <!-- 21. START Button Text -->
-    <Text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>700</X><Y>195</Y></Location>
+      <Size><Width>250</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>13</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Тревога «Высокое давление»: P &gt; 8 бар</Text>
+    </Text>
+    <Panel>
       <ID>21</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#FFFFFF</foreColor>
-      <font>
-        <size>16</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>380</x>
-        <y>460</y>
-      </location>
-      <size>
-        <width>295</width>
-        <height>35</height>
-      </size>
-      <text>ПУСК (1)</text>
-    </Text>
-    <!-- 22. STOP Button Panel -->
-    <Panel>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>360</X><Y>260</Y></Location>
+      <Size><Width>610</Width><Height>140</Height></Size>
+      <BackColor>#FFFFFF</BackColor><Border><Width>1</Width><Color>#CBD5E1</Color></Border><CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+    </Panel>
+    <Text>
       <ID>22</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#9B2C2C</backColor>
-      <border>
-        <color>#F56565</color>
-        <width>2</width>
-      </border>
-      <cornerRadius>
-        <topLeft>6</topLeft>
-        <topRight>6</topRight>
-        <bottomLeft>6</bottomLeft>
-        <bottomRight>6</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>705</x>
-        <y>435</y>
-      </location>
-      <size>
-        <width>295</width>
-        <height>85</height>
-      </size>
-    </Panel>
-    <!-- 23. STOP Button Text -->
-    <Text>
-      <ID>23</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#FFFFFF</foreColor>
-      <font>
-        <size>16</size>
-        <bold>true</bold>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>705</x>
-        <y>460</y>
-      </location>
-      <size>
-        <width>295</width>
-        <height>35</height>
-      </size>
-      <text>СТОП (0)</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>380</X><Y>272</Y></Location>
+      <Size><Width>570</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>14</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Лампа «Авария» (T &gt; 80 °C ИЛИ P &gt; 8 бар)</Text>
     </Text>
-
-    <!-- 24. Footer Status Panel -->
-    <Panel>
-      <ID>24</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <backColor>#2A4365</backColor>
-      <cornerRadius>
-        <topLeft>4</topLeft>
-        <topRight>4</topRight>
-        <bottomLeft>4</bottomLeft>
-        <bottomRight>4</bottomRight>
-      </cornerRadius>
-      <location>
-        <x>25</x>
-        <y>580</y>
-      </location>
-      <size>
-        <width>1000</width>
-        <height>45</height>
-      </size>
-    </Panel>
-    <!-- 25. Footer Status Text -->
+    <BasicLed>
+      <ID>23</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>390</X><Y>312</Y></Location>
+      <Size><Width>64</Width><Height>64</Height></Size>
+      <InCnlNum>6</InCnlNum>
+      <BackColor>Silver</BackColor>
+      <Border><Width>4</Width><Color>Black</Color></Border>
+      <BorderOpacity>30</BorderOpacity>
+      <IsSquare>false</IsSquare>
+      <DefaultColor>Silver</DefaultColor>
+      <Tooltip>Alarm_Flag</Tooltip>
+      <Conditions isArray="true"><Item><ComparisonOper1>GreaterThan</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Color>Red</Color></Item><Item><ComparisonOper1>LessThanEqual</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Color>LimeGreen</Color></Item></Conditions>
+    </BasicLed>
     <Text>
+      <ID>24</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>480</X><Y>314</Y></Location>
+      <Size><Width>470</Width><Height>60</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>26</Size><Bold>true</Bold></Font><ForeColor>#1F2937</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>НЕТ ДАННЫХ</Text><InCnlNum>6</InCnlNum><DefaultText>НЕТ ДАННЫХ</DefaultText><Conditions isArray="true"><Item><ComparisonOper1>GreaterThan</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Text>АВАРИЯ! Параметры вне нормы</Text></Item><Item><ComparisonOper1>LessThanEqual</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Text>НОРМА</Text></Item></Conditions>
+    </Text>
+    <Panel>
       <ID>25</ID>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <autoSize>false</autoSize>
-      <foreColor>#A0AEC0</foreColor>
-      <font>
-        <size>10</size>
-      </font>
-      <textAlign>MiddleCenter</textAlign>
-      <location>
-        <x>35</x>
-        <y>590</y>
-      </location>
-      <size>
-        <width>980</width>
-        <height>25</height>
-      </size>
-      <text>Режим симуляции DrvSimulator | Вариант Б | Станция управления: localhost:10008 | АС СН</text>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>360</X><Y>420</Y></Location>
+      <Size><Width>610</Width><Height>170</Height></Size>
+      <BackColor>#FFFFFF</BackColor><Border><Width>1</Width><Color>#CBD5E1</Color></Border><CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+    </Panel>
+    <Text>
+      <ID>26</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>380</X><Y>432</Y></Location>
+      <Size><Width>570</Width><Height>28</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>14</Size><Bold>false</Bold></Font><ForeColor>#6B7280</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>Управление насосом Н-01 (канал управления Pump_Control)</Text>
+    </Text>
+    <BasicButton>
+      <ID>27</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>390</X><Y>480</Y></Location>
+      <Size><Width>170</Width><Height>70</Height></Size>
+      <OutCnlNum>5</OutCnlNum>
+      <Text>ПУСК</Text>
+      <Font><Inherit>false</Inherit><Size>20</Size><Bold>true</Bold></Font>
+      <BackColor>#2E7D32</BackColor>
+      <ForeColor>White</ForeColor>
+      <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+      <ClickAction>
+        <ActionType>SendCommand</ActionType>
+        <CommandArgs><ShowDialog>false</ShowDialog><CmdVal>1</CmdVal></CommandArgs>
+      </ClickAction>
+    </BasicButton>
+    <BasicButton>
+      <ID>28</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>580</X><Y>480</Y></Location>
+      <Size><Width>170</Width><Height>70</Height></Size>
+      <OutCnlNum>5</OutCnlNum>
+      <Text>СТОП</Text>
+      <Font><Inherit>false</Inherit><Size>20</Size><Bold>true</Bold></Font>
+      <BackColor>#C62828</BackColor>
+      <ForeColor>White</ForeColor>
+      <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+      <ClickAction>
+        <ActionType>SendCommand</ActionType>
+        <CommandArgs><ShowDialog>false</ShowDialog><CmdVal>0</CmdVal></CommandArgs>
+      </ClickAction>
+    </BasicButton>
+    <BasicLed>
+      <ID>29</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>780</X><Y>492</Y></Location>
+      <Size><Width>44</Width><Height>44</Height></Size>
+      <InCnlNum>4</InCnlNum>
+      <BackColor>Silver</BackColor>
+      <Border><Width>4</Width><Color>Black</Color></Border>
+      <BorderOpacity>30</BorderOpacity>
+      <IsSquare>false</IsSquare>
+      <DefaultColor>Silver</DefaultColor>
+      <Tooltip>Pump_State</Tooltip>
+      <Conditions isArray="true"><Item><ComparisonOper1>GreaterThan</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Color>LimeGreen</Color></Item><Item><ComparisonOper1>LessThanEqual</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Color>Gray</Color></Item></Conditions>
+    </BasicLed>
+    <Text>
+      <ID>30</ID>
+      <Enabled>true</Enabled>
+      <Visible>true</Visible>
+      <Location><X>835</X><Y>485</Y></Location>
+      <Size><Width>125</Width><Height>60</Height></Size>
+      <AutoSize>false</AutoSize>
+      <Font><Inherit>false</Inherit><Size>15</Size><Bold>true</Bold></Font><ForeColor>#1F2937</ForeColor>
+      <TextAlign>MiddleLeft</TextAlign>
+      <Text>нет данных</Text><InCnlNum>4</InCnlNum><DefaultText>нет данных</DefaultText><WordWrap>true</WordWrap><Conditions isArray="true"><Item><ComparisonOper1>GreaterThan</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Text>Насос работает</Text></Item><Item><ComparisonOper1>LessThanEqual</ComparisonOper1><ComparisonArg1>0</ComparisonArg1><LogicalOper>None</LogicalOper><ComparisonOper2>None</ComparisonOper2><ComparisonArg2>0</ComparisonArg2><Text>Насос остановлен</Text></Item></Conditions>
     </Text>
   </Components>
+  <Images />
 </Mimic>

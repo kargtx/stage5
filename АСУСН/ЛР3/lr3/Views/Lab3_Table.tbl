@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableView>
+  <TableOptions>
+    <UseDefault>true</UseDefault>
+  </TableOptions>
+  <TableItems>
+    <Item cnlNum="1" autoText="true" />
+    <Item cnlNum="2" autoText="true" />
+    <Item cnlNum="3" autoText="true" />
+    <Item cnlNum="4" autoText="true" />
+    <Item cnlNum="5" autoText="true" />
+    <Item cnlNum="6" autoText="true" />
+  </TableItems>
+</TableView>
