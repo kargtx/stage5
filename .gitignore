@@ -1,0 +1,22 @@
+# Temporary files from MS Word
+~$*
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+[Bb]in/
+[Oo]bj/
+ipch/
+*.ipch
+*.VC.db
+*.opendb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
