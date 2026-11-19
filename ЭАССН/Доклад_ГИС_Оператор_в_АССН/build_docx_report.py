@@ -134,7 +134,7 @@ def create_report():
     p_sign.paragraph_format.line_spacing = 1.15
     r = p_sign.add_run("Выполнил:\n"
                        "студент гр. ЭАС-514С\n"
-                       "Каргапольцев Т. Р.\n\n"
+                       "Гарифуллин К. Р.\n\n"
                        "Проверил:\n"
                        "к.т.н., доцент\n"
                        "Ризванов К. А.\n")
