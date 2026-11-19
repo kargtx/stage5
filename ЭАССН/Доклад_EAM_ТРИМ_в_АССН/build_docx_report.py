@@ -8,7 +8,7 @@ from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
 from docx.oxml import OxmlElement, parse_xml
 from docx.oxml.ns import nsdecls, qn
 
-out_dir = r"c:\Users\kargt\Desktop\УЧЕБА\5 КУРС\stage5\Доклад_EAM_ТРИМ_в_АССН"
+out_dir = os.path.dirname(os.path.abspath(__file__))
 fig_dir = os.path.join(out_dir, "figures")
 docx_path = os.path.join(out_dir, "Доклад_EAM_комплекс_ТРИМ_в_АССН.docx")
 

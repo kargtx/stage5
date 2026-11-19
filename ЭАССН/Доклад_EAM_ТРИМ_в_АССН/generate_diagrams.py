@@ -5,7 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-fig_dir = r"c:\Users\kargt\Desktop\УЧЕБА\5 КУРС\stage5\Доклад_EAM_ТРИМ_в_АССН\figures"
+fig_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "figures")
 os.makedirs(fig_dir, exist_ok=True)
 
 # 1. Asynchronous Packet Replication Architecture
