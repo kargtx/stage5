@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ScadaProject>
-  <AdminVersion>6.2.0.0</AdminVersion>
-  <ProjectVersion>6.0</ProjectVersion>
-  <Description />
+  <Version>6.2.0.0</Version>
+  <Description>Лабораторная работа №3 по АСУСН — Вариант 2 (Расход, Уровень, Вибрация), источник данных: Modbus TCP ПЛК-имитатор</Description>
   <Instances>
     <Instance>
       <ID>1</ID>
@@ -10,7 +9,7 @@
       <ServerApp enabled="true" />
       <CommApp enabled="true" />
       <WebApp enabled="true" />
-      <DeploymentProfile>Default Profile</DeploymentProfile>
+      <Active>true</Active>
     </Instance>
   </Instances>
 </ScadaProject>

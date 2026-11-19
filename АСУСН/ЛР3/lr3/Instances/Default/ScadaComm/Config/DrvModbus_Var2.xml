@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceTemplate>
+  <Options>
+    <ZeroAddr>true</ZeroAddr>
+    <DecAddr>true</DecAddr>
+    <DefByteOrder2 />
+    <DefByteOrder4 />
+    <DefByteOrder8 />
+  </Options>
+  <ElemGroups>
+    <ElemGroup active="true" dataBlock="HoldingRegisters" address="10" name="Аналоговые параметры (Float32)">
+      <Elem type="float" readOnly="true" isBitMask="false" tagCode="Flow" name="Расход Q (м³/ч)" />
+      <Elem type="float" readOnly="true" isBitMask="false" tagCode="Level" name="Уровень L (%)" />
+      <Elem type="float" readOnly="true" isBitMask="false" tagCode="Vibration" name="Вибрация V (мм/с)" />
+    </ElemGroup>
+    <ElemGroup active="true" dataBlock="HoldingRegisters" address="3" name="Состояние и управление">
+      <Elem type="ushort" readOnly="true" isBitMask="false" tagCode="PumpRun" name="Состояние насоса (Reg 3)" />
+      <Elem type="ushort" readOnly="false" isBitMask="false" tagCode="PumpCtrl" name="Управление насосом (Reg 4)" />
+    </ElemGroup>
+  </ElemGroups>
+  <Cmds>
+    <Cmd dataBlock="HoldingRegisters" multiple="false" address="4" cmdNum="1" cmdCode="PumpCtrl" name="Команда ПУСК/СТОП насоса" />
+  </Cmds>
+</DeviceTemplate>

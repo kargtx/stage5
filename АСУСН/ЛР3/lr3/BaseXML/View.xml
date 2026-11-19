@@ -1,19 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfView xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <View>
     <ViewID>1</ViewID>
-    <Path>Lab3_Mimic.mim</Path>
-    <ViewTypeID>7</ViewTypeID>
-    <Title>Lab3_Mimic — мнемосхема узла</Title>
+    <Path>Lab3\</Path>
+    <ViewTypeID xsi:nil="true" />
+    <Title>ЛР3 — Насосная станция (Вар. 2)</Title>
     <Ord>1</Ord>
     <Hidden>false</Hidden>
     <ObjNum>1</ObjNum>
   </View>
   <View>
     <ViewID>2</ViewID>
-    <Path>Lab3_Table.tbl</Path>
+    <Path>Lab3\Lab3_Mimic.mim</Path>
+    <ViewTypeID>7</ViewTypeID>
+    <Title>Мнемосхема агрегата</Title>
+    <Ord>1</Ord>
+    <Hidden>false</Hidden>
+    <ObjNum>1</ObjNum>
+  </View>
+  <View>
+    <ViewID>3</ViewID>
+    <Path>Lab3\Lab3_Table.tbl</Path>
     <ViewTypeID>1</ViewTypeID>
-    <Title>Lab3 — таблица каналов</Title>
+    <Title>Таблица параметров и тренды</Title>
     <Ord>2</Ord>
     <Hidden>false</Hidden>
     <ObjNum>1</ObjNum>

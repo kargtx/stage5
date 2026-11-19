@@ -2,38 +2,38 @@
 <ArrayOfRole xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Role>
     <RoleID>0</RoleID>
-    <Name>Отключен</Name>
+    <Name>Disabled</Name>
     <Code>ScadaDisabled</Code>
-    <Descr>Доступ запрещён</Descr>
+    <Descr>Access denied</Descr>
   </Role>
   <Role>
     <RoleID>1</RoleID>
-    <Name>Администратор</Name>
+    <Name>Administrator</Name>
     <Code>ScadaAdmin</Code>
-    <Descr>Полный доступ</Descr>
+    <Descr>Full access</Descr>
   </Role>
   <Role>
     <RoleID>2</RoleID>
-    <Name>Диспетчер</Name>
+    <Name>Dispatcher</Name>
     <Code>ScadaDispatcher</Code>
-    <Descr>Может просматривать информацию и отправлять команды</Descr>
+    <Descr>Can view information and send commands</Descr>
   </Role>
   <Role>
     <RoleID>3</RoleID>
-    <Name>Гость</Name>
+    <Name>Guest</Name>
     <Code>ScadaGuest</Code>
-    <Descr>Может просматривать информацию</Descr>
+    <Descr>Can view information</Descr>
   </Role>
   <Role>
     <RoleID>4</RoleID>
-    <Name>Приложение</Name>
+    <Name>Application</Name>
     <Code>ScadaApp</Code>
-    <Descr>Взаимодействует с сервером</Descr>
+    <Descr>Interacts with the server</Descr>
   </Role>
   <Role>
     <RoleID>101</RoleID>
-    <Name>Пользовательская роль</Name>
+    <Name>Custom role</Name>
     <Code />
-    <Descr>Добавляйте пользовательские элементы, начиная с этой строки</Descr>
+    <Descr>Add custom items starting from this row</Descr>
   </Role>
 </ArrayOfRole>

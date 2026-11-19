@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mimic editorVersion="6.0.0.0">
+  <Dependencies />
+  <Document>
+    <BackColor>#EEF2F6</BackColor>
+    <Size>
+      <Width>1060</Width>
+      <Height>650</Height>
+    </Size>
+  </Document>
+  <Components>
+    <!-- Верхняя панель заголовка (смещена ниже панели масштаба Вебстанции) -->
+    <Panel>
+      <ID>1</ID>
+      <Name>HeaderPanel</Name>
+      <Enabled>True</Enabled>
+      <Visible>True</Visible>
+      <Location><X>20</X><Y>44</Y></Location>
+      <Size><Width>1020</Width><Height>66</Height></Size>
+      <BackColor>#1E293B</BackColor>
+      <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+      <Components>
+        <Text>
+          <ID>2</ID>
+          <Name>TitleText</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>10</Y></Location>
+          <Size><Width>760</Width><Height>28</Height></Size>
+          <ForeColor>#FFFFFF</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>18</Size><Bold>True</Bold></Font>
+          <Text>АСУСН · ЛР №3 · НАСОСНАЯ СТАНЦИЯ (ВАРИАНТ 2)</Text>
+        </Text>
+        <Text>
+          <ID>3</ID>
+          <Name>SubtitleText</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>38</Y></Location>
+          <Size><Width>760</Width><Height>22</Height></Size>
+          <ForeColor>#CBD5E1</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>12</Size><Bold>False</Bold></Font>
+          <Text>Источник: Modbus TCP (127.0.0.1:502, Unit ID=1) | Уставки: Q &gt; 400 м³/ч, V &gt; 15 мм/с</Text>
+        </Text>
+        <Text>
+          <ID>4</ID>
+          <Name>HeaderStatusText</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>800</X><Y>15</Y></Location>
+          <Size><Width>200</Width><Height>36</Height></Size>
+          <InCnlNum>5</InCnlNum>
+          <BackColor>#16A34A</BackColor>
+          <ForeColor>#FFFFFF</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>НОРМА</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>5</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? 'АВАРИЯ' : 'НОРМА'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>backColor</PropertyName>
+              <DataSource>5</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? '#DC2626' : '#16A34A'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+      </Components>
+    </Panel>
+
+    <!-- Левая секция: Резервуар (Уровень L, Канал 2) -->
+    <Panel>
+      <ID>10</ID>
+      <Name>TankSectionCard</Name>
+      <Enabled>True</Enabled>
+      <Visible>True</Visible>
+      <Location><X>20</X><Y>126</Y></Location>
+      <Size><Width>330</Width><Height>502</Height></Size>
+      <BackColor>#FFFFFF</BackColor>
+      <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+      <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+      <Components>
+        <Text>
+          <ID>11</ID>
+          <Name>TankTitle</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>16</Y></Location>
+          <Size><Width>290</Width><Height>28</Height></Size>
+          <ForeColor>#1E293B</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>ТЕХНОЛОГИЧЕСКИЙ РЕЗЕРВУАР</Text>
+        </Text>
+
+        <!-- Корпус резервуара (180 x 300) -->
+        <Panel>
+          <ID>12</ID>
+          <Name>TankBody</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>75</X><Y>58</Y></Location>
+          <Size><Width>180</Width><Height>300</Height></Size>
+          <BackColor>#F1F5F9</BackColor>
+          <Border><Width>3</Width><Color>#475569</Color></Border>
+          <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+          <Components>
+            <Panel>
+              <ID>13</ID>
+              <Name>TankLiquid</Name>
+              <Enabled>True</Enabled>
+              <Visible>True</Visible>
+              <Location><X>4</X><Y>120</Y></Location>
+              <Size><Width>166</Width><Height>170</Height></Size>
+              <InCnlNum>2</InCnlNum>
+              <BackColor>#0284C7</BackColor>
+              <CornerRadius><TopLeft>3</TopLeft><TopRight>3</TopRight><BottomRight>5</BottomRight><BottomLeft>5</BottomLeft></CornerRadius>
+              <PropertyBindings isArray="true">
+                <Item>
+                  <PropertyName>size.height</PropertyName>
+                  <DataSource>2</DataSource>
+                  <DataMember>Value</DataMember>
+                  <Expression>Math.max(4, Math.min(286, Math.round(x * 2.86)))</Expression>
+                  <Format />
+                </Item>
+                <Item>
+                  <PropertyName>location.y</PropertyName>
+                  <DataSource>2</DataSource>
+                  <DataMember>Value</DataMember>
+                  <Expression>290 - Math.max(4, Math.min(286, Math.round(x * 2.86)))</Expression>
+                  <Format />
+                </Item>
+                <Item>
+                  <PropertyName>backColor</PropertyName>
+                  <DataSource>2</DataSource>
+                  <DataMember>Value</DataMember>
+                  <Expression>x &gt; 85 ? '#EA580C' : '#0284C7'</Expression>
+                  <Format />
+                </Item>
+              </PropertyBindings>
+            </Panel>
+          </Components>
+        </Panel>
+
+        <Text>
+          <ID>14</ID>
+          <Name>LevelLabel</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>10</X><Y>374</Y></Location>
+          <Size><Width>310</Width><Height>24</Height></Size>
+          <ForeColor>#475569</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>12</Size><Bold>False</Bold></Font>
+          <Text>Уровень L (Канал 2, диапазон 0–100 %)</Text>
+        </Text>
+
+        <Text>
+          <ID>15</ID>
+          <Name>LevelVal</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>55</X><Y>406</Y></Location>
+          <Size><Width>220</Width><Height>58</Height></Size>
+          <InCnlNum>2</InCnlNum>
+          <BackColor>#F8FAFC</BackColor>
+          <ForeColor>#0369A1</ForeColor>
+          <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>26</Size><Bold>True</Bold></Font>
+          <Text>--- %</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>2</DataSource>
+              <DataMember>DisplayValueWithUnit</DataMember>
+              <Expression />
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+      </Components>
+    </Panel>
+
+    <!-- Средняя секция: Датчики Расхода Q (Канал 1) и Вибрации V (Канал 3) -->
+    <Panel>
+      <ID>20</ID>
+      <Name>FlowCard</Name>
+      <Enabled>True</Enabled>
+      <Visible>True</Visible>
+      <Location><X>370</X><Y>126</Y></Location>
+      <Size><Width>350</Width><Height>240</Height></Size>
+      <BackColor>#FFFFFF</BackColor>
+      <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+      <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+      <Components>
+        <Text>
+          <ID>21</ID>
+          <Name>FlowTitle</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>16</Y></Location>
+          <Size><Width>310</Width><Height>28</Height></Size>
+          <ForeColor>#1E293B</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>РАСХОД МАГИСТРАЛИ (Q)</Text>
+        </Text>
+        <Text>
+          <ID>22</ID>
+          <Name>FlowSub</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>44</Y></Location>
+          <Size><Width>310</Width><Height>22</Height></Size>
+          <ForeColor>#64748B</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>12</Size><Bold>False</Bold></Font>
+          <Text>Канал 1 | Reg 10..11 (Float32) | Порог: Q &gt; 400 м³/ч</Text>
+        </Text>
+        <Text>
+          <ID>23</ID>
+          <Name>FlowVal</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>80</Y></Location>
+          <Size><Width>310</Width><Height>78</Height></Size>
+          <InCnlNum>1</InCnlNum>
+          <BackColor>#F8FAFC</BackColor>
+          <ForeColor>#0F172A</ForeColor>
+          <Border><Width>2</Width><Color>#94A3B8</Color></Border>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>30</Size><Bold>True</Bold></Font>
+          <Text>--- м³/ч</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>DisplayValueWithUnit</DataMember>
+              <Expression />
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 400 ? '#DC2626' : '#0369A1'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>border.color</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 400 ? '#DC2626' : '#94A3B8'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+        <Text>
+          <ID>24</ID>
+          <Name>FlowStatus</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>176</Y></Location>
+          <Size><Width>310</Width><Height>36</Height></Size>
+          <InCnlNum>1</InCnlNum>
+          <BackColor>#DCFCE7</BackColor>
+          <ForeColor>#166534</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <CornerRadius><TopLeft>4</TopLeft><TopRight>4</TopRight><BottomRight>4</BottomRight><BottomLeft>4</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>13</Size><Bold>True</Bold></Font>
+          <Text>В пределах нормы (0–400 м³/ч)</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 400 ? 'ТРЕВОГА: ПРЕВЫШЕНИЕ Q &gt; 400 м³/ч' : 'В пределах нормы (0–400 м³/ч)'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>backColor</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 400 ? '#FEE2E2' : '#DCFCE7'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>1</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 400 ? '#991B1B' : '#166534'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+      </Components>
+    </Panel>
+
+    <Panel>
+      <ID>30</ID>
+      <Name>VibCard</Name>
+      <Enabled>True</Enabled>
+      <Visible>True</Visible>
+      <Location><X>370</X><Y>384</Y></Location>
+      <Size><Width>350</Width><Height>244</Height></Size>
+      <BackColor>#FFFFFF</BackColor>
+      <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+      <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+      <Components>
+        <Text>
+          <ID>31</ID>
+          <Name>VibTitle</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>16</Y></Location>
+          <Size><Width>310</Width><Height>28</Height></Size>
+          <ForeColor>#1E293B</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>ВИБРАЦИЯ АГРЕГАТА (V)</Text>
+        </Text>
+        <Text>
+          <ID>32</ID>
+          <Name>VibSub</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>44</Y></Location>
+          <Size><Width>310</Width><Height>22</Height></Size>
+          <ForeColor>#64748B</ForeColor>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>12</Size><Bold>False</Bold></Font>
+          <Text>Канал 3 | Reg 14..15 (Float32) | Порог: V &gt; 15 мм/с</Text>
+        </Text>
+        <Text>
+          <ID>33</ID>
+          <Name>VibVal</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>80</Y></Location>
+          <Size><Width>310</Width><Height>78</Height></Size>
+          <InCnlNum>3</InCnlNum>
+          <BackColor>#F8FAFC</BackColor>
+          <ForeColor>#0F172A</ForeColor>
+          <Border><Width>2</Width><Color>#94A3B8</Color></Border>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>30</Size><Bold>True</Bold></Font>
+          <Text>--- мм/с</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>DisplayValueWithUnit</DataMember>
+              <Expression />
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 15 ? '#DC2626' : '#0369A1'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>border.color</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 15 ? '#DC2626' : '#94A3B8'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+        <Text>
+          <ID>34</ID>
+          <Name>VibStatus</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>176</Y></Location>
+          <Size><Width>310</Width><Height>36</Height></Size>
+          <InCnlNum>3</InCnlNum>
+          <BackColor>#DCFCE7</BackColor>
+          <ForeColor>#166534</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <CornerRadius><TopLeft>4</TopLeft><TopRight>4</TopRight><BottomRight>4</BottomRight><BottomLeft>4</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>13</Size><Bold>True</Bold></Font>
+          <Text>В пределах нормы (0–15 мм/с)</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 15 ? 'ТРЕВОГА: ПРЕВЫШЕНИЕ V &gt; 15 мм/с' : 'В пределах нормы (0–15 мм/с)'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>backColor</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 15 ? '#FEE2E2' : '#DCFCE7'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>3</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 15 ? '#991B1B' : '#166534'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+      </Components>
+    </Panel>
+
+    <!-- Правая секция: Аварийная сигнализация и Управление ПУСК/СТОП -->
+    <Panel>
+      <ID>40</ID>
+      <Name>ControlCard</Name>
+      <Enabled>True</Enabled>
+      <Visible>True</Visible>
+      <Location><X>740</X><Y>126</Y></Location>
+      <Size><Width>300</Width><Height>502</Height></Size>
+      <BackColor>#FFFFFF</BackColor>
+      <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+      <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+      <Components>
+        <Text>
+          <ID>41</ID>
+          <Name>AlarmHeader</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>16</Y></Location>
+          <Size><Width>260</Width><Height>28</Height></Size>
+          <ForeColor>#1E293B</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>АВАРИЙНАЯ СИГНАЛИЗАЦИЯ</Text>
+        </Text>
+
+        <BasicLed>
+          <ID>42</ID>
+          <Name>AlarmLed</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>105</X><Y>58</Y></Location>
+          <Size><Width>90</Width><Height>90</Height></Size>
+          <InCnlNum>5</InCnlNum>
+          <Border><Width>4</Width><Color>#64748B</Color></Border>
+          <IsSquare>False</IsSquare>
+          <BorderOpacity>0.35</BorderOpacity>
+          <DefaultColor>#22C55E</DefaultColor>
+          <Conditions isArray="true">
+            <Item>
+              <ComparisonOper1>GreaterThan</ComparisonOper1>
+              <ComparisonArg1>0</ComparisonArg1>
+              <LogicalOper>None</LogicalOper>
+              <ComparisonOper2>None</ComparisonOper2>
+              <ComparisonArg2>0</ComparisonArg2>
+              <Color>#EF4444</Color>
+            </Item>
+          </Conditions>
+        </BasicLed>
+
+        <Text>
+          <ID>43</ID>
+          <Name>AlarmBanner</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>162</Y></Location>
+          <Size><Width>260</Width><Height>44</Height></Size>
+          <InCnlNum>5</InCnlNum>
+          <BackColor>#DCFCE7</BackColor>
+          <ForeColor>#166534</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>14</Size><Bold>True</Bold></Font>
+          <Text>ШТАТНЫЙ РЕЖИМ</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>5</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? 'АВАРИЯ АГРЕГАТА!' : 'ШТАТНЫЙ РЕЖИМ'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>backColor</PropertyName>
+              <DataSource>5</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? '#FEE2E2' : '#DCFCE7'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>5</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? '#B91C1C' : '#166534'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+
+        <Text>
+          <ID>44</ID>
+          <Name>PumpSectionHeader</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>230</Y></Location>
+          <Size><Width>260</Width><Height>28</Height></Size>
+          <ForeColor>#1E293B</ForeColor>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>15</Size><Bold>True</Bold></Font>
+          <Text>УПРАВЛЕНИЕ НАСОСОМ</Text>
+        </Text>
+
+        <Text>
+          <ID>45</ID>
+          <Name>PumpStateBox</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>268</Y></Location>
+          <Size><Width>260</Width><Height>46</Height></Size>
+          <InCnlNum>4</InCnlNum>
+          <BackColor>#F1F5F9</BackColor>
+          <ForeColor>#15803D</ForeColor>
+          <Border><Width>2</Width><Color>#CBD5E1</Color></Border>
+          <CornerRadius><TopLeft>6</TopLeft><TopRight>6</TopRight><BottomRight>6</BottomRight><BottomLeft>6</BottomLeft></CornerRadius>
+          <TextAlign>MiddleCenter</TextAlign>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>16</Size><Bold>True</Bold></Font>
+          <Text>Состояние: ПУСК (1)</Text>
+          <PropertyBindings isArray="true">
+            <Item>
+              <PropertyName>text</PropertyName>
+              <DataSource>4</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? 'Состояние: ПУСК (1)' : 'Состояние: СТОП (0)'</Expression>
+              <Format />
+            </Item>
+            <Item>
+              <PropertyName>foreColor</PropertyName>
+              <DataSource>4</DataSource>
+              <DataMember>Value</DataMember>
+              <Expression>x &gt; 0 ? '#15803D' : '#DC2626'</Expression>
+              <Format />
+            </Item>
+          </PropertyBindings>
+        </Text>
+
+        <BasicButton>
+          <ID>46</ID>
+          <Name>BtnStart</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>334</Y></Location>
+          <Size><Width>260</Width><Height>56</Height></Size>
+          <OutCnlNum>4</OutCnlNum>
+          <BackColor>#16A34A</BackColor>
+          <ForeColor>#FFFFFF</ForeColor>
+          <Border><Width>1</Width><Color>#15803D</Color></Border>
+          <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>16</Size><Bold>True</Bold></Font>
+          <Text>ПУСК (1)</Text>
+          <ClickAction>
+            <ActionType>SendCommand</ActionType>
+            <CommandArgs>
+              <ShowDialog>False</ShowDialog>
+              <CmdVal>1</CmdVal>
+            </CommandArgs>
+          </ClickAction>
+        </BasicButton>
+
+        <BasicButton>
+          <ID>47</ID>
+          <Name>BtnStop</Name>
+          <Enabled>True</Enabled>
+          <Visible>True</Visible>
+          <Location><X>20</X><Y>406</Y></Location>
+          <Size><Width>260</Width><Height>56</Height></Size>
+          <OutCnlNum>4</OutCnlNum>
+          <BackColor>#DC2626</BackColor>
+          <ForeColor>#FFFFFF</ForeColor>
+          <Border><Width>1</Width><Color>#B91C1C</Color></Border>
+          <CornerRadius><TopLeft>8</TopLeft><TopRight>8</TopRight><BottomRight>8</BottomRight><BottomLeft>8</BottomLeft></CornerRadius>
+          <Font><Inherit>False</Inherit><Name>Segoe UI</Name><Size>16</Size><Bold>True</Bold></Font>
+          <Text>СТОП (0)</Text>
+          <ClickAction>
+            <ActionType>SendCommand</ActionType>
+            <CommandArgs>
+              <ShowDialog>False</ShowDialog>
+              <CmdVal>0</CmdVal>
+            </CommandArgs>
+          </ClickAction>
+        </BasicButton>
+      </Components>
+    </Panel>
+  </Components>
+</Mimic>

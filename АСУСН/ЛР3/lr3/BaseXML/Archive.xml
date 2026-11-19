@@ -2,7 +2,7 @@
 <ArrayOfArchive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Archive>
     <ArchiveID>1</ArchiveID>
-    <Name>Текущие данные</Name>
+    <Name>Current data</Name>
     <Code>Cur</Code>
     <ArchiveKindID>1</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -10,7 +10,7 @@
   </Archive>
   <Archive>
     <ArchiveID>2</ArchiveID>
-    <Name>Минутный архив</Name>
+    <Name>Minute archive</Name>
     <Code>Min</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -18,7 +18,7 @@
   </Archive>
   <Archive>
     <ArchiveID>3</ArchiveID>
-    <Name>Часовой архив</Name>
+    <Name>Hourly archive</Name>
     <Code>Hour</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -26,7 +26,7 @@
   </Archive>
   <Archive>
     <ArchiveID>4</ArchiveID>
-    <Name>Дневной архив</Name>
+    <Name>Daily archive</Name>
     <Code>Day</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -34,7 +34,7 @@
   </Archive>
   <Archive>
     <ArchiveID>5</ArchiveID>
-    <Name>Архив событий</Name>
+    <Name>Event archive</Name>
     <Code>Events</Code>
     <ArchiveKindID>3</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -42,7 +42,7 @@
   </Archive>
   <Archive>
     <ArchiveID>6</ArchiveID>
-    <Name>Копия текущих данных</Name>
+    <Name>Current data copy</Name>
     <Code>CurCopy</Code>
     <ArchiveKindID>1</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -50,7 +50,7 @@
   </Archive>
   <Archive>
     <ArchiveID>7</ArchiveID>
-    <Name>Копия минутного архива</Name>
+    <Name>Minute archive copy</Name>
     <Code>MinCopy</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -58,7 +58,7 @@
   </Archive>
   <Archive>
     <ArchiveID>8</ArchiveID>
-    <Name>Копия часового архива</Name>
+    <Name>Hourly archive copy</Name>
     <Code>HourCopy</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -66,7 +66,7 @@
   </Archive>
   <Archive>
     <ArchiveID>9</ArchiveID>
-    <Name>Копия дневного архива</Name>
+    <Name>Daily archive copy</Name>
     <Code>DayCopy</Code>
     <ArchiveKindID>2</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -74,7 +74,7 @@
   </Archive>
   <Archive>
     <ArchiveID>10</ArchiveID>
-    <Name>Копия архива событий</Name>
+    <Name>Event archive copy</Name>
     <Code>EventsCopy</Code>
     <ArchiveKindID>3</ArchiveKindID>
     <IsDefault>true</IsDefault>
@@ -82,11 +82,11 @@
   </Archive>
   <Archive>
     <ArchiveID>101</ArchiveID>
-    <Name>Lab3_Archive</Name>
+    <Name>Архив ЛР3 (1 сек)</Name>
     <Code>Lab3</Code>
     <ArchiveKindID>2</ArchiveKindID>
-    <IsDefault>true</IsDefault>
+    <IsDefault>false</IsDefault>
     <Bit>16</Bit>
-    <Descr>пользовательские элементы, начиная с этой строки</Descr>
+    <Descr>Секундный архив исторических данных для графиков ЛР3</Descr>
   </Archive>
 </ArrayOfArchive>

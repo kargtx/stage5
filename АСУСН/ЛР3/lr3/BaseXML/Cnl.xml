@@ -1,55 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCnl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cnl>
     <CnlNum>1</CnlNum>
     <Active>true</Active>
-    <Name>Temp_Value</Name>
-    <Code>Temp</Code>
+    <Name>Расход (Q)</Name>
+    <Code>Flow</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
     <ObjNum>1</ObjNum>
     <DeviceNum>1</DeviceNum>
     <TagNum xsi:nil="true" />
-    <TagCode>Temp</TagCode>
-    <FormulaEnabled>true</FormulaEnabled>
-    <InFormula>Cnl / 10</InFormula>
-    <OutFormula />
+    <TagCode>Flow</TagCode>
+    <FormulaEnabled>false</FormulaEnabled>
     <FormatID>3</FormatID>
-    <OutFormatID xsi:nil="true" />
-    <QuantityID>4</QuantityID>
-    <UnitID>22</UnitID>
+    <QuantityID xsi:nil="true" />
+    <UnitID>1001</UnitID>
     <LimID>1</LimID>
-    <ArchiveMask xsi:nil="true" />
-    <EventMask>19</EventMask>
+    <ArchiveMask>65559</ArchiveMask>
+    <EventMask>49</EventMask>
   </Cnl>
   <Cnl>
     <CnlNum>2</CnlNum>
     <Active>true</Active>
-    <Name>Pressure_Value</Name>
-    <Code>Pressure</Code>
-    <DataTypeID xsi:nil="true" />
-    <DataLen xsi:nil="true" />
-    <CnlTypeID>1</CnlTypeID>
-    <ObjNum>1</ObjNum>
-    <DeviceNum>1</DeviceNum>
-    <TagNum xsi:nil="true" />
-    <TagCode>Pressure</TagCode>
-    <FormulaEnabled>true</FormulaEnabled>
-    <InFormula>Cnl / 100</InFormula>
-    <OutFormula />
-    <FormatID>4</FormatID>
-    <OutFormatID xsi:nil="true" />
-    <QuantityID>41</QuantityID>
-    <UnitID>1002</UnitID>
-    <LimID>2</LimID>
-    <ArchiveMask xsi:nil="true" />
-    <EventMask>19</EventMask>
-  </Cnl>
-  <Cnl>
-    <CnlNum>3</CnlNum>
-    <Active>true</Active>
-    <Name>Level_Value</Name>
+    <Name>Уровень (L)</Name>
     <Code>Level</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
@@ -58,44 +32,38 @@
     <DeviceNum>1</DeviceNum>
     <TagNum xsi:nil="true" />
     <TagCode>Level</TagCode>
-    <FormulaEnabled>true</FormulaEnabled>
-    <InFormula>Cnl / 10</InFormula>
-    <OutFormula />
+    <FormulaEnabled>false</FormulaEnabled>
     <FormatID>3</FormatID>
-    <OutFormatID xsi:nil="true" />
     <QuantityID xsi:nil="true" />
     <UnitID>101</UnitID>
-    <LimID>3</LimID>
-    <ArchiveMask xsi:nil="true" />
-    <EventMask>17</EventMask>
+    <LimID>2</LimID>
+    <ArchiveMask>65559</ArchiveMask>
+    <EventMask>49</EventMask>
   </Cnl>
   <Cnl>
-    <CnlNum>4</CnlNum>
+    <CnlNum>3</CnlNum>
     <Active>true</Active>
-    <Name>Pump_State</Name>
-    <Code>PumpState</Code>
+    <Name>Вибрация (V)</Name>
+    <Code>Vibration</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>1</CnlTypeID>
     <ObjNum>1</ObjNum>
     <DeviceNum>1</DeviceNum>
     <TagNum xsi:nil="true" />
-    <TagCode>PumpState</TagCode>
+    <TagCode>Vibration</TagCode>
     <FormulaEnabled>false</FormulaEnabled>
-    <InFormula />
-    <OutFormula />
-    <FormatID>21</FormatID>
-    <OutFormatID xsi:nil="true" />
-    <QuantityID>11</QuantityID>
-    <UnitID xsi:nil="true" />
-    <LimID xsi:nil="true" />
-    <ArchiveMask xsi:nil="true" />
-    <EventMask>25</EventMask>
+    <FormatID>4</FormatID>
+    <QuantityID xsi:nil="true" />
+    <UnitID>1002</UnitID>
+    <LimID>3</LimID>
+    <ArchiveMask>65559</ArchiveMask>
+    <EventMask>49</EventMask>
   </Cnl>
   <Cnl>
-    <CnlNum>5</CnlNum>
+    <CnlNum>4</CnlNum>
     <Active>true</Active>
-    <Name>Pump_Control</Name>
+    <Name>Управление насосом (ПУСК/СТОП)</Name>
     <Code>PumpCtrl</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
@@ -105,21 +73,18 @@
     <TagNum xsi:nil="true" />
     <TagCode>PumpCtrl</TagCode>
     <FormulaEnabled>false</FormulaEnabled>
-    <InFormula />
-    <OutFormula />
-    <FormatID>21</FormatID>
-    <OutFormatID xsi:nil="true" />
-    <QuantityID>11</QuantityID>
+    <FormatID>101</FormatID>
+    <QuantityID>12</QuantityID>
     <UnitID xsi:nil="true" />
     <LimID xsi:nil="true" />
-    <ArchiveMask xsi:nil="true" />
-    <EventMask>65</EventMask>
+    <ArchiveMask>65559</ArchiveMask>
+    <EventMask>105</EventMask>
   </Cnl>
   <Cnl>
-    <CnlNum>6</CnlNum>
+    <CnlNum>5</CnlNum>
     <Active>true</Active>
-    <Name>Alarm_Flag</Name>
-    <Code>Alarm</Code>
+    <Name>Аварийный сигнал</Name>
+    <Code>AlarmState</Code>
     <DataTypeID xsi:nil="true" />
     <DataLen xsi:nil="true" />
     <CnlTypeID>3</CnlTypeID>
@@ -128,14 +93,12 @@
     <TagNum xsi:nil="true" />
     <TagCode />
     <FormulaEnabled>true</FormulaEnabled>
-    <InFormula>(Val(1) &gt; 80 || Val(2) &gt; 8) ? 1.0 : 0.0</InFormula>
-    <OutFormula />
-    <FormatID>26</FormatID>
-    <OutFormatID xsi:nil="true" />
+    <InFormula>(Val(1) &gt; 400 || Val(3) &gt; 15) ? 1 : 0; (Val(1) &gt; 400 || Val(3) &gt; 15) ? 15 : 13</InFormula>
+    <FormatID>102</FormatID>
     <QuantityID>11</QuantityID>
     <UnitID xsi:nil="true" />
     <LimID xsi:nil="true" />
-    <ArchiveMask xsi:nil="true" />
-    <EventMask xsi:nil="true" />
+    <ArchiveMask>65559</ArchiveMask>
+    <EventMask>25</EventMask>
   </Cnl>
 </ArrayOfCnl>

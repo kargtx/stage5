@@ -20,3 +20,8 @@ __pycache__/
 *$py.class
 *.log
 
+# Large binaries and installers
+*.exe
+!ВАС/**/*.exe
+
+

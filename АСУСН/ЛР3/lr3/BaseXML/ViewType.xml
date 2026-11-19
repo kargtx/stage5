@@ -2,54 +2,54 @@
 <ArrayOfViewType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ViewType>
     <ViewTypeID>1</ViewTypeID>
-    <Name>Таблица</Name>
+    <Name>Table</Name>
     <Code>TableView</Code>
     <FileExt>tbl</FileExt>
-    <Descr>Требуется плагин Основной</Descr>
+    <Descr>Requires Main Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>2</ViewTypeID>
-    <Name>Мнемосхема</Name>
+    <Name>Scheme</Name>
     <Code>SchemeView</Code>
     <FileExt>sch</FileExt>
-    <Descr>Требуется плагин Схемы</Descr>
+    <Descr>Requires Scheme Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>3</ViewTypeID>
-    <Name>Веб-страница</Name>
+    <Name>Web page</Name>
     <Code>WebPageView</Code>
+    <Descr>Requires Web Page Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>4</ViewTypeID>
-    <Name>График Про</Name>
+    <Name>Chart Pro</Name>
     <Code>ChartProView</Code>
-    <FileExt>dash</FileExt>
-    <Descr>Требуется плагин Графики Про</Descr>
+    <Descr>Requires Chart Pro Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>5</ViewTypeID>
-    <Name>Дэшборд</Name>
+    <Name>Dashboard</Name>
     <Code>DashboardView</Code>
     <FileExt>dash</FileExt>
-    <Descr>Требуется плагин Дэшборды</Descr>
+    <Descr>Requires Dashboard Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>6</ViewTypeID>
-    <Name>Карта</Name>
+    <Name>Map</Name>
     <Code>MapView</Code>
     <FileExt>map</FileExt>
-    <Descr>Требуется плагин Карты</Descr>
+    <Descr>Requires Map Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>7</ViewTypeID>
-    <Name>Мнемосхема (новый)</Name>
+    <Name>Mimic view</Name>
     <Code>MimicView</Code>
     <FileExt>mim</FileExt>
-    <Descr>Требуется плагин Мнемосхемы</Descr>
+    <Descr>Requires Mimic Plugin</Descr>
   </ViewType>
   <ViewType>
     <ViewTypeID>101</ViewTypeID>
-    <Name>Пользовательское представление</Name>
-    <Descr>Добавляйте пользовательские элементы, начиная с этой строки</Descr>
+    <Name>Custom view</Name>
+    <Descr>Add custom items starting from this row</Descr>
   </ViewType>
 </ArrayOfViewType>

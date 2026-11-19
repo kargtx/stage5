@@ -2,14 +2,14 @@
 <ArrayOfFormat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Format>
     <FormatID>1</FormatID>
-    <Name>Общий</Name>
+    <Name>General</Name>
     <Code>G</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
     <Frmt>G</Frmt>
-    <Descr>Наиболее компактная запись с фиксированной точкой или экспоненциальная</Descr>
+    <Descr>The more compact of either fixed-point or scientific notation</Descr>
   </Format>
   <Format>
     <FormatID>2</FormatID>
@@ -20,7 +20,7 @@
     <IsDate>false</IsDate>
     <IsString>false</IsString>
     <Frmt>N0</Frmt>
-    <Descr>Целые и десятичные цифры, разделители групп и десятичный разделитель</Descr>
+    <Descr>Integral and decimal digits, group separators, and a decimal separator</Descr>
   </Format>
   <Format>
     <FormatID>3</FormatID>
@@ -84,18 +84,18 @@
   </Format>
   <Format>
     <FormatID>9</FormatID>
-    <Name>16-ричный</Name>
+    <Name>Hexadecimal</Name>
     <Code>X</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
     <Frmt>X</Frmt>
-    <Descr>Шестнадцатеричное представление числа</Descr>
+    <Descr>Hexadecimal representation of a number</Descr>
   </Format>
   <Format>
     <FormatID>10</FormatID>
-    <Name>16-ричный 2 цифры</Name>
+    <Name>Hexadecimal 2 digits</Name>
     <Code>X2</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
@@ -105,7 +105,7 @@
   </Format>
   <Format>
     <FormatID>11</FormatID>
-    <Name>16-ричный 4 цифры</Name>
+    <Name>Hexadecimal 4 digits</Name>
     <Code>X4</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
@@ -115,7 +115,7 @@
   </Format>
   <Format>
     <FormatID>12</FormatID>
-    <Name>16-ричный 8 цифр</Name>
+    <Name>Hexadecimal 8 digits</Name>
     <Code>X8</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
@@ -125,18 +125,18 @@
   </Format>
   <Format>
     <FormatID>13</FormatID>
-    <Name>Двоичный</Name>
+    <Name>Binary</Name>
     <Code>B</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
     <Frmt>B</Frmt>
-    <Descr>Двоичное представление числа</Descr>
+    <Descr>Binary representation of a number</Descr>
   </Format>
   <Format>
     <FormatID>14</FormatID>
-    <Name>Двоичный 8 цифр</Name>
+    <Name>Binary 8 digits</Name>
     <Code>B8</Code>
     <IsNumber>true</IsNumber>
     <IsEnum>false</IsEnum>
@@ -146,100 +146,100 @@
   </Format>
   <Format>
     <FormatID>21</FormatID>
-    <Name>Откл-Вкл</Name>
+    <Name>Off-On</Name>
     <Code>OffOn</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>Откл; Вкл</Frmt>
+    <Frmt>Off; On</Frmt>
   </Format>
   <Format>
     <FormatID>22</FormatID>
-    <Name>Нет-Да</Name>
+    <Name>No-Yes</Name>
     <Code>NoYes</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>Нет; Да</Frmt>
+    <Frmt>No; Yes</Frmt>
   </Format>
   <Format>
     <FormatID>23</FormatID>
-    <Name>Откл</Name>
+    <Name>Off</Name>
     <Code>Off</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>Откл: red</Frmt>
+    <Frmt>Off: red</Frmt>
   </Format>
   <Format>
     <FormatID>24</FormatID>
-    <Name>Вкл</Name>
+    <Name>On</Name>
     <Code>On</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>; Вкл: green</Frmt>
+    <Frmt>; On: green</Frmt>
   </Format>
   <Format>
     <FormatID>25</FormatID>
-    <Name>Выполнить</Name>
+    <Name>Execute</Name>
     <Code>Execute</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>; Выполнить</Frmt>
+    <Frmt>; Execute</Frmt>
   </Format>
   <Format>
     <FormatID>26</FormatID>
-    <Name>Норма-Ошибка</Name>
+    <Name>Normal-Error</Name>
     <Code>NormalError</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>Норма: green; Ошибка: red</Frmt>
+    <Frmt>Normal: green; Error: red</Frmt>
   </Format>
   <Format>
     <FormatID>31</FormatID>
-    <Name>Дата и время</Name>
+    <Name>Date and time</Name>
     <Code>DateTime</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>true</IsDate>
     <IsString>false</IsString>
     <Frmt>G</Frmt>
-    <Descr>Общий шаблон даты/времени (длинное время)</Descr>
+    <Descr>General date/time pattern (long time)</Descr>
   </Format>
   <Format>
     <FormatID>32</FormatID>
-    <Name>Дата</Name>
+    <Name>Date</Name>
     <Code>Date</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>true</IsDate>
     <IsString>false</IsString>
     <Frmt>d</Frmt>
-    <Descr>Короткая запись даты</Descr>
+    <Descr>Short date pattern</Descr>
   </Format>
   <Format>
     <FormatID>33</FormatID>
-    <Name>Время</Name>
+    <Name>Time</Name>
     <Code>Time</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>false</IsEnum>
     <IsDate>true</IsDate>
     <IsString>false</IsString>
     <Frmt>T</Frmt>
-    <Descr>Длинная запись времени</Descr>
+    <Descr>Long time pattern</Descr>
   </Format>
   <Format>
     <FormatID>41</FormatID>
-    <Name>Строка</Name>
+    <Name>String</Name>
     <Code>String</Code>
     <IsNumber>false</IsNumber>
     <IsEnum>false</IsEnum>
@@ -248,12 +248,24 @@
   </Format>
   <Format>
     <FormatID>101</FormatID>
-    <Name>Пользовательский формат</Name>
+    <Name>Состояние насоса</Name>
+    <Code>PumpState</Code>
     <IsNumber>false</IsNumber>
-    <IsEnum>false</IsEnum>
+    <IsEnum>true</IsEnum>
     <IsDate>false</IsDate>
     <IsString>false</IsString>
-    <Frmt>G</Frmt>
-    <Descr>Добавляйте пользовательские элементы, начиная с этой строки</Descr>
+    <Frmt>СТОП: red; ПУСК: green</Frmt>
+    <Descr>Дискретное состояние насосного агрегата</Descr>
+  </Format>
+  <Format>
+    <FormatID>102</FormatID>
+    <Name>Статус тревоги</Name>
+    <Code>AlarmState</Code>
+    <IsNumber>false</IsNumber>
+    <IsEnum>true</IsEnum>
+    <IsDate>false</IsDate>
+    <IsString>false</IsString>
+    <Frmt>НОРМА: green; АВАРИЯ: red</Frmt>
+    <Descr>Расчетный флаг аварийного режима</Descr>
   </Format>
 </ArrayOfFormat>

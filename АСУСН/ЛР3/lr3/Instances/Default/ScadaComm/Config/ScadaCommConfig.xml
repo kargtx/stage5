@@ -38,10 +38,10 @@
     </DataSource>
   </DataSources>
   <Lines>
-    <Line active="true" isBound="true" number="1" name="Lab3_Modbus">
+    <Line active="true" isBound="true" number="1" name="Линия Modbus TCP (ПЛК-имитатор)">
       <LineOptions>
         <ReqRetries>3</ReqRetries>
-        <CycleDelay>1000</CycleDelay>
+        <CycleDelay>500</CycleDelay>
         <CmdEnabled>true</CmdEnabled>
         <PollAfterCmd>true</PollAfterCmd>
         <DetailedLog>true</DetailedLog>
@@ -49,9 +49,9 @@
       <Channel type="TcpClient" driver="DrvCnlBasic">
         <Option name="Behavior" value="Master" />
         <Option name="ConnectionMode" value="Shared" />
-        <Option name="DisconnectOnError" value="true" />
+        <Option name="DisconnectOnError" value="false" />
         <Option name="Host" value="127.0.0.1" />
-        <Option name="ReconnectAfter" value="5" />
+        <Option name="ReconnectAfter" value="2" />
         <Option name="StayConnected" value="true" />
         <Option name="TcpPort" value="502" />
       </Channel>
@@ -59,7 +59,7 @@
         <Option name="TransMode" value="TCP" />
       </CustomOptions>
       <DevicePolling>
-        <Device active="true" isBound="true" number="1" name="PLC_Lab3" driver="DrvModbus" numAddress="1" strAddress="" pollOnCmd="false" timeout="1000" delay="200" time="00:00:00" period="00:00:00" cmdLine="DrvModbus_Lab3.xml" />
+        <Device active="true" isBound="true" number="1" name="ПЛК Вариант 2 (Modbus TCP)" driver="DrvModbus" numAddress="1" strAddress="127.0.0.1" pollOnCmd="false" timeout="2000" delay="500" time="00:00:00" period="00:00:00" cmdLine="DrvModbus_Var2.xml" />
       </DevicePolling>
     </Line>
   </Lines>

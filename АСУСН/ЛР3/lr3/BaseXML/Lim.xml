@@ -1,36 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLim xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Lim>
     <LimID>1</LimID>
-    <Name>Границы температуры (Перегрев: T > 80)</Name>
+    <Name>Пределы расхода Q (Q &gt; 400 м³/ч)</Name>
     <IsBoundToCnl>false</IsBoundToCnl>
-    <IsShared>false</IsShared>
+    <IsShared>true</IsShared>
     <LoLo xsi:nil="true" />
-    <Low>10</Low>
-    <High>70</High>
-    <HiHi>80</HiHi>
-    <Deadband>0.5</Deadband>
+    <Low xsi:nil="true" />
+    <High>380</High>
+    <HiHi>400</HiHi>
+    <Deadband>2</Deadband>
   </Lim>
   <Lim>
     <LimID>2</LimID>
-    <Name>Границы давления (Высокое давление: P > 8)</Name>
+    <Name>Пределы уровня L (0–100 %)</Name>
     <IsBoundToCnl>false</IsBoundToCnl>
-    <IsShared>false</IsShared>
-    <LoLo xsi:nil="true" />
-    <Low xsi:nil="true" />
-    <High>7</High>
-    <HiHi>8</HiHi>
-    <Deadband>0.05</Deadband>
+    <IsShared>true</IsShared>
+    <LoLo>5</LoLo>
+    <Low>15</Low>
+    <High>85</High>
+    <HiHi>95</HiHi>
+    <Deadband>1</Deadband>
   </Lim>
   <Lim>
     <LimID>3</LimID>
-    <Name>Границы уровня</Name>
+    <Name>Пределы вибрации V (V &gt; 15 мм/с)</Name>
     <IsBoundToCnl>false</IsBoundToCnl>
-    <IsShared>false</IsShared>
-    <LoLo>5</LoLo>
-    <Low>10</Low>
-    <High>90</High>
-    <HiHi>95</HiHi>
-    <Deadband>0.5</Deadband>
+    <IsShared>true</IsShared>
+    <LoLo xsi:nil="true" />
+    <Low xsi:nil="true" />
+    <High>13.5</High>
+    <HiHi>15</HiHi>
+    <Deadband>0.2</Deadband>
   </Lim>
 </ArrayOfLim>

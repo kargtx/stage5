@@ -17,7 +17,6 @@
   </ListenerOptions>
   <Modules>
     <Module code="ModArcBasic" />
-    <Module code="ModArcPostgreSql" />
   </Modules>
   <Archives>
     <Archive active="true" code="Cur" name="Current data" kind="Current" module="ModArcBasic">
@@ -38,21 +37,6 @@
       <Option name="WritingPeriod" value="1" />
       <Option name="WritingPeriodUnit" value="Minute" />
     </Archive>
-    <Archive active="true" code="Lab3" name="Lab3_Archive" kind="Historical" module="ModArcBasic">
-      <Option name="IsPeriodic" value="true" />
-      <Option name="LogEnabled" value="true" />
-      <Option name="MaxQueueSize" value="1000" />
-      <Option name="PullToPeriod" value="0" />
-      <Option name="ReadOnly" value="false" />
-      <Option name="Retention" value="1" />
-      <Option name="UseCopyDir" value="false" />
-      <Option name="UsePeriodStartTime" value="false" />
-      <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Second" />
-      <Option name="WritingPeriod" value="1" />
-      <Option name="WritingPeriodUnit" value="Second" />
-    </Archive>
     <Archive active="true" code="Hour" name="Hourly archive" kind="Historical" module="ModArcBasic">
       <Option name="IsPeriodic" value="true" />
       <Option name="LogEnabled" value="false" />
@@ -62,8 +46,6 @@
       <Option name="Retention" value="365" />
       <Option name="UseCopyDir" value="false" />
       <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Minute" />
       <Option name="WritingPeriod" value="1" />
       <Option name="WritingPeriodUnit" value="Hour" />
     </Archive>
@@ -76,8 +58,6 @@
       <Option name="Retention" value="365" />
       <Option name="UseCopyDir" value="false" />
       <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Hour" />
       <Option name="WritingPeriod" value="24" />
       <Option name="WritingPeriodUnit" value="Hour" />
     </Archive>
@@ -109,8 +89,6 @@
       <Option name="Retention" value="365" />
       <Option name="UseDefaultConn" value="true" />
       <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Second" />
       <Option name="WritingPeriod" value="1" />
       <Option name="WritingPeriodUnit" value="Minute" />
     </Archive>
@@ -126,8 +104,6 @@
       <Option name="Retention" value="365" />
       <Option name="UseDefaultConn" value="true" />
       <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Minute" />
       <Option name="WritingPeriod" value="1" />
       <Option name="WritingPeriodUnit" value="Hour" />
     </Archive>
@@ -143,8 +119,6 @@
       <Option name="Retention" value="365" />
       <Option name="UseDefaultConn" value="true" />
       <Option name="WriteWithPeriod" value="true" />
-      <Option name="WritingOffset" value="0" />
-      <Option name="WritingOffsetUnit" value="Hour" />
       <Option name="WritingPeriod" value="24" />
       <Option name="WritingPeriodUnit" value="Hour" />
     </Archive>
@@ -157,6 +131,18 @@
       <Option name="ReadOnly" value="false" />
       <Option name="Retention" value="365" />
       <Option name="UseDefaultConn" value="true" />
+    </Archive>
+    <Archive active="true" code="Lab3" name="Архив ЛР3 (1 сек)" kind="Historical" module="ModArcBasic">
+      <Option name="IsPeriodic" value="true" />
+      <Option name="LogEnabled" value="false" />
+      <Option name="MaxQueueSize" value="1000" />
+      <Option name="PullToPeriod" value="0" />
+      <Option name="ReadOnly" value="false" />
+      <Option name="Retention" value="365" />
+      <Option name="UseCopyDir" value="false" />
+      <Option name="WriteWithPeriod" value="true" />
+      <Option name="WritingPeriod" value="1" />
+      <Option name="WritingPeriodUnit" value="Second" />
     </Archive>
   </Archives>
 </ScadaServerConfig>

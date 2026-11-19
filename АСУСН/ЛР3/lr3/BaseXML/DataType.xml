@@ -3,21 +3,21 @@
   <DataType>
     <DataTypeID>0</DataTypeID>
     <Name>Double</Name>
-    <Descr>64-битное число с плавающей точкой</Descr>
+    <Descr>64-bit floating-point number</Descr>
   </DataType>
   <DataType>
     <DataTypeID>1</DataTypeID>
     <Name>Integer</Name>
-    <Descr>64-битное целое число со знаком</Descr>
+    <Descr>64-bit signed integer</Descr>
   </DataType>
   <DataType>
     <DataTypeID>2</DataTypeID>
     <Name>ASCII string</Name>
-    <Descr>Только латинские символы. 8 символов на канал</Descr>
+    <Descr>Only Latin characters. 8 characters per channel</Descr>
   </DataType>
   <DataType>
     <DataTypeID>3</DataTypeID>
     <Name>Unicode string</Name>
-    <Descr>Формат UTF-16 с порядком байт от младшего к старшему. 4 символа на канал</Descr>
+    <Descr>UTF-16 format using the little endian byte order. 4 characters per channel</Descr>
   </DataType>
 </ArrayOfDataType>
