@@ -22,6 +22,14 @@ import json
 import time
 import threading
 import argparse
+import sys
+
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 try:
     from pymodbus.datastore import ModbusSlaveContext
@@ -67,7 +75,48 @@ class VirtualPlc2:
             self.store = ModbusSlaveContext(di=self.di_block, co=self.co_block, hr=self.hr_block, ir=self.ir_block)
             self.context = ModbusServerContext(slaves=self.store, single=True)
 
+        if hasattr(self.store, 'simdevice'):
+            self.store.simdevice.action = self._modbus_action
+
         self.plant_socket = None
+        self.last_plant_connect_attempt = 0.0
+        self.last_plc1_connect_attempt = 0.0
+        self.plc1_client = None
+
+        self._init_registers()
+
+    async def _modbus_action(self, fc, start_addr, addr, count, current_regs, set_values):
+        """Динамический перехват Modbus-запросов от SCADA к ПЛК №2."""
+        if fc == 3:  # Чтение Holding Registers (T, Level, Pressure)
+            if len(current_regs) > 0:
+                current_regs[0] = int(self.state['temperature'] * 10)
+            if len(current_regs) > 1:
+                current_regs[1] = int(self.state['level'])
+            if len(current_regs) > 2:
+                current_regs[2] = int(self.state['pressure'] * 100)
+        elif fc == 2:  # Чтение Discrete Inputs (Pump, Valve, Alarm)
+            try:
+                from pymodbus.simulator.simutils import SimUtils
+                bits = [bool(self.state['pump_on']), bool(self.state['valve_open']), bool(self.state['alarm'])] + [False] * 13
+                regs = SimUtils.bitsToRegisters(bits)
+                current_regs[0] = regs[0]
+            except Exception:
+                pass
+        return None
+
+    def _init_registers(self):
+        """Начальная инициализация регистров Modbus ПЛК №2."""
+        hr = self._get_target_list(self.hr_block, block_idx=2)
+        if hr is not None and len(hr) >= 3:
+            hr[0] = int(self.state['temperature'] * 10)
+            hr[1] = int(self.state['level'])
+            hr[2] = int(self.state['pressure'] * 100)
+
+        di = self._get_target_list(self.di_block, block_idx=0)
+        if di is not None and len(di) >= 3:
+            di[0] = bool(self.state['pump_on'])
+            di[1] = bool(self.state['valve_open'])
+            di[2] = bool(self.state['alarm'])
 
     def _get_target_list(self, block, block_idx=2):
         if hasattr(self.store, 'simdevice') and hasattr(self.store.simdevice, 'simdata'):
@@ -81,40 +130,95 @@ class VirtualPlc2:
     def connect_to_plant(self):
         """Подключение к TCP-серверу имитатора объекта."""
         try:
-            self.plant_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.plant_socket.connect(('127.0.0.1', self.plant_port))
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(0.5)
+            sock.connect(('127.0.0.1', self.plant_port))
+            sock.settimeout(None)
+            self.plant_socket = sock
             print(f"[ПЛК №2] Успешное подключение к имитатору объекта на 127.0.0.1:{self.plant_port}")
             return True
-        except Exception as e:
-            print(f"[ПЛК №2] Предупреждение: имитатор объекта пока недоступен ({e})")
+        except Exception:
+            self.plant_socket = None
             return False
 
-    def read_from_plc1(self):
-        """Чтение регуляторных сигналов от ПЛК №1 по Modbus TCP."""
-        client = ModbusTcpClient('127.0.0.1', port=self.plc1_port)
-        if not client.connect():
-            self.state['plc1_connected'] = False
-            return False
+    def sync_with_plc1(self):
+        """Синхронизация с ПЛК №1: передача измеренной температуры и считывание мощности ТЭНа."""
+        now = time.time()
+        if self.plc1_client is None:
+            self.plc1_client = ModbusTcpClient('127.0.0.1', port=self.plc1_port, timeout=0.2)
 
         try:
-            res = client.read_holding_registers(0, count=3)
+            if not self.plc1_client.connected:
+                # Ограничиваем частоту попыток подключения при недоступности ПЛК №1
+                if now - self.last_plc1_connect_attempt < 1.0:
+                    return False
+                self.last_plc1_connect_attempt = now
+                if not self.plc1_client.connect():
+                    self.state['plc1_connected'] = False
+                    return False
+
+            # 1. Запись измеренной температуры процесса в ПЛК №1 (регистр HR[0])
+            w_res = self.plc1_client.write_register(0, int(self.state['temperature'] * 10))
+            if w_res.isError():
+                raise ConnectionError("Modbus write error")
+
+            # 2. Считывание управляющей мощности ТЭНа от ПИД-регулятора (регистр HR[1])
+            res = self.plc1_client.read_holding_registers(0, count=3)
             if not res.isError() and len(res.registers) >= 2:
                 self.state['heater_power'] = res.registers[1] / 10.0
                 self.state['plc1_connected'] = True
                 return True
+            else:
+                raise ConnectionError("Modbus read error")
         except Exception:
             self.state['plc1_connected'] = False
-        finally:
-            client.close()
-        return False
+            try:
+                self.plc1_client.close()
+            except Exception:
+                pass
+            return False
 
     def control_loop(self):
         """Цикл управления ПЛК №2 (период 100 мс)."""
         while self.running:
-            # 1. Считывание регуляторной мощности от ПЛК №1
-            self.read_from_plc1()
+            # 1. Автоматическое переподключение к имитатору объекта при необходимости
+            now = time.time()
+            if not self.plant_socket and (now - self.last_plant_connect_attempt > 1.0):
+                self.last_plant_connect_attempt = now
+                self.connect_to_plant()
 
-            # 2. Логика управления агрегатами по Варианту 1
+            # 2. Обмен данными с физическим объектом через TCP-сокет
+            if self.plant_socket:
+                cmd = {
+                    'heater_power': self.state['heater_power'] if self.state['plc1_connected'] else 0.0,
+                    'pump_on': self.state['pump_on'],
+                    'valve_open': self.state['valve_open']
+                }
+                try:
+                    self.plant_socket.sendall(json.dumps(cmd).encode('utf-8'))
+                    raw_data = self.plant_socket.recv(1024)
+                    if raw_data:
+                        plant_state = json.loads(raw_data.decode('utf-8'))
+                        self.state['temperature'] = plant_state['temperature']
+                        self.state['level'] = plant_state['level']
+                        self.state['pressure'] = plant_state['pressure']
+                    else:
+                        try:
+                            self.plant_socket.close()
+                        except Exception:
+                            pass
+                        self.plant_socket = None
+                except Exception:
+                    try:
+                        self.plant_socket.close()
+                    except Exception:
+                        pass
+                    self.plant_socket = None
+
+            # 3. Межконтроллерная синхронизация с ПЛК №1 по Modbus TCP
+            self.sync_with_plc1()
+
+            # 4. Логика управления агрегатами по Варианту 1
             t_cur = self.state['temperature']
             l_cur = self.state['level']
 
@@ -133,25 +237,7 @@ class VirtualPlc2:
             # Сигнал аварии
             self.state['alarm'] = bool(t_cur > 85.0 or self.state['pressure'] > 7.5 or not self.state['plc1_connected'])
 
-            # 3. Обмен данными с физическим объектом через сокет
-            if self.plant_socket:
-                cmd = {
-                    'heater_power': self.state['heater_power'] if self.state['plc1_connected'] else 0.0,
-                    'pump_on': self.state['pump_on'],
-                    'valve_open': self.state['valve_open']
-                }
-                try:
-                    self.plant_socket.sendall(json.dumps(cmd).encode('utf-8'))
-                    raw_data = self.plant_socket.recv(1024)
-                    if raw_data:
-                        plant_state = json.loads(raw_data.decode('utf-8'))
-                        self.state['temperature'] = plant_state['temperature']
-                        self.state['level'] = plant_state['level']
-                        self.state['pressure'] = plant_state['pressure']
-                except Exception:
-                    self.plant_socket = None
-
-            # 4. Обновление регистров Modbus TCP для SCADA
+            # 5. Обновление регистров Modbus TCP для SCADA (порт 5021)
             hr = self._get_target_list(self.hr_block, block_idx=2)
             di = self._get_target_list(self.di_block, block_idx=0)
 
@@ -195,6 +281,11 @@ class VirtualPlc2:
         if self.plant_socket:
             try:
                 self.plant_socket.close()
+            except Exception:
+                pass
+        if self.plc1_client:
+            try:
+                self.plc1_client.close()
             except Exception:
                 pass
         print("ПЛК №2 остановлен.")

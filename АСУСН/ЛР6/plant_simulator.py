@@ -9,13 +9,21 @@
 - Гидродинамический баланс: приток от насоса и слив через регулирующий клапан
 - Барометрическое давление в емкости
 - Поддержка внесения отказов датчиков и исполнительных органов
-- Сетевой TCP-интерфейс (порт 9999) для сопряжения с ПЛК №2
+- Сетевой TCP-интерфейс (порт 9999) для сопряжения с ПЛК №2 с автоматическим реконнектом
 """
 
 import socket
 import json
 import time
 import argparse
+import sys
+
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 
 class PlantSimulator:
@@ -55,7 +63,6 @@ class PlantSimulator:
     def step(self, dt=0.1):
         """
         Один такт численного интегрирования физической модели.
-        
         :param dt: шаг интегрирования по времени (с)
         :return: словарь текущего состояния {'temperature', 'level', 'pressure'}
         """
@@ -97,35 +104,44 @@ class PlantSimulator:
 
 
 def run_plant_server(host='127.0.0.1', port=9999):
-    """Запуск TCP-сервера имитатора объекта для подключения ПЛК №2."""
+    """Запуск TCP-сервера имитатора объекта для подключения ПЛК №2 с циклом авто-реконнекта."""
     plant = PlantSimulator()
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server.bind((host, port))
-    server.listen(1)
+    server.listen(5)
 
     print("=" * 70)
     print("  ИМИТАТОР ТЕХНОЛОГИЧЕСКОГО ОБЪЕКТА (PLANT SIMULATOR)")
-    print(f"  Сервер запущен и ожидает подключение ПЛК №2 на {host}:{port}")
+    print(f"  TCP-сервер запущен на {host}:{port}. Ожидание подключения ПЛК №2...")
     print("=" * 70)
 
     try:
-        conn, addr = server.accept()
-        print(f"[TCP Server] Успешное подключение от ПЛК №2: {addr}")
         while True:
-            data = conn.recv(1024)
-            if not data:
-                break
-            commands = json.loads(data.decode('utf-8'))
-            plant.heater_power = float(commands.get('heater_power', 0.0))
-            plant.pump_on = bool(commands.get('pump_on', False))
-            plant.valve_open = bool(commands.get('valve_open', False))
+            conn, addr = server.accept()
+            print(f"[Объект] Подключение от ПЛК №2: {addr}")
+            try:
+                while True:
+                    data = conn.recv(1024)
+                    if not data:
+                        break
+                    commands = json.loads(data.decode('utf-8'))
+                    plant.heater_power = float(commands.get('heater_power', 0.0))
+                    plant.pump_on = bool(commands.get('pump_on', False))
+                    plant.valve_open = bool(commands.get('valve_open', False))
 
-            state = plant.step(dt=0.1)
-            conn.sendall(json.dumps(state).encode('utf-8'))
-            time.sleep(0.1)
+                    state = plant.step(dt=0.1)
+                    conn.sendall(json.dumps(state).encode('utf-8'))
+                    time.sleep(0.1)
+            except Exception as e:
+                print(f"[Объект] Разрыв соединения с ПЛК №2 ({e}). Ожидание повторного подключения...")
+            finally:
+                try:
+                    conn.close()
+                except Exception:
+                    pass
     except KeyboardInterrupt:
-        print("\nОстановка имитатора по команде оператора.")
+        print("\nОстановка имитатора объекта.")
     finally:
         server.close()
 

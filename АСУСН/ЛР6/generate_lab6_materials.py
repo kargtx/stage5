@@ -932,15 +932,33 @@ def build_full_docx_report(img_paths, output_docx_path):
             run_cap.font.size = Pt(10.5)
 
     def add_code_block(code_text):
-        p = doc.add_paragraph()
-        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-        p.paragraph_format.space_before = Pt(4)
-        p.paragraph_format.space_after = Pt(6)
-        p.paragraph_format.left_indent = Inches(0.3)
-        run = p.add_run(code_text)
-        run.font.name = 'Consolas'
-        run.font.size = Pt(9.5)
-        run.font.color.rgb = RGBColor(30, 30, 30)
+        tbl = doc.add_table(rows=1, cols=1)
+        tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
+        cell = tbl.cell(0, 0)
+        cell.paragraphs[0].text = ""
+        tcPr = cell._tc.get_or_add_tcPr()
+        shd = parse_xml(f'<w:shd {nsdecls("w")} w:fill="F8FAFC"/>')
+        tcPr.append(shd)
+        tcBorders = parse_xml(f'<w:tcBorders {nsdecls("w")}><w:top w:val="single" w:sz="4" w:space="0" w:color="CBD5E1"/><w:left w:val="single" w:sz="4" w:space="0" w:color="CBD5E1"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="CBD5E1"/><w:right w:val="single" w:sz="4" w:space="0" w:color="CBD5E1"/></w:tcBorders>')
+        tcPr.append(tcBorders)
+
+        p = cell.paragraphs[0]
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_before = Pt(3)
+        p.paragraph_format.space_after = Pt(3)
+        p.paragraph_format.line_spacing = 1.05
+        for idx, line in enumerate(code_text.strip().split('\n')):
+            if idx > 0:
+                p = cell.add_paragraph()
+                p.paragraph_format.first_line_indent = Inches(0)
+                p.paragraph_format.space_before = Pt(0)
+                p.paragraph_format.space_after = Pt(1.5)
+                p.paragraph_format.line_spacing = 1.05
+            r = p.add_run(line)
+            r.font.name = 'Consolas'
+            r.font.size = Pt(8.5)
+            r.font.color.rgb = RGBColor(30, 41, 59)
+        add_p("", space_before=0, space_after=4, indent=0)
 
     # -------------------------------------------------------------------------
     # ТИТУЛЬНЫЙ ЛИСТ
@@ -1065,6 +1083,14 @@ def build_full_docx_report(img_paths, output_docx_path):
         "Программный макет реализован на языке Python 3.14 и состоит из 4 взаимодействующих процессов:",
         indent=0.49
     )
+
+    def load_code(filename):
+        fpath = os.path.join(WORK_DIR, filename)
+        if os.path.exists(fpath):
+            with open(fpath, 'r', encoding='utf-8') as f:
+                return f.read()
+        return f"# Файл {filename} не найден"
+
     add_p("1. plant_simulator.py (Имитатор физического аппарата):", bold=True, indent=0.49)
     add_p(
         "Моделирует нелинейную динамику емкости с жидкостью:\n"
@@ -1074,24 +1100,35 @@ def build_full_docx_report(img_paths, output_docx_path):
         "Связь с ПЛК №2 осуществляется через высокоскоростной TCP-сокет на порту 9999 с форматом сообщений JSON.",
         indent=0.49
     )
+    add_p("Листинг 1 — Имитатор технологического объекта (plant_simulator.py):", bold=True, italic=True)
+    add_code_block(load_code("plant_simulator.py"))
+
     add_p("2. plc1.py (ПЛК №1 — Температурный регулятор):", bold=True, indent=0.49)
     add_p(
         "Выполняет функции регулятора температуры. Развертывает сервер Modbus TCP на порту 5020. "
         "Карта памяти: HR[0] = T · 10, HR[1] = Heater · 10, HR[2] = SP · 10. Реализует цикл 100 мс с защищенным ПИД-алгоритмом.",
         indent=0.49
     )
+    add_p("Листинг 2 — Виртуальный контроллер ПЛК №1 (plc1.py):", bold=True, italic=True)
+    add_code_block(load_code("plc1.py"))
+
     add_p("3. plc2.py (ПЛК №2 — Управление насосом, клапаном и ПАЗ):", bold=True, indent=0.49)
     add_p(
         "Шлюзовой контроллер. Читает данные от ПЛК №1 по Modbus TCP (порт 5020) и передает команды имитатору через TCP-сокет. "
         "Реализует логику противоаварийных блокировок. Выставляет свои регистры в сеть Modbus TCP на порту 5021 для SCADA.",
         indent=0.49
     )
+    add_p("Листинг 3 — Виртуальный контроллер ПЛК №2 (plc2.py):", bold=True, italic=True)
+    add_code_block(load_code("plc2.py"))
+
     add_p("4. scada.py (Диспетчерская станция верхнего уровня):", bold=True, indent=0.49)
     add_p(
         "Опрашивает оба контроллера, формирует мнемосхему, строит графические тренды в реальном времени "
         "и предоставляет оператору интерфейс изменения уставки технологического параметра.",
         indent=0.49
     )
+    add_p("Листинг 4 — SCADA-эмулятор диспетчерского управления (scada.py):", bold=True, italic=True)
+    add_code_block(load_code("scada.py"))
 
     add_img(img_paths['mimic'], "Рисунок 3 – Мнемосхема интерфейса SCADA-эмулятора технологического аппарата", width_in=6.1)
 
@@ -1384,7 +1421,27 @@ def build_full_docx_report(img_paths, output_docx_path):
         with open(sc_file, 'r', encoding='utf-8') as f:
             add_code_block(f.read())
 
+    doc.add_page_break()
+    add_h1("ПРИЛОЖЕНИЕ Д")
+    add_p("Скрипты автоматизированного запуска распределенной системы (run_all.py, start_all.bat)", bold=True, space_after=6)
+    r_file = os.path.join(WORK_DIR, 'run_all.py')
+    if os.path.exists(r_file):
+        add_p("Скрипт мастер-запуска на Python (run_all.py):", bold=True, italic=True)
+        with open(r_file, 'r', encoding='utf-8') as f:
+            add_code_block(f.read())
+    b_file = os.path.join(WORK_DIR, 'start_all.bat')
+    if os.path.exists(b_file):
+        add_p("Командный файл пакетного запуска Windows (start_all.bat):", bold=True, italic=True)
+        with open(b_file, 'r', encoding='utf-8') as f:
+            add_code_block(f.read())
+
     doc.save(output_docx_path)
+    # Сохранение второй копии по университетскому шаблону наименования
+    copy_path = os.path.join(WORK_DIR, 'ЭАС-514С_АСУСН_Гайнанов_Гарифуллин_ЛР6.docx')
+    try:
+        doc.save(copy_path)
+    except Exception:
+        pass
     return output_docx_path
 
 

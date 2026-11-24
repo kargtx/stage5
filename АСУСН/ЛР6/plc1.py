@@ -18,6 +18,14 @@
 import time
 import threading
 import argparse
+import sys
+
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 try:
     from pymodbus.datastore import ModbusSlaveContext
@@ -60,7 +68,29 @@ class VirtualPlc1:
             self.store = ModbusSlaveContext(di=self.di_block, co=self.co_block, hr=self.hr_block, ir=self.ir_block)
             self.context = ModbusServerContext(slaves=self.store, single=True)
 
+        if hasattr(self.store, 'simdevice'):
+            self.store.simdevice.action = self._modbus_action
+
         self._init_registers()
+
+    async def _modbus_action(self, fc, start_addr, addr, count, current_regs, set_values):
+        """Динамический перехват Modbus-запросов в pymodbus 3.x."""
+        if fc == 3:  # Чтение Holding Registers (T, Heater, SP)
+            if len(current_regs) > 0:
+                current_regs[0] = int(self.state['temperature'] * 10)
+            if len(current_regs) > 1:
+                current_regs[1] = int(self.state['heater_power'] * 10)
+            if len(current_regs) > 2:
+                current_regs[2] = int(self.state['setpoint'] * 10)
+        elif fc in (6, 16):  # Запись Holding Registers
+            if set_values:
+                for i, val in enumerate(set_values):
+                    reg_addr = addr + i
+                    if reg_addr == 0 and val > 0:
+                        self.state['temperature'] = val / 10.0
+                    elif reg_addr == 2 and val > 0:
+                        self.state['setpoint'] = val / 10.0
+        return None
 
     def _get_target_list(self, block, block_idx=2):
         if hasattr(self.store, 'simdevice') and hasattr(self.store.simdevice, 'simdata'):
@@ -96,7 +126,6 @@ class VirtualPlc1:
         # Насыщение выхода 0..100%
         if raw_output > 100.0:
             output = 100.0
-            # Если ошибка одного знака с насыщением - заморозка интегрирования
             if error <= 0:
                 self.state['integral'] = tentative_integral
         elif raw_output < 0.0:
@@ -114,22 +143,7 @@ class VirtualPlc1:
     def control_loop(self):
         """Основной цикл управления ПЛК №1 (период 100 мс)."""
         while self.running:
-            hr = self._get_target_list(self.hr_block, block_idx=2)
-
-            # Проверка изменения уставки из SCADA (регистр HR[2])
-            if hr is not None and len(hr) >= 3:
-                scada_sp = hr[2] / 10.0
-                if abs(scada_sp - self.state['setpoint']) > 0.01 and scada_sp > 0:
-                    self.state['setpoint'] = scada_sp
-
-            heater = self.pid_step(dt=0.1)
-
-            # Обновление регистров
-            if hr is not None and len(hr) >= 3:
-                hr[0] = int(self.state['temperature'] * 10)
-                hr[1] = int(heater * 10)
-                hr[2] = int(self.state['setpoint'] * 10)
-
+            self.pid_step(dt=0.1)
             time.sleep(0.1)
 
     def start(self, blocking=True):
