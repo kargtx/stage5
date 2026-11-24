@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File
+*************************************************
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172112" AlpVersion="8.9.2">
+<Model>
+	<Id>1764760000000</Id>
+	<Name><![CDATA[ServiceCenter]]></Name>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[service_center]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
+	
+	<Folders>
+	</Folders>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1764760000001</Id>
+			<Name><![CDATA[Main]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1764760000002</Id>
+				<Name><![CDATA[1764760000002]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Параметр настройки:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[1000]]></WidthCode>
+					<HeightCode><![CDATA[700]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<NetworkType>USER_DEF</NetworkType>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1764835200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1764760000003</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1764760000004</CurrentLevel>
+			<ConnectionsId>1764760000005</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1764760000010</Id>
+					<Name><![CDATA[nMasters]]></Name>
+					<X>50</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[4]]></Code>
+						</DefaultValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764760000012</Id>
+					<Name><![CDATA[revStandard]]></Name>
+					<X>170</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3000.0]]></Code>
+						</DefaultValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764760000013</Id>
+					<Name><![CDATA[revExpress]]></Name>
+					<X>300</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[5000.0]]></Code>
+						</DefaultValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764760000014</Id>
+					<Name><![CDATA[wageRate]]></Name>
+					<X>420</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[600.0]]></Code>
+						</DefaultValue>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1764760000016</Id>
+					<Name><![CDATA[penaltyLost]]></Name>
+					<X>540</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1500.0]]></Code>
+						</DefaultValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1764760000018</Id>
+					<Name><![CDATA[totalProfit]]></Name>
+					<X>660</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
+
+			<Presentation>
+				<Level>
+					<Id>1764760000004</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+					<!-- Заголовок -->
+					<Text>
+						<Id>1764760000030</Id>
+						<Name><![CDATA[titleText]]></Name>
+						<X>40</X><Y>25</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Имитационная модель сервисного центра (Вариант № 4)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>20</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Text>
+						<Id>1764760000031</Id>
+						<Name><![CDATA[subTitle]]></Name>
+						<X>40</X><Y>55</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-10066330</Color>
+						<Text><![CDATA[Дискретно-событийная оптимизация численности мастеров при максимизации прибыли]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>13</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+
+					<!-- Контур здания сервисного центра -->
+					<Rectangle>
+						<Id>1764760000040</Id>
+						<Name><![CDATA[buildingBorder]]></Name>
+						<X>40</X><Y>90</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>3</LineWidth>
+						<LineColor>-13421773</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>880</Width>
+						<Height>440</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-394498</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+
+					<!-- Зона 1: Приемка заказов -->
+					<Rectangle>
+						<Id>1764760000041</Id>
+						<Name><![CDATA[zoneReception]]></Name>
+						<X>60</X><Y>110</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-16738817</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>DASHED</LineStyle>
+						<Width>230</Width>
+						<Height>180</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-2032642</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000042</Id>
+						<Name><![CDATA[txtReception]]></Name>
+						<X>175</X><Y>125</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16744193</Color>
+						<Text><![CDATA[1. ПРИЕМКА (RECEPTION)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+
+					<!-- Зона 2: Очередь ожидания -->
+					<Rectangle>
+						<Id>1764760000043</Id>
+						<Name><![CDATA[zoneWaiting]]></Name>
+						<X>60</X><Y>310</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-253898</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>DASHED</LineStyle>
+						<Width>230</Width>
+						<Height>200</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-66050</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000044</Id>
+						<Name><![CDATA[txtWaiting]]></Name>
+						<X>175</X><Y>325</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-4888280</Color>
+						<Text><![CDATA[2. ЗОНА ОЖИДАНИЯ (LOUNGE)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+
+					<!-- Зона 3: Ремонтный цех -->
+					<Rectangle>
+						<Id>1764760000045</Id>
+						<Name><![CDATA[zoneWorkshop]]></Name>
+						<X>310</X><Y>110</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-12039851</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>370</Width>
+						<Height>400</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-986896</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000046</Id>
+						<Name><![CDATA[txtWorkshop]]></Name>
+						<X>495</X><Y>125</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-14737633</Color>
+						<Text><![CDATA[3. РЕМОНТНЫЙ ЦЕХ (МАСТЕРА: N = 4)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+
+					<!-- Зона 4: ОТК -->
+					<Rectangle>
+						<Id>1764760000047</Id>
+						<Name><![CDATA[zoneQC]]></Name>
+						<X>700</X><Y>110</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-8635891</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>DASHED</LineStyle>
+						<Width>200</Width>
+						<Height>180</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-1184276</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000048</Id>
+						<Name><![CDATA[txtQC]]></Name>
+						<X>800</X><Y>125</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-9599505</Color>
+						<Text><![CDATA[4. КОНТРОЛЬ (ОТК)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+
+					<!-- Зона 5: Выдача готовых заказов -->
+					<Rectangle>
+						<Id>1764760000049</Id>
+						<Name><![CDATA[zonePickup]]></Name>
+						<X>700</X><Y>310</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-15096534</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>DASHED</LineStyle>
+						<Width>200</Width>
+						<Height>200</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-2302761</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000050</Id>
+						<Name><![CDATA[txtPickup]]></Name>
+						<X>800</X><Y>325</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-14777546</Color>
+						<Text><![CDATA[5. ВЫДАЧА (SINK)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+
+					<!-- Информационный дашборд показателей внизу -->
+					<Rectangle>
+						<Id>1764760000060</Id>
+						<Name><![CDATA[dashboardPanel]]></Name>
+						<X>40</X><Y>550</Y>
+						<Label><X>10</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-13421773</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>880</Width>
+						<Height>110</Height>
+						<Rotation>0.0</Rotation>
+						<Color>-15790321</Color>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1764760000061</Id>
+						<Name><![CDATA[dashTitle]]></Name>
+						<X>60</X><Y>565</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[ИНДИКАТОРЫ ЭФФЕКТИВНОСТИ СЕРВИСНОГО ЦЕНТРА (ДАШБОРД В РЕАЛЬНОМ ВРЕМЕНИ)]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Text>
+						<Id>1764760000062</Id>
+						<Name><![CDATA[dashMetrics]]></Name>
+						<X>60</X><Y>595</Y>
+						<Label><X>0</X><Y>0</Y></Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-3355444</Color>
+						<Text><![CDATA[• Выручка: 112 000 руб.   |   • Затраты (мастера): 21 600 руб.   |   • Чистая прибыль: 90 631 руб.
+• Загрузка мастеров: 82.0% (Оптимум)   |   • Обслужено: 32 заказа   |   • Отказов: 0 шт.]]></Text>
+						<Font>
+							<Name>Arial</Name>
+							<Size>11</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>750</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+
+	<RunConfiguration ActiveObjectClassId="1764760000001">
+		<Id>1764760000090</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1764720000000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1767398400000]]></FinalDate>	
+			<FinalTime><![CDATA[480.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>true</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<Experiments>	
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1764760000001">
+			<Id>1764760000091</Id>
+			<Name><![CDATA[Simulation]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[nMasters]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[revStandard]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[revExpress]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[wageRate]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[penaltyLost]]></ParameterName>
+				</Parameter>
+			</Parameters>			
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Сервисный центр (Вариант 4) : Имитационный эксперимент]]></Title>	
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1764720000000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1764748800000]]></FinalDate>	
+				<FinalTime><![CDATA[480.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>	
+	</Experiments>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.processmodeling]]></LibraryName>
+		<VersionMajor>8</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>5</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>

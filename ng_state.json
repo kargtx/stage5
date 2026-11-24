@@ -1,0 +1,739 @@
+{
+  "sidebar_tab": 0,
+  "app_config": {
+    "frontend": {
+      "cookieConsentMessage": {
+        "enable": true,
+        "position": "top",
+        "width": "narrow"
+      },
+      "i18n": {
+        "languages": [
+          "en",
+          "zh"
+        ],
+        "defaultLanguage": "en"
+      },
+      "documentTitle": "AnyLogic",
+      "sharingButtons": {
+        "enable": true,
+        "buttons": [
+          {
+            "name": "facebook",
+            "visible": true
+          },
+          {
+            "name": "twitter",
+            "visible": true
+          },
+          {
+            "name": "linkedin",
+            "visible": true
+          },
+          {
+            "name": "telegram",
+            "visible": true
+          },
+          {
+            "name": "wechat",
+            "visible": true
+          }
+        ]
+      }
+    },
+    "registration": {
+      "enabled": true,
+      "enableGuestAccess": true,
+      "emailVerificationEnabled": true,
+      "providers": {
+        "enterprise": "anylogic, oauth"
+      },
+      "passwordPolicy": {
+        "minLength": 8,
+        "numberOfDigits": 0,
+        "numberOfUpperCaseCharacters": 0,
+        "numberOfLowerCaseCharacters": 0,
+        "numberOfSpecialCharacters": 0,
+        "maxLength": 40
+      }
+    },
+    "featureFlags": {
+      "enableCustomUI": false,
+      "enableAllRunsView": false,
+      "enableAL9": true,
+      "enableHardSyncWithAL9": true,
+      "enableFileTracking": false,
+      "enableUserSuspension": true,
+      "disableAdminPanelNodesTab": false,
+      "enableActivityJournal": true,
+      "enableUserSurvey": true
+    }
+  },
+  "editor_config": {
+    "address": "https://editor.anylogic.com",
+    "createPath": "/new",
+    "editPath": "/project"
+  },
+  "model_c8bdf877-fc50-4e0b-baa5-1cf8d9663401": {
+    "uuid": "c8bdf877-fc50-4e0b-baa5-1cf8d9663401",
+    "name": "Сar_Workshop",
+    "description": "",
+    "published": true,
+    "sourcesPublished": false,
+    "dateLastModified": "2026-01-08T15:28:52.512Z",
+    "developers": [
+      {
+        "uuid": "8313db2a-f615-4111-b378-943d848967e0",
+        "firstName": "Nadezhda",
+        "lastName": "Solovyova",
+        "avatarHash": null,
+        "createdDate": null,
+        "lastNotifiedDate": null,
+        "subscriptionExpireDate": null
+      }
+    ],
+    "runs": 91,
+    "likes": 0,
+    "liked": false,
+    "lastUploadDate": "2026-01-08T15:26:28.950Z",
+    "openedLink": true,
+    "redirected": false,
+    "imageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAIAAAAiZtkUAAAAL0lEQVR4AWN49OjReSRw+/Zthps3bx4Ag3379gFpoCxCCCIBEnr+/Pl1JPDgwQMAmr46P+icn6gAAAAASUVORK5CYII=",
+    "isBlankImage": false,
+    "imageHash": "GbolPQJgqYgpswWewQNCA4YXJNXZxZwtDXZiKJr094o",
+    "imageUrl": "//cdn-cloud.anylogic.com/GbolPQJgqYgpswWewQNCA4YXJNXZxZwtDXZiKJr094o"
+  },
+  "model_role_c8bdf877-fc50-4e0b-baa5-1cf8d9663401": "ANONYMOUS",
+  "model_public_data": "{\"categoryNames\":[\"Test Models\"],\"tagTags\":[],\"areaTags\":[],\"methodTags\":[]}",
+  "model_versions_c8bdf877-fc50-4e0b-baa5-1cf8d9663401": [
+    {
+      "uuid": "0f8c2a96-3801-4e22-8eeb-2d7f47c924f6",
+      "branchUuid": "7c32c49f-7bef-4938-8432-5e1d3e2414e9",
+      "commitDate": "2026-01-08T15:26:28.950Z",
+      "createdDate": "2026-01-08T15:26:28.950Z",
+      "version": "2",
+      "name": "Version 1",
+      "author": {
+        "uuid": "8313db2a-f615-4111-b378-943d848967e0",
+        "firstName": "Nadezhda",
+        "lastName": "Solovyova",
+        "status": "CONFIRMED",
+        "createdDate": null,
+        "lastNotifiedDate": null,
+        "subscriptionExpireDate": null
+      },
+      "experiments": [
+        {
+          "uuid": "5d749999-dd52-4ac1-9a17-47c4ffab39d9",
+          "branchUuid": "971a08ce-8ff8-4964-9d80-4aa0903926a9",
+          "type": "SIMULATION",
+          "name": "Experiment",
+          "dateCreated": "2026-01-08T15:26:28.965Z",
+          "dateLastModified": "2026-01-08T15:26:28.965Z",
+          "modelVersion": "0f8c2a96-3801-4e22-8eeb-2d7f47c924f6",
+          "inputs": [
+            {
+              "name": "{MAX_MEMORY_MB}",
+              "type": "INTEGER",
+              "units": null,
+              "value": "512"
+            },
+            {
+              "name": "{RANDOM_SEED}",
+              "type": "LONG",
+              "units": null,
+              "value": "1"
+            },
+            {
+              "name": "{START_DATE}",
+              "type": "DATE_TIME",
+              "units": null,
+              "value": "2026-01-06T00:00"
+            },
+            {
+              "name": "{START_TIME}",
+              "type": "DOUBLE",
+              "units": "MINUTE",
+              "value": "0"
+            },
+            {
+              "name": "{STOP_DATE}",
+              "type": "DATE_TIME",
+              "units": null,
+              "value": "2026-01-06T05:00"
+            },
+            {
+              "name": "{STOP_MODE}",
+              "type": "STRING",
+              "units": null,
+              "value": "STOP_MODE_AT_TIME"
+            },
+            {
+              "name": "{STOP_TIME}",
+              "type": "DOUBLE",
+              "units": "MINUTE",
+              "value": "300"
+            }
+          ],
+          "dashboard": {
+            "inputs": [
+              {
+                "type": "SECTION",
+                "width": null,
+                "height": null,
+                "visible": true,
+                "name": "{SECTION_EXPERIMENT_SETTINGS}"
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{RANDOM_SEED}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              },
+              {
+                "type": "COMBO_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{STOP_MODE}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null,
+                "labels": [
+                  "Stop mode at time",
+                  "Stop mode at date"
+                ],
+                "values": [
+                  "STOP_MODE_AT_TIME",
+                  "STOP_MODE_AT_DATE"
+                ]
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{START_TIME}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{START_DATE}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{STOP_TIME}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{STOP_DATE}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              },
+              {
+                "type": "EDIT_BOX",
+                "width": null,
+                "height": null,
+                "visible": false,
+                "data": "{MAX_MEMORY_MB}",
+                "description": null,
+                "conditionsEnabled": false,
+                "hideConditions": null
+              }
+            ],
+            "outputs": []
+          },
+          "isUserModified": false
+        }
+      ],
+      "experimentTemplate": {
+        "inputs": [
+          {
+            "name": "{STOP_MODE}",
+            "type": "STRING",
+            "units": null,
+            "value": "STOP_MODE_AT_TIME"
+          },
+          {
+            "name": "{START_TIME}",
+            "type": "DOUBLE",
+            "units": "MINUTE",
+            "value": "0"
+          },
+          {
+            "name": "{STOP_TIME}",
+            "type": "DOUBLE",
+            "units": "MINUTE",
+            "value": "300"
+          },
+          {
+            "name": "{START_DATE}",
+            "type": "DATE_TIME",
+            "units": null,
+            "value": "2026-01-06T00:00"
+          },
+          {
+            "name": "{STOP_DATE}",
+            "type": "DATE_TIME",
+            "units": null,
+            "value": "2026-01-06T05:00"
+          },
+          {
+            "name": "{MAX_MEMORY_MB}",
+            "type": "INTEGER",
+            "units": null,
+            "value": "512"
+          }
+        ],
+        "outputs": [],
+        "dashboard": {
+          "inputs": [],
+          "outputs": []
+        }
+      },
+      "modelTimeUnit": "MINUTE",
+      "hasSources": true,
+      "hasCompilationErrors": false,
+      "isRawUpload": false,
+      "modelId": "c8bdf877-fc50-4e0b-baa5-1cf8d9663401"
+    }
+  ],
+  "__nghData__": [
+    {
+      "n": {
+        "2": "hfn2"
+      },
+      "t": {
+        "2": "t11"
+      },
+      "c": {
+        "2": []
+      }
+    },
+    {
+      "t": {
+        "0": "t12"
+      },
+      "c": {
+        "0": []
+      }
+    },
+    {
+      "n": {
+        "2": "hf"
+      },
+      "t": {
+        "2": "t9"
+      },
+      "c": {
+        "2": [
+          {
+            "i": "t9",
+            "r": 4,
+            "t": {
+              "0": "t10",
+              "3": "t13"
+            },
+            "c": {
+              "0": [
+                {
+                  "i": "t10",
+                  "r": 2,
+                  "n": {
+                    "1": "0fn"
+                  },
+                  "c": {
+                    "0": []
+                  }
+                }
+              ]
+            },
+            "d": [
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "t": {
+        "0": "t14",
+        "2": "t26"
+      },
+      "c": {
+        "0": [
+          {
+            "i": "t14",
+            "r": 3,
+            "t": {
+              "0": "t15"
+            },
+            "c": {
+              "0": [
+                {
+                  "i": "t15",
+                  "r": 2,
+                  "e": {
+                    "0": 1
+                  },
+                  "t": {
+                    "3": "t16",
+                    "4": "t17",
+                    "5": "t18",
+                    "6": "t19",
+                    "7": "t20",
+                    "9": "t21",
+                    "10": "t22",
+                    "11": "t23",
+                    "32": "t24",
+                    "33": "t25"
+                  },
+                  "c": {
+                    "3": [
+                      {
+                        "i": "t16",
+                        "r": 1
+                      }
+                    ],
+                    "4": [],
+                    "5": [
+                      {
+                        "i": "t18",
+                        "r": 1
+                      }
+                    ],
+                    "6": [],
+                    "7": [],
+                    "9": [],
+                    "10": [],
+                    "11": [],
+                    "32": [],
+                    "33": [
+                      {
+                        "i": "t25",
+                        "r": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "2": []
+      }
+    },
+    {
+      "n": {
+        "4": "hfn7"
+      }
+    },
+    {
+      "n": {
+        "1": "hf"
+      },
+      "t": {
+        "1": "t3",
+        "2": "t4"
+      },
+      "c": {
+        "1": [
+          {
+            "i": "t3",
+            "r": 1
+          }
+        ],
+        "2": []
+      }
+    },
+    {
+      "t": {
+        "1": "t57",
+        "2": "t63"
+      },
+      "c": {
+        "1": [
+          {
+            "i": "t57",
+            "r": 1,
+            "t": {
+              "2": "t58",
+              "3": "t59",
+              "4": "t60",
+              "5": "t61",
+              "6": "t62"
+            },
+            "c": {
+              "2": [
+                {
+                  "i": "t58",
+                  "r": 1
+                }
+              ],
+              "3": [],
+              "4": [],
+              "5": [],
+              "6": []
+            }
+          }
+        ],
+        "2": []
+      }
+    },
+    {
+      "n": {
+        "16": "hf",
+        "17": "16fn"
+      },
+      "t": {
+        "18": "t64",
+        "19": "t66",
+        "20": "t67",
+        "21": "t68"
+      },
+      "c": {
+        "18": [
+          {
+            "i": "t64",
+            "r": 1,
+            "t": {
+              "0": "t65"
+            },
+            "c": {
+              "0": []
+            }
+          }
+        ],
+        "19": [],
+        "20": [],
+        "21": []
+      }
+    },
+    {},
+    {
+      "t": {
+        "0": "t80",
+        "1": "t81"
+      },
+      "c": {
+        "0": [],
+        "1": []
+      }
+    },
+    {
+      "t": {
+        "0": "t77",
+        "1": "t86"
+      },
+      "c": {
+        "0": [
+          {
+            "i": "t77",
+            "r": 8,
+            "e": {
+              "0": 7
+            },
+            "n": {
+              "10": "hf"
+            },
+            "t": {
+              "11": "t78",
+              "12": "t79",
+              "13": "t82",
+              "14": "t83",
+              "19": "t84",
+              "20": "t85"
+            },
+            "c": {
+              "11": [],
+              "12": [
+                {
+                  "i": "t79",
+                  "r": 1
+                }
+              ],
+              "13": [
+                {
+                  "i": "t82",
+                  "r": 1
+                }
+              ],
+              "14": [],
+              "19": [],
+              "20": []
+            }
+          }
+        ],
+        "1": []
+      }
+    },
+    {
+      "n": {
+        "6": "hf"
+      },
+      "t": {
+        "18": "t74",
+        "20": "t76",
+        "21": "t87",
+        "22": "t88"
+      },
+      "c": {
+        "18": [],
+        "20": [
+          {
+            "i": "t76",
+            "r": 1,
+            "n": {
+              "1": "hf2n"
+            }
+          }
+        ],
+        "21": [],
+        "22": []
+      }
+    },
+    {
+      "t": {
+        "1": "t73",
+        "3": "t89"
+      },
+      "c": {
+        "1": [
+          {
+            "i": "t73",
+            "r": 1
+          }
+        ],
+        "3": []
+      }
+    },
+    {
+      "n": {
+        "2": "hf",
+        "5": "3f"
+      },
+      "t": {
+        "2": "t71",
+        "5": "t72",
+        "6": "t90"
+      },
+      "c": {
+        "2": [
+          {
+            "i": "t71",
+            "r": 1,
+            "n": {
+              "3": "0fnf3",
+              "5": "3fn2f2",
+              "8": "6fn2f2"
+            }
+          }
+        ],
+        "5": [
+          {
+            "i": "t72",
+            "r": 1
+          }
+        ],
+        "6": []
+      }
+    },
+    {
+      "t": {
+        "0": "t69",
+        "2": "t70"
+      },
+      "c": {
+        "0": [],
+        "2": [
+          {
+            "i": "t70",
+            "r": 1
+          }
+        ]
+      }
+    },
+    {
+      "t": {
+        "0": "t91",
+        "1": "t92",
+        "2": "t93"
+      },
+      "c": {
+        "0": [],
+        "1": [],
+        "2": [
+          {
+            "i": "t92",
+            "r": 1,
+            "s": 0
+          }
+        ]
+      }
+    },
+    {
+      "n": {
+        "4": "1f3"
+      },
+      "c": {
+        "6": [
+          {
+            "i": "c339102412",
+            "r": 1
+          }
+        ]
+      }
+    },
+    {
+      "t": {
+        "0": "t30"
+      },
+      "c": {
+        "0": [
+          {
+            "i": "t30",
+            "r": 1,
+            "t": {
+              "2": "t31"
+            },
+            "c": {
+              "2": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "c": {
+        "0": [
+          {
+            "i": "c181067862",
+            "r": 1
+          }
+        ]
+      }
+    }
+  ]
+}
